@@ -1,0 +1,339 @@
+
+#section_1st .content{
+    z-index: 0;
+}
+
+#mm_quick_search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    max-width: 1000px;
+    margin: 0px auto 0;
+    height: 141px;
+    margin-top: 0;
+    position: relative;
+}
+@media (max-width: 601px){
+    #mm_quick_search{
+        height: 251px;
+    }
+}
+
+/* islands */
+
+#mm_quick_search #mm_quick_search_island_wrapper{
+    margin-right: 20px;
+    position: relative;
+}
+#mm_quick_search #mm_quick_search_island_result{
+    background: #fff;
+    color: #000;
+    padding: 10px 30px;
+    border-radius: 30px;
+    min-width: 190px;
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+#mm_quick_search_island_widget{
+    background: #fff;
+    color: #000;
+    padding: 10px 30px;
+    border-radius: 30px;
+    /* position: absolute; */
+    /* top: -10px; */
+    /* top: 0; */
+    /* top: -50%; */
+    /* left: 0; */
+    right: 0;
+    border: 1px solid var(--mmtf-primary-color, #ff9903 );
+    padding: 20px;
+    display: none;
+    min-width: 190px;
+    height: 141px;
+}
+#mm_quick_search_island_widget .island_selector{
+    display: flex;
+    align-items: center;
+    transition: all 300ms ease;
+    user-select: none;
+    cursor: pointer;
+}
+#mm_quick_search_island_widget .island_selector:hover{
+    color: var(--mmtf-primary-color, #ff9903 );
+    transition: all 300ms ease;
+}
+#mm_quick_search_island_widget .island_selector:before{
+    content: "✔";
+    margin-right: 10px;
+    margin-left: 10px;
+    color: transparent;
+}
+#mm_quick_search_island_widget .island_selector.selected:before{
+    color: var(--mmtf-primary-color, #ff9903 );
+}
+#mm_quick_search_island_controls{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+#mm_quick_search_island_controls #mm_quick_search_island_apply{
+    border-radius: 5px;
+    border-radius: 30px;
+    border: 1px solid var(--mmtf-primary-color, #ff9903 );
+    background: var(--mmtf-primary-color, #ff9903 );
+    text-align: center;
+    line-height: 40px;
+    transition: all 300ms ease;
+    cursor: pointer;
+    color: #fff;
+    background: var(--mmtf-primary-color, #ff9903 );
+    cursor: pointer;
+    user-select: none;
+    padding: 0 30px;
+    width: 100%;
+}
+
+
+
+#mm_quick_search select#mm_quick_search_island{
+    display: none;
+    position: relative;
+    top: 100px;
+}
+
+
+/* date picker */
+
+#mm_quick_search #mm_quick_search_datepicker_wrapper {
+    background: #fff;
+    color: #000;
+    padding: 10px 30px;
+    border-radius: 30px;
+    display: none;
+    position: absolute;
+    border: 1px solid var(--mmtf-primary-color, #ff9903);
+    padding-top: 20px;
+    padding-bottom: 30px;
+    max-width: 500px;
+    width: 100%;
+    top: calc(100% - 30px);
+    right: 0;
+}
+#mm_quick_search #mm_quick_search_datepicker_result {
+    cursor: pointer;
+    user-select: none;
+    background: #fff;
+    color: #000;
+    padding: 16px 15px;
+    border-radius: 30px;
+    margin-left: 20px;
+    min-width: 230px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+#mm_quick_search #mm_quick_search_datepicker_result .icon-date {
+    width: 25px;
+    height: 25px;
+}
+#mm_quick_search #mm_quick_search_datepicker_result .icon-dropdown {
+    margin-left: auto;
+    width: 15px;
+    height: 15px;
+}
+#mm_quick_search #mm_quick_search_datepicker_wrapper #mmtf_datepicker_widget {
+    background: #fff;
+}
+
+
+/* submit */
+
+#mm_quick_search #mm_quick_search_submit{
+    all: revert;
+    display: flex;
+    justify-content: center;
+    background: var(--mmtf-primary-color, #ff9903);
+    padding: 10px 30px;
+    border-radius: 30px;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    min-width: 50px;
+}
+#mm_quick_search #mm_quick_search_submit:hover{
+    background-color: #2189c1;
+}
+
+
+/* controls */
+
+#mm_quick_search_datepicker_controls{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+#mm_quick_search_datepicker_controls.hidden{
+    display: none;
+}
+#mm_quick_search_datepicker_controls #mm_quick_search_datepicker_reset,
+#mm_quick_search_datepicker_controls #mm_quick_search_datepicker_apply{
+    border-radius: 5px;
+    border-radius: 30px;
+    border: 1px solid var(--mmtf-primary-color, #ff9903 );
+    background: var(--mmtf-primary-color, #ff9903 );
+    text-align: center;
+    width: 48%;
+    line-height: 40px;
+    transition: all 300ms ease;
+    cursor: pointer;
+}
+#mm_quick_search_datepicker_controls #mm_quick_search_datepicker_reset{
+    color: var(--mmtf-primary-color, #ff9903 );
+    background: #fff;
+    cursor: pointer;
+    user-select: none;
+}
+#mm_quick_search_datepicker_controls #mm_quick_search_datepicker_apply{
+    color: #fff;
+    background: var(--mmtf-primary-color, #ff9903 );
+    cursor: pointer;
+    user-select: none;
+}
+#mm_quick_search_datepicker_controls #mm_quick_search_datepicker_apply:hover{
+    background: #2189c1;
+    border-color: #2189c1;
+}
+
+#mm_quick_search .mm_quick_search_date[type="text"] {
+    display: none;
+}
+#mm_quick_search img#mmtf_filter_clear_search {
+    right: 130px;
+}
+@media (max-width: 900px) {
+    #mm_quick_search {
+        flex-direction: column;
+    }
+    #mm_quick_search #mm_quick_search_datepicker_result {
+        margin-left: 0;
+        margin-top: 12px;
+    }
+    #mm_quick_search #mm_quick_search_datepicker_wrapper {
+        top: 100%;
+        left: 50%;
+        right: unset;
+        transform: translateX(-50%);
+    }
+}
+
+@media all and (max-width: 600px) {
+    #mm_quick_search_keyword_wrapper #mm_quick_search_keyword {
+        padding-left: 0;
+    }
+    #mm_quick_search_keyword_wrapper .icon-search {
+        width: 20px;
+        height: 20px;
+    }
+    #mm_quick_search_keyword_wrapper #mm_quick_search_keyword {
+        width: 100%;
+        padding-right: 50px;
+    }
+    #mm_quick_search img#mmtf_filter_clear_search {
+        right: 15px;
+    }
+    #mm_quick_search_keyword_wrapper #mm_quick_search_submit {
+        display: none;
+    }
+    #mm_quick_search {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column;
+        width: 100%;
+    }
+    .footer_search #mm_quick_search {
+        width: calc(100% - 48px);
+    }
+    #mm_quick_search_keyword_wrapper {
+        width: 100%;
+    }
+    #mm_quick_search #mm_quick_search_island_wrapper{
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    #mm_quick_search #mm_quick_search_datepicker_wrapper {
+        padding: 10px 10px;
+    }
+    #mm_quick_search #mm_quick_search_datepicker_result {
+        margin-right: 0;
+        margin-bottom: 10px;
+        max-width: 100%;
+        padding: 12px 15px;
+    }
+    #mm_quick_search #mm_quick_search_submit {
+        width: 150px;
+        text-align: center;
+    }
+    .home-search{
+        position: relative;
+    }
+    .home-search #mm_quick_search #mm_quick_search_datepicker_wrapper {
+        position: absolute;
+        top: calc(100% - 90px);
+    }
+
+}/* end media */
+
+#top #searchform #s {
+    transition: all 200ms linear; 
+}
+
+#top #searchform #s:focus::-webkit-input-placeholder {
+    color: #71717130 !important;
+}
+
+#top #searchform #s:focus:-moz-placeholder {
+    color: #71717130 !important;
+}
+
+#top #searchform #s:focus::-moz-placeholder {
+    color: #71717130 !important;
+}
+
+#top #searchform #s:focus:-ms-input-placeholder {
+    color: #71717130 !important;
+}
+#mm_quick_search_island_wrapper input.mm_quick_search_input {
+    margin-bottom: 0px;
+    padding: 13px 25px;
+    border-radius: 30px;
+    min-width: 260px;
+}
+body.home .mm-search-header{
+    display: none;
+}
+#header_main .mmtf_filter_top_btn_search {
+    padding: 15px;
+}
+
+#mm_quick_search_submit .quick-search-loader {
+    width: 29px;
+    aspect-ratio: 1;
+    --_g: no-repeat radial-gradient(farthest-side, #fff 94%, #0000);
+    background: var(--_g) 0 0, var(--_g) 100% 0, var(--_g) 100% 100%, var(--_g) 0 100%;
+    background-size: 30% 30%;
+    animation: l38 .5s infinite; 
+}
+@keyframes l38 {
+    100% {
+        background-position: 100% 0,100% 100%,0 100%,0 0;
+    }
+}

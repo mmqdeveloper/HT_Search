@@ -1,0 +1,108 @@
+pre{
+    background: black;
+    color: yellowgreen;
+    margin: 0;
+    border: 0;
+}
+
+#progress_bar{
+    height: 10px;
+    border: 1px solid lightgray;
+    margin-top: 30px;
+    margin-right: 30px;
+  box-sizing: content-box;
+  position: relative;
+  background: #fff;
+  border-radius: 25px;
+  padding: 3px;
+  padding: 0;
+  box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+  transition: opacity 3000ms ease;
+}
+#progress_bar > span{
+  display: block;
+  height: 100%;
+  width: 0;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: rgb(43, 194, 83);
+  background-image: linear-gradient(
+    center bottom,
+    rgb(43, 194, 83) 37%,
+    rgb(84, 240, 84) 69%
+  );
+  box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+#progress_bar > span:after,
+#progress_bar.animate > span > span {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+  z-index: 1;
+  background-size: 50px 50px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  overflow: hidden;
+}
+#progress_bar.animate > span > span {
+  animation: animate_progress 2s linear infinite;
+}
+#progress_bar.animate > span:after {
+  display: none;
+}
+
+@keyframes animate_progress {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+#progress_start_wrapper{
+    margin-top: 30px;
+    text-align: center;
+}
+#progress_start{
+    display: inline-block;
+    padding: 10px 30px;
+    background: #2271b1;
+    color: #fff;
+    border-radius: 100px;
+    border: 1px solid #2271b1;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+#progress_start:hover{
+    background: #fff;
+    color: #2271b1;
+    border: 1px solid #2271b1;
+}
+
+#progress_result_wrapper{
+    display: none;
+    margin-top: 30px;
+    text-align: center;
+}
+

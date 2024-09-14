@@ -1,0 +1,1955 @@
+#wc-bookings-booking-form .cpf-section.cruise-ship-info {
+    display: none;
+}
+
+.cruise-ship-calender.hasDatepicker {
+    line-height: 1em;
+}
+
+.cruise-ship-calender .ui-widget {
+    border: none !important;
+    background: #2189C1 !important;
+    border-radius: 35px;
+    width: 100%;
+    padding: 10px 30px 30px;
+}
+
+.cruise-ship-calender .ui-datepicker .ui-datepicker-header {
+    width: 100%;
+    float: none;
+    position: relative;
+    background-color: #fff !important;
+    color: #000 !important;
+    border: none;
+    padding: 0;
+}
+
+.cruise-ship-calender .ui-datepicker .ui-datepicker-header a {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    position: absolute;
+    background: #fff;
+    top: 20px;
+    cursor: pointer;
+}
+
+.cruise-ship-calender .ui-datepicker .ui-datepicker-prev {
+    right: 44px;
+    left: auto !important;
+}
+
+.cruise-ship-calender .ui-datepicker .ui-datepicker-next {
+    right: 0;
+}
+
+#top .cruise-ship-calender .ui-icon-circle-triangle-w {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAwIDEwMDAiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojZmY5OTAzO308L3N0eWxlPjwvZGVmcz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zODUuMiw1MTYuMTMsNTY5LjEsNzAwYTIyLjYzLDIyLjYzLDAsMCwwLDMyLDBsMTMuNTUtMTMuNTRhMjIuNjQsMjIuNjQsMCwwLDAsMC0zMkw0NjAuMTksNTAwLjA5bDE1NC42LTE1NC42YTIyLjY3LDIyLjY3LDAsMCwwLDAtMzJMNjAxLjI1LDMwMGEyMi42NSwyMi42NSwwLDAsMC0zMiwwTDM4NS4yLDQ4NGEyMi44MywyMi44MywwLDAsMCwwLDMyLjA5WiIvPjwvc3ZnPg==");
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+    top: calc(50% - 10px);
+    left: 7px;
+    background-position: center center;
+}
+
+#top .cruise-ship-calender .ui-icon-circle-triangle-e {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAwIDEwMDAiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojZmY5OTAzO308L3N0eWxlPjwvZGVmcz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik02MTQuOCw0ODMuODcsNDMwLjksMzAwYTIyLjYzLDIyLjYzLDAsMCwwLTMyLDBsLTEzLjU1LDEzLjU0YTIyLjY0LDIyLjY0LDAsMCwwLDAsMzJMNTM5LjgxLDQ5OS45MWwtMTU0LjYsMTU0LjZhMjIuNjcsMjIuNjcsMCwwLDAsMCwzMkwzOTguNzUsNzAwYTIyLjY1LDIyLjY1LDAsMCwwLDMyLDBMNjE0LjgsNTE2YTIyLjgzLDIyLjgzLDAsMCwwLDAtMzIuMDlaIi8+PC9zdmc+");
+    background-size: 100% 100%;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    top: calc(50% - 10px);
+    left: 9px;
+}
+
+.cruise-ship-calender .ui-datepicker .ui-datepicker-title {
+    line-height: 1em;
+    font-weight: 400;
+    padding: 18px 0;
+    text-align: left;
+    margin: 0;
+    background: #2189C1;
+}
+
+#top .cruise-ship-calender .ui-datepicker .ui-datepicker-header .ui-datepicker-title .ui-datepicker-month, #top .cruise-ship-calender .ui-datepicker .ui-datepicker-header .ui-datepicker-title .ui-datepicker-year {
+    border: 1px solid #fff;
+    min-width: 110px;
+    border-radius: 20px;
+    padding: 10px 12px;
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 0;
+    margin-right: 10px;
+    box-shadow: 2px 2px 7px rgb(0 0 0 / 21%);
+}
+
+.cruise-ship-calender .ui-datepicker table {
+    border-bottom: 1px solid #e1e1e1;
+    margin: 0;
+    width: 100%;
+    float: none;
+}
+
+.cruise-ship-calender .ui-datepicker th {
+    font-weight: 400;
+    width: calc(100% / 7);
+}
+
+.cruise-ship-calender .ui-datepicker th, .cruise-ship-calender .ui-datepicker td .ui-state-default {
+    color: #636363;
+}
+
+#top .cruise-ship-calender span {
+    vertical-align: middle;
+}
+
+#top .main_color .cruise-ship-calender .ui-datepicker td.ui-datepicker-other-month {
+    background-color: #fff;
+}
+
+.main_color .cruise-ship-calender .block-picker li a, #top .main_color .cruise-ship-calender .ui-datepicker td {
+    border-color: #e1e1e1;
+}
+
+#top .main_color .cruise-ship-calender .ui-datepicker td.available a {
+    background: #ff9903;
+    color: #fff !important;
+    opacity: 1;
+}
+
+#top .main_color .cruise-ship-calender .ui-datepicker td.available a.ui-state-active {
+    background: #D97000;
+}
+
+.cruise-ship-calender .ui-datepicker td {
+    border: 0;
+    border-top: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+    background: #fefefe;
+    padding: 0 !important;
+    display: table-cell;
+}
+
+.cruise-ship-calender .ui-datepicker td .ui-state-default {
+    padding: 1em 0;
+}
+
+#top .main_color .cruise-ship-calender.ui-datepicker th,
+#top .main_color .cruise-ship-calender .ui-datepicker td .ui-state-default {
+    color: #838383;
+    text-align: center;
+    border: 0;
+    background-color: #ebebeb;
+}
+
+.cs-calendar-and-info {
+    display: grid;
+    grid-template-columns: 50% calc(50% - 40px);
+    gap: 40px;
+    margin-bottom: 40px;
+    margin-top: 22px;
+    align-items: center;
+}
+
+ul.cs-calendar-visible {
+    background-color: #2689c1;
+    color: #fff;
+    list-style-type: none;
+    margin: -1.5px 0 0;
+    text-align: center;
+    border-radius: 0 0 35px 35px;
+    padding-bottom: 10px;
+}
+
+ul.cs-calendar-visible li {
+    width: 25%;
+    display: inline-block;
+    margin: 0;
+}
+
+ul.cs-calendar-visible .color-calendar {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+}
+
+ul.cs-calendar-visible .cs-available .color-calendar {
+    background-color: #f89903;
+}
+
+ul.cs-calendar-visible .cs-not-available .color-calendar {
+    background-color: #d9d9d9;
+}
+
+  .cs-info {
+    text-align: center;
+}
+
+.cs-calendar-and-info .ship-name {
+    font-size: 24px;
+}
+
+.cs-calendar-and-info .cs-arrival-date-text {
+    margin-bottom: 24px;
+}
+
+.cs-calendar-and-info .cs-destination,
+.cs-calendar-and-info .cs-arrival-time,
+.cs-calendar-and-info .cs-dock-time {
+    text-align: left;
+    padding-left: 32px;
+    position: relative;
+}
+
+.cs-calendar-and-info .cs-destination,
+.cs-calendar-and-info .cs-arrival-time {
+    margin-bottom: 16px;
+}
+
+.cs-calendar-and-info .cs-destination-text,
+.cs-calendar-and-info .cs-arrival-time-text,
+.cs-calendar-and-info .cs-dock-time-text,
+.cs-calendar-and-info .cs-arrival-date {
+    font-weight: 600;
+    color: #000;
+}
+
+.cs-calendar-and-info .cs-destination:before,
+.cs-calendar-and-info .cs-arrival-time:before,
+.cs-calendar-and-info .cs-dock-time:before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    display: block;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.cs-calendar-and-info .cs-destination:before {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAyNCAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzQ4Nl81NjEpIj4KPHBhdGggZD0iTTIxIDEwLjVDMjEgMTcuNSAxMiAyMy41IDEyIDIzLjVDMTIgMjMuNSAzIDE3LjUgMyAxMC41QzMgOC4xMTMwNSAzLjk0ODIxIDUuODIzODcgNS42MzYwNCA0LjEzNjA0QzcuMzIzODcgMi40NDgyMSA5LjYxMzA1IDEuNSAxMiAxLjVDMTQuMzg2OSAxLjUgMTYuNjc2MSAyLjQ0ODIxIDE4LjM2NCA0LjEzNjA0QzIwLjA1MTggNS44MjM4NyAyMSA4LjExMzA1IDIxIDEwLjVaIiBzdHJva2U9IiMyMTg5QzEiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTEyIDEzLjVDMTMuNjU2OSAxMy41IDE1IDEyLjE1NjkgMTUgMTAuNUMxNSA4Ljg0MzE1IDEzLjY1NjkgNy41IDEyIDcuNUMxMC4zNDMxIDcuNSA5IDguODQzMTUgOSAxMC41QzkgMTIuMTU2OSAxMC4zNDMxIDEzLjUgMTIgMTMuNVoiIHN0cm9rZT0iIzIxODlDMSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzQ4Nl81NjEiPgo8cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IndoaXRlIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDAuNSkiLz4KPC9jbGlwUGF0aD4KPC9kZWZzPgo8L3N2Zz4K");
+}
+
+.cs-calendar-and-info .cs-arrival-time:before {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAyNCAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDIyLjVDMTcuNTIyOCAyMi41IDIyIDE4LjAyMjggMjIgMTIuNUMyMiA2Ljk3NzE1IDE3LjUyMjggMi41IDEyIDIuNUM2LjQ3NzE1IDIuNSAyIDYuOTc3MTUgMiAxMi41QzIgMTguMDIyOCA2LjQ3NzE1IDIyLjUgMTIgMjIuNVoiIHN0cm9rZT0iIzIxODlDMSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTIgNi41VjEyLjVMMTYgMTQuNSIgc3Ryb2tlPSIjMjE4OUMxIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=");
+}
+
+.cs-calendar-and-info .cs-dock-time:before {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAyNCAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzY2M18xODMwKSI+CjxwYXRoIGQ9Ik00LjMyMDExIDMuODU5OTZIMTkuNjgwMUMyMC4yMTA1IDMuODU5OTYgMjAuNjQwMSAzLjQzMDM2IDIwLjY0MDEgMi44OTk5NlYxLjQ1OTk2SDMuMzYwMTFWMi44OTk5NkMzLjM2MDExIDMuNDMwMzYgMy43ODk3MSAzLjg1OTk2IDQuMzIwMTEgMy44NTk5NloiIHN0cm9rZT0iIzIxODlDMSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIvPgo8cGF0aCBkPSJNMjAuNjQwMSAyMy41Mzk2SDMuMzYwMTFWMjIuMDk5NkMzLjM2MDExIDIxLjU2OTIgMy43ODk3MSAyMS4xMzk2IDQuMzIwMTEgMjEuMTM5NkgxOS42ODAxQzIwLjIxMDUgMjEuMTM5NiAyMC42NDAxIDIxLjU2OTIgMjAuNjQwMSAyMi4wOTk2VjIzLjUzOTZaIiBzdHJva2U9IiMyMTg5QzEiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiLz4KPHBhdGggZD0iTTE4LjIzOTkgMy44NjAzNVY3LjU2NTQ3QzE4LjIzOTkgOC44NDk0NyAxNy41OTgyIDEwLjA0ODUgMTYuNTMwMiAxMC43NjA0TDEzLjkxOTkgMTIuNTAwNEwxNi41MzAyIDE0LjI0MDRDMTcuNTk4MiAxNC45NTI3IDE4LjIzOTkgMTYuMTUxNyAxOC4yMzk5IDE3LjQzNTJWMjEuMTQwNCIgc3Ryb2tlPSIjMjE4OUMxIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIi8+CjxwYXRoIGQ9Ik01Ljc2MDAxIDMuODYwMzVWNy41NjU0N0M1Ljc2MDAxIDguODQ5NDcgNi40MDE3NyAxMC4wNDg1IDcuNDY5NzcgMTAuNzYwNEwxMC4wOCAxMi41MDA0TDcuNDY5NzcgMTQuMjQwNEM2LjQwMTc3IDE0Ljk1MjcgNS43NjAwMSAxNi4xNTE3IDUuNzYwMDEgMTcuNDM1MlYyMS4xNDA0IiBzdHJva2U9IiMyMTg5QzEiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF82NjNfMTgzMCI+CjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0id2hpdGUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMC41KSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=");
+}
+
+.cs-calendar-and-info .cs-view-excursions {
+    margin-top: 16px !important;
+    margin-bottom: 24px !important;
+}
+
+.cs-calendar-and-info .cs-excerpt {
+    text-align: left;
+    background-color: #DFF1B9;
+    padding: 16px;
+}
+
+.cruise-ship-filter-box {
+    padding: 24px 40px;
+    display: flex;
+    margin: 0 auto;
+    background: #2189C1;
+    border-radius: 18px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.12);
+}
+
+.cruise-ship-calendar-box {
+    position: relative;
+    width: 35%;
+}
+
+.cruise-ship-calendar-box:after {
+    content: "";
+    width: 24px;
+    height: 24px;
+    display: block;
+    position: absolute;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAYCAYAAAAPtVbGAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABdSURBVHgB7c3BCQAgCIVhR3mjNFqbNkpFdOhgZaQQ4Q/iIekj8rwvQ53Yt8V9K9XJfYP2wHh/jOwgMLfiIIAkN1fQ6u04MJ8FTWAGZW1gBakCHGQCjFAkQ8DzHqwAaIA2jGECDhUAAAAASUVORK5CYII=");
+    top: calc(50% - 12px);
+    right: 24px;
+}
+
+.cruise-ship-filter-box .cs-calender-box {
+    position: absolute;
+    top: 50px;
+    z-index: 111;
+    width: 500px;
+}
+
+input.cruise-ship-calendar {
+    margin-bottom: 0 !important;
+}
+
+select#cruise-ship-name {
+    margin-bottom: 0;
+}
+
+.cruise-ship-filter-box a.cruise-ship-see-detail {
+    background: #FF9903;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    width: calc(30% - 50px);
+    border-radius: 25px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    margin-left: 24px;
+}
+
+.cruise-ship-see-detail:hover {
+    background: #fff !important;
+}
+
+.cruise-ship-name-box {
+    width: 35%;
+    position: relative;
+}
+
+#top .cruise-ship-name-box .select2-container {
+    width: 100% !important;
+}
+
+#top .cruise-ship-name-box .select2-selection {
+    height: 50px;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNSAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzU5MF8yMTEpIj4KPHBhdGggZD0iTTE5LjIyIDkuODg3ODhWNS43NTk4OEgxNi4zNFYyLjg3OTg4SDguNjZWNS43NTk4OEg1Ljc4VjkuODg3ODgiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTEyLjUgMFYyLjY0IiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIi8+CjxwYXRoIGQ9Ik0yMC42NiAyMC44Nzk3VjE2LjMxOTdMMjIuNDM2IDEyLjQ3OTdDMjIuNzcyIDExLjgwNzcgMjIuMzg4IDEwLjk5MTcgMjEuNjY4IDEwLjc1MTdMMTIuNSA3LjY3OTY5TDMuMjg0IDEwLjc1MTdDMi41NjQgMTAuOTkxNyAyLjIyOCAxMS44MDc3IDIuNTE2IDEyLjQ3OTdMNC4zNCAxNi4zMTk3VjIwLjg3OTciIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMjQuMDIgMjEuNDA4M0MyMy43OCAyMS41MDQzIDIzLjQ5MiAyMS41NTIzIDIzLjE1NiAyMS41NTIzQzIyLjQzNiAyMS41NTIzIDIxLjI4NCAyMS4zNjAzIDIwLjUxNiAyMC43MzYzQzE5Ljc0OCAyMS4zNjAzIDE4LjU5NiAyMS41NTIzIDE3Ljg3NiAyMS41NTIzQzE3LjE1NiAyMS41NTIzIDE2LjAwNCAyMS4zNjAzIDE1LjIzNiAyMC43MzYzQzE0LjQ2OCAyMS4zNjAzIDEzLjMxNiAyMS41NTIzIDEyLjU5NiAyMS41NTIzQzExLjg3NiAyMS41NTIzIDEwLjcyNCAyMS4zNjAzIDkuOTU2IDIwLjczNjNDOS4xODggMjEuMzYwMyA4LjAzNiAyMS41NTIzIDcuMzE2IDIxLjU1MjNDNi41OTYgMjEuNTUyMyA1LjQ0NCAyMS4zNjAzIDQuNjc2IDIwLjczNjNDMy45MDggMjEuMzYwMyAyLjc1NiAyMS41NTIzIDIuMDM2IDIxLjU1MjNDMS43IDIxLjU1MjMgMS40MTIgMjEuNTA0MyAxLjE3MiAyMS41MDQzIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTI0LjAyIDIzLjMyODJDMjMuNzggMjMuNDI0MiAyMy40OTIgMjMuNDcyMyAyMy4xNTYgMjMuNDcyM0MyMi40MzYgMjMuNDcyMyAyMS4yODQgMjMuMjgwMiAyMC41MTYgMjIuNjU2MkMxOS43NDggMjMuMjgwMiAxOC41OTYgMjMuNDcyMyAxNy44NzYgMjMuNDcyM0MxNy4xNTYgMjMuNDcyMyAxNi4wMDQgMjMuMjgwMiAxNS4yMzYgMjIuNjU2MkMxNC40NjggMjMuMjgwMiAxMy4zMTYgMjMuNDcyMyAxMi41OTYgMjMuNDcyM0MxMS44NzYgMjMuNDcyMyAxMC43MjQgMjMuMjgwMiA5Ljk1NiAyMi42NTYyQzkuMTg4IDIzLjI4MDIgOC4wMzYgMjMuNDcyMyA3LjMxNiAyMy40NzIzQzYuNTk2IDIzLjQ3MjMgNS40NDQgMjMuMjgwMiA0LjY3NiAyMi42NTYyQzMuOTA4IDIzLjI4MDIgMi43NTYgMjMuNDcyMyAyLjAzNiAyMy40NzIzQzEuNyAyMy40NzIzIDEuNDEyIDIzLjQyNDIgMS4xNzIgMjMuNDI0MiIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0xNi41OCAxNC40QzE2Ljk3NzYgMTQuNCAxNy4zIDEzLjg2MjcgMTcuMyAxMy4yQzE3LjMgMTIuNTM3MyAxNi45Nzc2IDEyIDE2LjU4IDEyQzE2LjE4MjMgMTIgMTUuODYgMTIuNTM3MyAxNS44NiAxMy4yQzE1Ljg2IDEzLjg2MjcgMTYuMTgyMyAxNC40IDE2LjU4IDE0LjRaIiBmaWxsPSJibGFjayIvPgo8cGF0aCBkPSJNOC40MjAwMSAxNC40QzguODE3NjYgMTQuNCA5LjE0MDAxIDEzLjg2MjcgOS4xNDAwMSAxMy4yQzkuMTQwMDEgMTIuNTM3MyA4LjgxNzY2IDEyIDguNDIwMDEgMTJDOC4wMjIzNyAxMiA3LjcwMDAxIDEyLjUzNzMgNy43MDAwMSAxMy4yQzcuNzAwMDEgMTMuODYyNyA4LjAyMjM3IDE0LjQgOC40MjAwMSAxNC40WiIgZmlsbD0iYmxhY2siLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF81OTBfMjExIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiBmaWxsPSJ3aGl0ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC41KSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=") !important;
+    background-repeat: no-repeat;
+    padding: 0 50px;
+    background-size: 24px;
+    background-position: 24px !important;
+    text-align-last: center;
+    -moz-text-align-last: center;
+    -ms-text-align-last: center;
+    font-size: 16px;
+    font-family: 'Open Sans', serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #555 !important;
+    border-radius: 25px !important;
+}
+
+#top .cruise-ship-name-box .select2-selection__arrow b {
+    border: none;
+    width: 24px;
+    height: 24px;
+    display: block;
+    position: absolute;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAYCAYAAAAPtVbGAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABdSURBVHgB7c3BCQAgCIVhR3mjNFqbNkpFdOhgZaQQ4Q/iIekj8rwvQ53Yt8V9K9XJfYP2wHh/jOwgMLfiIIAkN1fQ6u04MJ8FTWAGZW1gBakCHGQCjFAkQ8DzHqwAaIA2jGECDhUAAAAASUVORK5CYII=);
+    top: calc(50% - 11px);
+    left: 0;
+}
+
+#top .cruise-ship-name-box .select2-selection__arrow {
+    height: 50px;
+    right: 20px;
+}
+
+#top .cruise-ship-name-box .select2-selection__rendered {
+    line-height: 50px;
+}
+
+#top .cruise-ship-name-box .select2-dropdown {
+    overflow: hidden;
+}
+
+ul#select2-cruise-ship-name-results {
+    list-style-type: none;
+}
+
+#top .cruise-ship-name-box .select2-results__option {
+    margin: 0;
+    padding: 6px 16px;
+}
+
+#top .cruise-ship-name-box .select2-container--below.select2-container--open .select2-selection {
+    border-radius: 25px 25px 0 0 !important;
+}
+
+#top .cruise-ship-name-box .select2-container--above.select2-container--open .select2-selection {
+    border-radius: 0 0 25px 25px !important;
+}
+
+#top .cruise-ship-name-box .select2-results__option--highlighted[aria-selected] {
+    background-color: #f89903;
+    color: white;
+}
+
+#top .cruise-ship-name-box .select2-search--dropdown .select2-search__field {
+    border: 1px solid #aaa;
+    margin-bottom: 0 !important;
+}
+
+select#cruise-ship-name.select-cs-name {
+    font-weight: 600;
+    color: #000 !important;
+}
+
+#top .main_color .cruise-ship-calendar-box input.cruise-ship-calendar {
+    height: 50px;
+    color: #000;
+    font-size: 16px;
+    padding: 0 50px;
+    border-radius: 25px;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE5IDRINUMzLjg5NTQzIDQgMyA0Ljg5NTQzIDMgNlYyMEMzIDIxLjEwNDYgMy44OTU0MyAyMiA1IDIySDE5QzIwLjEwNDYgMjIgMjEgMjEuMTA0NiAyMSAyMFY2QzIxIDQuODk1NDMgMjAuMTA0NiA0IDE5IDRaIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0xNiAyVjYiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTggMlY2IiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0zIDEwSDIxIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=");
+    background-size: 24px;
+    background-position: 24px !important;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.cruise-ship-filter-box .cruise-ship-calender .ui-widget {
+    padding-top: 20px;
+}
+
+.cruise-ship-filter-box .cs-back-choose-date {
+    position: absolute;
+    width: 50%;
+    z-index: 1111;
+    font-size: 16px;
+    color: #fff;
+    top: 8px;
+    left: 32px;
+    cursor: pointer;
+}
+
+.list-cruise-ship {
+    display: grid;
+    gap: 34px;
+    margin-top: 16px;
+}
+
+.cruise-ship-item {
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 3px 3px 12px rgb(0 0 0 / 20%);
+    text-align: center;
+    position: relative;
+}
+
+.cruise-ship-item .tag-cs-special-deal {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    font-size: 12px;
+    line-height: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #fff;
+    background-color: #FF0000;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.cruise-ship-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.cruise-ship-item .cs-content-box {
+    padding: 10px 16px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cruise-ship-item .cs-content-box p {
+    color: #000;
+    margin: 0 0 10px 0;
+}
+
+#top #wrap_all .main_color h3.cs-title {
+    font-size: 20px;
+    color: #000;
+}
+
+#top .cruise-ship-item .cs-see-detail-button {
+    padding: 10px 16px;
+    background-color: #ff9903;
+    border-radius: 25px;
+    color: #fff !important;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: normal;
+}
+
+#top .cruise-ship-item .cs-see-detail-button:hover {
+    background-color: #2189C1;
+}
+
+#top .cruise-ship-item a {
+    text-decoration: none;
+    color: #000;
+    position: static !important;
+    display: block;
+}
+
+#top .mm-bg-size-cover {
+    background-size: cover !important;
+}
+
+/*cruise detail*/
+
+#top.single-cruise .av-subheading.av_custom_color,
+#top.cruise-ship-page .av-subheading.av_custom_color {
+    opacity: 1;
+}
+
+.list-cruise-ship-sort {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.list-cruise-ship-sort .cs-sort {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #000;
+}
+
+#top .list-cruise-ship-sort select {
+    display: none;
+}
+
+.cs-sort-select {
+    width: 160px;
+    position: relative;
+}
+
+ul.cs-sort-select-options {
+    width: 160px;
+    position: absolute;
+    z-index: 11;
+    background: #fff;
+    margin: 0;
+    list-style-type: none;
+    border: 1px solid #E8E8E8;
+    border-top: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 10px;
+}
+
+ul.cs-sort-select-options li {
+    padding: 4px 16px;
+    margin: 0 0 5px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 25px;
+    color: #000;
+}
+
+ul.cs-sort-select-options li:last-child {
+    margin-bottom: 0;
+}
+
+ul.cs-sort-select-options li:hover {
+    background: #e8e8e8;
+}
+
+.cs-sort-custom-select {
+    padding: 8px 36px;
+    background: #fff;
+    border: 1px solid #E8E8E8;
+    border-radius: 25px;
+    box-shadow: 0 0 5px #0000002e;
+    color: #000;
+    font-size: 14px;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.cs-sort-custom-select:before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    display: block;
+    position: absolute;
+    left: 16px;
+    top: calc(50% - 6px);
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CjxyZWN0IHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgdHJhbnNmb3JtPSJtYXRyaXgoLTEgMCAwIDEgMTIgMCkiIGZpbGw9InVybCgjcGF0dGVybjApIi8+CjxkZWZzPgo8cGF0dGVybiBpZD0icGF0dGVybjAiIHBhdHRlcm5Db250ZW50VW5pdHM9Im9iamVjdEJvdW5kaW5nQm94IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIj4KPHVzZSB4bGluazpocmVmPSIjaW1hZ2UwXzU2Ml8xMzc2IiB0cmFuc2Zvcm09InNjYWxlKDAuMDAxOTUzMTIpIi8+CjwvcGF0dGVybj4KPGltYWdlIGlkPSJpbWFnZTBfNTYyXzEzNzYiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4bGluazpocmVmPSJkYXRhOmltYWdlL3BuZztiYXNlNjQsaVZCT1J3MEtHZ29BQUFBTlNVaEVVZ0FBQWdBQUFBSUFDQVlBQUFEMGVOVDZBQUFBQVhOU1IwSUFyczRjNlFBQUlBQkpSRUZVZUY3dDNRbllydVc0OFBIL2x1YVJNa2VsVWZPQVVsS1NvU0pqVWloVGhyRFpsQ0ViMmFZdjQ2Zk5qbVJJdXhBUm1paVNCaW9wSkpLS1R3TlJhYUJCNVR2T3VsYXR0WHJYZXAvaGZwNzdHdjdYY2J6SFduVGYxMzJldit0ZTczTSs5M0JkLzRaTkFRVVVVRUFCQlpvVCtMZm1NalpoQlJSUVFBRUZGTUFDd0pOQUFRVVVVRUNCQmdVc0FCb2NkRk5XUUFFRkZGREFBc0J6UUFFRkZGQkFnUVlGTEFBYUhIUlRWa0FCQlJSUXdBTEFjMEFCQlJSUVFJRUdCU3dBR2h4MFUxWkFBUVVVVU1BQ3dITkFBUVVVVUVDQkJnVXNBQm9jZEZOV1FBRUZGRkRBQXNCelFBRUZGRkJBZ1FZRkxBQWFISFJUVmtBQkJSUlF3QUxBYzBBQkJSUlFRSUVHQlN3QUdoeDBVMVpBQVFVVVVNQUN3SE5BQVFVVVVFQ0JCZ1VzQUJvY2RGTldRQUVGRkZEQUFzQnpRQUVGRkZCQWdRWUZMQUFhSEhSVFZrQUJCUlJRd0FMQWMwQUJCUlJRUUlFR0JTd0FHaHgwVTFaQUFRVVVVTUFDd0hOQUFRVVVVRUNCQmdVc0FCb2NkRk5XUUFFRkZGREFBc0J6UUFFRkZGQkFnUVlGTEFBYUhIUlRWa0FCQlJSUXdBTEFjMEFCQlJSUVFJRUdCU3dBR2h4MFUxWkFBUVVVVU1BQ3dITkFBUVVVVUVDQkJnVXNBQm9jZEZOV1FBRUZGRkRBQXNCelFBRUZGRkJBZ1FZRkxBQWFISFJUVmtBQkJSUlF3QUxBYzBBQkJSUlFRSUVHQlN3QUdoeDBVMVpBQVFVVVVNQUN3SE5BQVFVVVVFQ0JCZ1VzQUJvY2RGTldRQUVGRkZEQUFzQnpRQUVGRkZCQWdRWUZMQUFhSEhSVFZrQUJCUlJRd0FMQWMwQUJCUlJRUUlFR0JTd0FHaHgwVTFaQUFRVVVVTUFDd0hOQUFRVVVVRUNCQmdVc0FCb2NkRk5XUUlHSkNjVHYxQWNDRDBnL2k2UWp4Zisvd254SHZSVzRicTZmdjZXLzN6Nng2T3hZZ2JrRUxBQThIUlJRUUlIQkJaWUMxZ0VlQmF3THJBSThLUDNNLzZFL2VLL3pibmtqY0JWd3lWdy9sODcxOTJ0RzdkajlGSmhid0FMQTgwRUJCUlNZV1dCVllHdGd3L1JoSHgvNjhmLzEvWHN6Q29DejUvdTUwa0ZVWUZpQnZrL2tZZU4xZXdVVVVHQVNBdmNCMWs4ZitGc0JUd0FlTm9rRFRhalBQNmFDNEV6Zys4RFBnSDlONkZoMlc0bUFCVUFsQTJrYUNpZ3d0TUJLd0RPQVp3TGJ6SENQZnVnT005cmhUOEFKd1BIQTk0QjR2c0Ntd0R3Q0ZnQ2VFQW9vMEpKQTNMTi9WdnFKeS90ekh0S3IyZUEyNE1lcEdQZzZjRkhOeVpyYjRBSVdBSU5idWFVQ0NwUXA4QkJnVDJBWFlOTXlVK2cwNnRPQkx3RkhlbVdnVTlmaU9yTUFLRzdJREZnQkJRWVFpSHY2MndHdlROLzJGeDFnbjlZMnVRVTRNUlVEUndQL2JBMmc5WHd0QUZvL0E4eGZnYm9FVmdaZUJyd2NlRVJkcVUwMG0zaUw0QkRnaytrVnhJa2V6TTd6RUxBQXlHTWNqRUlCQmNZVDJBUjRSL3EyMzhKOS9mRzBGcnozVGNDaHdNZDhWbUJTeFBuMGF3R1F6MWdZaVFJS0RDOFFIL3h2QjU2WHdmdjV3MGVmN3g1M0FNY0JId1RPeURkTUl4dEh3QUpnSEQzM1ZVQ0J2Z1RpdGIzL0JMYnZLNENHam5zcThHN2c1SVp5YmlKVkM0QW1odGtrRmFoR1lBdmdRMm5Dbm1xU0tpU1JZNEczQUJjVUVxOWh6aUpnQWVBcG9vQUNKUWc4TkgwTGZRVVFUL2piK2hHSVd3T0hBMjhGbkg2NG56SG83S2dXQUoxUjJwRUNDa3hBWURIZ05jQjdnV1VuMEw5ZGppYnc5L1RHd1B1QkcwYnJ3cjM2RnJBQTZIc0VQTDRDQ2l4STRMbkFoNEhWSk1wVzRMSlVvQjJUYllRR3RrQUJDd0JQRGdVVXlFMGdMdmZITytrNzVCYVk4U3hRSUc0THZCSDRxMGJsQ0ZnQWxETldScXBBQ3dJeFhlOUJ3SW90SkZ0WmpsY0IrNmFaQlN0THJjNTBMQURxSEZlelVxQTBnUldBL3daZVZGcmd4bnN2Z1hoYjROVkEzQjZ3WlN4Z0FaRHg0QmlhQW8wSTdBd2NERHlva1h4YlNQTmE0S1hBdDFwSXR0UWNMUUJLSFRualZxQjhnY1hUdC82OXlrL0ZER1lRK0ZkNmlET21hSTRsaVcyWkNWZ0FaRFlnaHFOQUl3SVBBMkp0K3BqWXgxYTNRTXdrK0FMZ2lyclRMQzg3QzREeXhzeUlGU2hkNFBIQTE0QUhsNTZJOFE4czhCZmdoV241NFlGM2NzUEpDbGdBVE5iWDNoVlFZRjZCMXdNZkJSWVZwam1CMjlPS2pRYzBsM21tQ1ZzQVpEb3docVZBWlFKTEFKOENYbFpaWHFZenZFQXNOeHpQZmZ4eitGM2RvMHNCQzRBdU5lMUxBUVZtRW9oWC9MNER4S1YvbXdJaGNDSVFNejA2alhDUDU0TUZRSS80SGxxQkJnVGkxYjRUZ0kwYnlOVVVoeFA0S2ZCMDRNL0Q3ZWJXWFFsWUFIUWxhVDhLS0RDL3dDcnBtOTZhMGlpd0FJRkwwNVRQRnlvMGZRRUxnT21iZTBRRldoQllGL2dlRUsvNzJSUlltRUM4SVJEclBwd2owM1FGTEFDbTYrM1JGR2hCNE5IQWNjQURXa2pXSERzUitCdXd2VVZBSjVZRGQySUJNRENWR3lxZ3dBQUNtNmZML3NzT3NLMmJLREMzUUZ3SmVDTHdLMW1tSTJBQk1CMW5qNkpBQ3dMckFhZTRrbDhMUXoyeEhHTkZ3U2dDTHBqWUVlejRiZ0VMQUU4R0JSVG9RdUFSd0duQXc3dm96RDZhRnJnYzJBYTR1R21GS1NSdkFUQUZaQStoUU9VQ01hVnZ6UGUrUnVWNW10NzBCUDZRaW9ENDB6WWhBUXVBQ2NIYXJRS05DQ3dQbkF4czBraStwams5Z2Q4QWp3UGlBVUhiQkFRc0FDYUFhcGNLTkNLd1ZIcmdiOHRHOGpYTjZRdkVKRkl4V1ZDc0kyRHJXTUFDb0dOUXUxT2dJWUV2QW5zMmxLK3A5aU53SVBDR2ZnNWQ5MUV0QU9vZVg3TlRZRklDYjBxcitrMnFmL3RWWUc2QnZZR0RKT2xXd0FLZ1cwOTdVNkFGZ1hoTksyYjV1MjhMeVpwakZnSzNwZGtDVDhvaW1rcUNzQUNvWkNCTlE0RXBDY1RyZnJHSWk3UDhUUW5jdzl3dGNDM3dHRjhQN082TXNBRG96dEtlRktoZFlBbmdSK21YY08yNW1sK2VBbEY4YmdYY21tZDRaVVZsQVZEV2VCbXRBbjBLZkFGNFNaOEJlR3dGZ0FPQXR5a3h2b0FGd1BpRzlxQkFDd0xQQXI3WlFxTG1tTDNBSGNCVEFaOEhHSE9vTEFER0JIUjNCUm9RaVB2OTV3TVBiQ0JYVXl4RDRNL0FSa0Q4YVJ0UndBSmdSRGgzVTZBaGdhT0E1elNVcjZtV0lYQThzQlB3cnpMQ3pTOUtDNEQ4eHNTSUZNaEpJTzc1eDcxL213STVDcndHK0hTT2daVVFrd1ZBQ2FOa2pBcjBJN0F5OEF2Z2Z2MGMzcU1xTUt2QTljQ2pnQ3RtM2RJTjdpVmdBZUJKb1lBQ013bkU3NFlUZ1NmSm8wRG1BbDhCZHNzOHhpekRzd0RJY2xnTVNvSGVCVjRFSE5aN0ZBYWd3R0FDT3dMeFRJQnRDQUVMZ0NHdzNGU0JSZ1JpbGI5ZkF6SHJuMDJCRWdSK0Iyd0EzRnhDc0xuRWFBR1F5MGdZaHdMNUNQd1g4TTU4d2lrMmtqOEI4WE4xV3M3MnVwVEpZc0F5d0FyQXNzRFN3RU1CZngrUE45VHZBZllmcjR1Mjl2YUVhMnU4elZhQjJRUldTZC8rbDV4dFEvLzduUUx4Q3RxRndIbnA1OXcwVi8xbHdDMURHSVgzMnNCYTZjOTRzRzFMSU1iRE5waEFlTWRWZ0lzRzI5eXRMQUE4QnhSUVlHNkJJNEZkSkZtb3dPVnBOY1NZaWU3N0U1Nk1ablVnVmwvY0x2MDh5TEZacU1CWGdSZG9OSmlBQmNCZ1RtNmxRQXNDajArTC9maDc0ZDZqZlExd0xQQWw0QWRBVEVjNzdYYWZkRlhneGVtcDk3aDlZSnRYSUs3SWJBYkVsUmpiTEFMK1EvY1VVVUNCT1FKbkE0K1dZeDZCVTRBRGdXOERzU1o5TGkyZUc0alpHZmNDdHM0bHFFemlPQVo0UmlheFpCMkdCVURXdzJOd0NreE40R20rUm5XMzllM0FFY0RIMG4zOXFRM0NpQWVLQXVBZGFZR2NFYnVvYnJkNGZ1TEgxV1hWY1VJV0FCMkQycDBDaFFxY2x0WlpMelQ4VHNLT3k4ZXg3c0c3MG9PUW5YUTZ4VTdpNnMxL0FzK2M0akZ6UGRUSjZabUpYT1BMSWk0TGdDeUd3U0FVNkZVZ0hqS0wrOW90dHpPQjF3TG5WSUFRc3pkK0tyMU5VRUU2STZld2ZYcEljK1FPYXQvUkFxRDJFVFkvQldZWGlDZlo0eW56RnR2ZmdQMkF6L1QwWU4ra3pHT3VnWDNTcllHWTJLbkY5aU5nbXhZVEh6Um5DNEJCcGR4T2dUb0Y0bDdwNlhXbU5tdFdKd0F2VFpQMXpMcHhvUnVzQ2h3S1BLSFErTWNOZTFQZkNGZ3dvUVhBdUtlWCt5dFF0a0M4MmhienFMZlVZc0tZdHdHZmFHUXQrZnNDTVV0ZTVCeXZFcmJVdnBpS3ZKWnlIamhYQzRDQnFkeFFnZW9FMWt5ejJMWDBlK0Qzd0xNTGVicS82eFB1S1dtQnB3ZDIzWEhHL2NYYUFER2I0bFVaeDloYmFDMzl3KzhOMlFNcmtLbkFBY0JiTW8xdEVtR2RrVDc4Vy80d2lEVUg0cXJQeHBNQXpyVFBXTmZpZlpuRzFtdFlGZ0M5OG50d0JYb1RpSWZFL2dpMDhtM3djT0RsUTg3UDM5dmdUUGpBeXdOSEE5dE8rRGk1ZEg4RkVNOUMvRE9YZ0hLSnd3SWdsNUV3RGdXbUt4RHovY2U4L3kyMGVNSi83OHFlOGg5MzNCWlAweG8vZjl5T0N0bC9kK0RMaGNRNnRUQXRBS1pHN1lFVXlFcmd1MERjRTY2OWZSeDRjeU1QK3cwN2xvdWsxeC9qeWtqdExWNTFqWGtCYkhNSldBQjRPaWpRbnNCcXdPOGFlQ0k4UHZ6ZjFON3dEcFZ4RkFGZkFaNDMxRjdsYlJ6VE96OGN1TEs4MENjWHNRWEE1R3p0V1lGY0JlS0JxSmc3dnVZV0gyb3Y5TEwvUUVNY3R3T09UOHNPRDdSRG9SdTlNYjM2V1dqNDNZZHRBZEM5cVQwcWtMdkFoY0JhdVFjNVJueXhndDlUZmVCdktNSGxnSmcvUHliT3FiWEZkTTliMUpyY0tIbFpBSXlpNWo0S2xDdXdIbkIrdWVIUEd2a2xhVW5qYTJmZDBnM21GM2hJbWpYdlFaWFN4R0pQYXdCeGp0Z0FDd0JQQXdYYUVvalY0dDViYWNveDZjdmpLMW5RcDY4aGlvV2hUZ1RpMllBYVc5ejYra0NOaVkyU2t3WEFLR3J1bzBDNUFqOEZOaXMzL0lWRy9rcmdzNVhtTnMyMC9ndUl5WE5xYkhIMWE0TWFFeHNsSnd1QVVkVGNSNEV5QlI0QnhGUzROZjY3UDZxQko5bW5kZGJGdC8rVEtwNG9hSFZ2QTl4MUt0WDRpMkJhLzBnOGpnS2xDZng3cFU5Qlh3T3NDL3k1dEFISk9ONTRaZTRDWUptTVl4dzF0RmNCQjQrNmMwMzdXUURVTkpybW9zRENCV0l5bE8wcVJOb3p6V3BYWVdxOXByUXY4S0ZlSTVqTXdiOEd0RElENGtJRkxRQW1jNExacXdLNUNjUzczdGNCOFdkTjdRZkFrMnBLS0tOY0ZrMXZCY1NiSXpXMXE5TWFHSGZVbE5Rb3VVeWlBSWhmTVBHTzhTT0JXSFJpYVNEZU1iVXBvRUIvQWpIN1gxejZyS25GTC9ESCt0VC9SSWMwM3FyNFVZVzNpLzhidUh5aWN1TjNmajN3OTFTNFh3eGMxUFhjRmwwVUFGRWxQam5OS3g2WEYrTmVYSzJ2a0l3L3BQYWdnQUpkQ1J3RzdORlZaL2F6UUlHdmVzazhpN01qcGpQK0ZSQlh2YjZYWHRlOGJaekl4aWtBNGh2Rkc0QllaZWtCNHdUaHZnb29vTUNRQXJjQWE2WWxqWWZjMWMySEZOZ1FPSy9DcXdCRE1tUzMrVlhBRWVuQjNuaTdaK2cyU2dHd1NwcElaRGZndmtNZjBSMFVVRUNCOFFVK0Q3U3dpdDM0VXQzMGNEVHd6RzY2c3BlT0JmNlpDb0dZdStHUHcvUTlUQUVRSC9iN3BBa2lsaHJtSUc2cmdBSUtkQ2dRVTdxdW4xNVQ2N0JidTFxSVFLd1JFSk5JRGZPWkllaDBCZUo1Z1pqRTZXUEFRTGNHQmgzTWVDZjB5OEJXMDgzSG95bWdnQUwzRWpnR2VJWXVVeGVJKzg3eHZKY3RiNEd6Z0YzVHBGOExqWFNRQWlDZUFvM0xQeXZtbmJQUkthQkFJd0k3QUNjMGttdE9hVDRQaUhmb2Jma0wvRFhkc2psallhSE9WZ0JFbFIxUGdDNlpmNzVHcUlBQ0RRaGNBY1NVeHZGRXRHMjZBb3NCNGUrWHdlbTZqM3EwZjZTM040NWRVQWNMS3dEaWxiN2pLcHc0WkZSTTkxTkFnZjRGRGdEZTFuOFl6VWJ3NlFybms2aDVNT01Cd2ZnaS85MlprbHhRQVJDcmhmMncwbm1nYXg1c2MxT2dkb0Y0K0MvZWhiYjFJeERQZ1ozV3o2RTk2b2dDTndEYnBGa2Q1K2xpcGdKZ0JlQm5RTHpuYjFOQUFRVnlFZmhkZXZjL2wzaGFqQ00rTXk0RjRuVndXemtDTVpOZ2ZMR1A2Y0R2YmpNVkFFY0N1NVNUbDVFcW9FQWpBZ2VteWNjYVNUZmJORDhIdkN6YjZBeHNRUUx4UE44TEZsWUFQQTA0WGo4RkZGQWdRd0dmL3M5alVGNEV4RFRNdHZJRW5nN2MvVkRnM0ZjQVloR2ZYM3Zwdjd3Uk5XSUZHaEM0RllqYmt6YzFrR3Z1S1Q0a0xhUXoyMXRrdWVmUllueHhLeURXNjRsL1QvUE02dlJxNEtBV1JjeFpBUVd5RnpnN3JmeVhmYUNOQkhnQjhLaEdjcTB0emIyQVErWXVBR0thM3d2VEVyNjFKV3MrQ2loUXZrQjhPZG03L0RTcXllQ3p3Q3VxeWFhdFJPSXF3Tm94bDhhY1N6Zzd6bjFmb0MwTHMxVkFnUUlFWGdwOHNZQTRXd254emNCSFdrbTJ3anpqZWIvdnppa0FZcDcvZVo0T3JEQmhVMUpBZ1hJRkhndkViUUJiSGdJN0FiRW1nNjFNZ2NPQkYwVUJFTk03WGdNc1hXWWVScTJBQWcwSXJBUmMzVUNlcGFTNEJuQlJLY0VhNTcwRVluS2dGYU1BMkJyNGtVQUtLS0JBcGdMeHkycTVUR05yTmF4RmdGaCtOdDRlczVVcHNGVVVBUHNCN3k4emZxTldRSUVHQk9LSjgvVWF5TE8wRkdObXh0VkxDOXA0N3haNGV4UUFjUzlnZDFFVVVFQ0JUQVhPQVI2ZGFXd3RoeFh6eHF6VE1rRGh1UjhXQlVEODQ5cTA4RVFNWHdFRjZoV0l0VWxpSG5OYlhnTE9CWkRYZUF3YnpkbFJBTVQ2empHemswMEJCUlRJVWNBQ0lNZFJBUXVBUE1kbDBLZ3Vqd0lnSHJCWlp0QTkzRTRCQlJTWXNvQUZ3SlRCQnp6Y0w0RlludGxXcHNEMVVRRGNCc1FUblRZRkZGQWdSNEh6Z1ExeURLenhtSDRPYk5pNFFjbnAzemtUNEkzT0FWRHlHQnE3QXRVTHhBZk54dFZuV1Y2Q0ZnRGxqZG5jRWQ4UUJjQ1Z3SVBMenNQb0ZWQ2dZZ0Z2QWVRNXVML3d5a3llQXpOZ1ZGZEVBWEFlc05HQU83aVpBZ29vTUcwQlZ3S2N0dmhneC9Pell6Q25YTGM2TndxQUk0RmRjbzNRdUJSUW9Ia0Jyd0RrZVFyRXVHeVNaMmhHTllEQVY2SUEyQjk0OXdBYnU0a0NDaWpRaDBCTU9MTnVId2YybUFzVmNDYkFzaytRZDBjQnNEMXdZdGw1R0wwQ0NsUXNjQlh3b0lyekt6VzFXQXRncVZLRE4yNmVHQVhBRXNDMTZVOU5GRkJBZ2R3RS9nVXNuK1lzeVMyMlZ1T0oxUm4vMG1yeUZlUjlNM0MvS0FDaWZRdll1WUtrVEVFQkJlb1UyQnc0cTg3VWlzd3F4dU1uUlVadTBDSHdUZUE1Y3dxQTV3RmYwMFVCQlJUSVZPQWx3S0daeHRaaVdLOEdEbW94OFVweWZrNFVBWE1LZ0ZqVCtWTFhCS2hrYUUxRGdmb0VQZ3JzVTE5YXhXYjBhZUJWeFViZmR1Q3gvczlxd0sxekNvRGdpSDljSDI3Ynhld1ZVQ0JUZ1RPQXJUS05yY1d3NHZKLzNBYXdsU2Z3SnVEakVmYmNCVUFzQ0JTdmRmaTBiWGtEYXNRSzFDNXdhenkwQlB5ajlrUUx5RzlwNEdvZ3JoemJ5aEtJbVgvWEJPSU5qbmtLZ1BqZkx3YStWRlkrUnF1QUFvMEliQVA4cUpGY2MwNXpSK0RZbkFNMHRnVUs3QTU4ZWM1L25mc0t3SnlDSU9ZRWVKS0FDaWlnUUdZQzd3UGVtVmxNTFlZVHoyUEVaV1JiV1FMeDJmNlV1VU9ldndDSS94YTNBTTcxZ2NDeVJ0Wm9GV2hBd0dXQjh4amtYd0xyNXhHS1VRd29FSk5weGJUTjhRRGczVzJtQWlEKzQzYkE4Y0JpQTNidVpnb29vTUEwQk5ZR2ZqdU5BM21NR1FVZUJWeWdUVkVDOGZ6TVU0RWZ6aC8xZ2dxQTJPNEZ3T0hBZllwSzFXQVZVS0JtZ2JjQ0g2bzV3Y3h6aTlzdzc4ZzhSc083UnlCbTBZdzVOR1o4dG05aEJVQjBzVmVhN0dFUlJSVlFRSUVNQkg2VEZnYUtYMnkyNlF0Y0JLd3gvY042eEJFRWJrOXpOWHh1UWZ2T1ZnREVmczhHam5DdGdCSDQzVVVCQlNZaDhBVGcxRWwwYko4TEZZaGJ3OS9YcUFpQmVGMDJudmlQYWY0WDJBWXBBR0xuV0lyelNHQzlJbEkzU0FVVXFGbmdNR0NQbWhQTU5MZVlQLzVabWNabVdQY0lYQWc4SC9qRmJDaURGZ0RSejdMQUI0R1lBOXBiQXJQSit0OFZVR0JTQXJHUzJlcnpQOUU4cVlQWjc1MENxNmFKNHZ6ZG4rOEpFWmY4L3dmWUQ3aHhrRENIS1FEbTlMZHBtakk0TGdmWkZGQkFnVDRFUGdhOHVZOEROM3JNbURyMmpZM21Ya0xhSndGdlNhL3dEeHp2S0FYQW5NNGZseWFEZUlaVFFnN3M3WVlLS05DTlFOempqQVZONHYxbTIyUUZIcHErL1M4NTJjUFkrNUFDdHdEZkJtSmlwak9IM1BmT3pjY3BBT1ljTCtibjNnVjRNckF0c05Jb2diaVBBZ29vTUtSQXZBNFlyd1hhSml2Z3luK1Q5UjJtOTc4Q0p3UGZBNDRDcmgxbTUvbTM3YUlBbUx2UG1ETmdGU0FtNjRoWFJlSzVnZVhIQ2RCOUZWQ2dFNEc0Wi82OFRucktwNVA0QmhRUEpsK2NUMGpWUlJLL3gyUGluMFVyeXl3ZWFyKzBnSnl1QTI0QTR2WExtQURyOTBCbnI4QjJYUUFVNEdtSUNqUXBFSmR2NDl2RFVwVmxmM1I2VmJteXRMSko1enZBMDdPSnBwdEFvbkJjY2M2S2VOMTBXV1l2RmdCbGpwdFJLekNLd0hIQURxUHNtUGsrc2NCSkxIUmk2MWJndWNEWHUrMHlpOTdpOG5sTWpkdDhzd0JvL2hRUW9DR0Ixd01IVnBodlhCYmRNRjBxclRDOVhsS0syN2R4NlgvbFhvNCsyWVBHU29ieFZrUHp6UUtnK1ZOQWdJWUVIbG54L2ZKRDB0VGxEUTNuUkZQOUlyRG5SSS9RWCtleG9GRk1LZDE4c3dCby9oUVFvREdCbUNWc3JVcHpqbGVTajZrMHQybW10VnVhL24yYXg1eldzZUxCdnlpRWJSMjlCaWlrQWdxVUkvQi9nVGVVRSs1UWtWNE5QS2FRcDd1SFNteUtHOGVINDg4cWZudkxWMGZuT3BtOEFqREZmMWtlU29FTUJMWUdmcFJCSEpNSzRlZkFsa0JNRkdRYlRpRHUrNStXbnFjWWJzOXl0bjQwY0U0NTRVNDJVZ3VBeWZyYXV3SzVDY1MvK1hpbk9PWUZxTFY5R1hoaGwrOUwxd28xVjE0eGgwdThVaG0zVVdwdHZ3UFdyRFc1VWZLeUFCaEZ6WDBVS0Z2ZzNjRCtaYWN3YS9RZkFmYWRkU3MzbUNNUTA4bkcwL0UxdHc4QTc2ZzV3V0Z6c3dBWVZzenRGU2hmSU9iUWo5bnphdi8zSDZ1aXhRcW10b1VMdkF0NFR3Tkk2d08vYWlEUGdWT3MvUmZBd0JCdXFFQmpBajhFdHFrODU1Z3k5WFZwaWRUS1V4MDV2VmhMNGYrTXZIYzVPNTRCYkZWT3VOT0oxQUpnT3M0ZVJZSGNCRjRHZkM2M29DWVFUeFFCYndjT21FRGZwWGNaTG5GWnZJVVc1L3NYV2toMG1Cd3RBSWJSY2xzRjZoRllCcmdTaUQ5YmFERURZcXhuMzlsQ0tnV2p4ZS85ZUIxdW40SnpHQ2IwV0V3bmxqUytjWmlkV3RqV0FxQ0ZVVFpIQldZV2lObnpYdDRRenVGcHRzQ2JHc3A1L2xTWEFBNnJjR1hJaFExcExHZjhtb2JIZklHcFd3QjRWaWpRcmtBczJ4M3p2Y2NyWUsyMG1DZmcyWTFPRmhSTHRjY3l1STl0WmJEVEZaOTQrQy9PYzl0OEFoWUFuaElLdEMzd0xXRG54Z2hpV2VRWEF5YzBsSGNVUFhFUGZQbUdjbzVVajYxd09lUE9odEFDb0ROS08xS2dTSUhhWndaYzBLREVzd0FIcC92Z05kOGJYZzc0Y0xyMTBlTHYreWNDOGNhTGJRYUJGazhJVHdRRkZKaFg0TWZBRm8yaVhBSzhBamk1d3Z4M0FENERQTHpDM0FaSjZhZHBiWWhCdG0xeUd3dUFKb2ZkcEJXWVIrQTV3RkdObTN3dHpSejRod29jWWtHZmVMMXYxd3B5R1NlRlhZQ3ZqOU5CN2Z0YUFOUSt3dWFud093QzhSQmdySS9lK2p6cDhYYkF4NENZRnZmYTJkbXkyK0wrYWFyYjF3S0xaeGZkZEFPS2h6MDM4YlhQaGFOYkFFejNwUFJvQ3VRcUVBL0ZmU25YNEtZYzEvWEFwNENQQTMrWjhyRkhPVnk4NHg1TFBMK3F3WWY4RnVUMUxDQWVjTFV0Uk1BQ3dOTkRBUVZDSUs0Q3hEM1QrTlprdTB2Zzc4QVJ3R2VCc3pORTJRellPNjE4MlBvMy9ybUhKODdqZU5YUlNaOW1PV2t0QURMOFYyMUlDdlFrc0Izdy9aNk9uZnRoendNK0Qzd1R1S3pIWUIrV1B2RDNBTmJyTVk2Y0R4MFBQN2IwaXVmSVkyRUJNREtkT3lwUXBVQzhONzFqbFpsMWsxUjhxNHh2bUZFSW5BU2NDOXpXVGRjejloSlhaaDZUeGlUR1pkUEdKbTRhbGpZKytLTUFzQTBnWUFFd0FKS2JLTkNRUUh5cmpBZW9GbWtvNTNGU2pUa0U0alhLV0czdWZPRFh3RVhBclNOMEdwZnhWMDNmN09ORFB5NWp4MlgrMWlidkdZSHV6bDMrQ1d5VXhtRFVQcHJhendLZ3FlRTJXUVVHRW9nSmN2WWFhRXMzbWtrZ3JnajhFZmhUZW9nd0hpU010d3B1bjJ2anBZQ1lwQ2QrVmtvZi9IRjV2NlZwbWJzK2V6NlJGbnpxdXQ5cSs3TUFxSFpvVFV5QmtRVWVBbHdJTER0eUQrNm93SFFGWW5ybnRRcDlmWE82VW5NZHpRS2dOM29QckVEV0F2RjBlYndLWjFPZ0JJR1hBSWVXRUdoT01Wb0E1RFFheHFKQVBnTHh1K0ZFNEVuNWhHUWtDc3dvRU5NNHgzbnFhMzlEbmlBV0FFT0N1YmtDRFFtc0J2d1NXTHFobkUyMUxJRi9BQnNDRjVjVmRoN1JXZ0RrTVE1R29VQ3VBbThHUHBKcmNNYlZ2TUMrbnAram53TVdBS1BidWFjQ0xRakVVK21uQWx1MmtLdzVGaVZ3R3JEdGZHOVhGSlZBMzhGYUFQUTlBaDVmZ2Z3RlltNkFjMXhnSnYrQmFpakN2d0ViQXpXczN0amJzRmtBOUVidmdSVW9TdUQxd0lGRlJXeXdOUXU4TUszVFVIT09FOC9OQW1EaXhCNUFnV29FdnVJYTg5V01aY21KSEFiRVdnaTJNUVVzQU1ZRWRIY0ZHaEpZQmpnVFdMZWhuRTAxTDRHWW9DcW1TSTRsbTIxakNsZ0FqQW5vN2dvMEpyQjJXaHJYV1FJYkcvZ00wcjBCMk55NS9yc2JDUXVBN2l6dFNZRldCRjRBZkxtVlpNMHpDNEdZNUdjWDRLZ3NvcWtrQ0F1QVNnYlNOQlNZc3NCQndLdW5mRXdQMTY3QUI0SDkyazEvTXBsYkFFekcxVjRWcUYxZ1VlRGJ3Tk5xVDlUOGVoZUliLzNQQis3b1BaTEtBckFBcUd4QVRVZUJLUXJFY3dBL0JEYWQ0akU5VkZzQ1o2ZkpmbUxLWDF2SEFoWUFIWVBhblFLTkNUd0FPQjFZczdHOFRYZnlBcGNDandQK1BQbER0WGtFQzRBMng5MnNGZWhTSU40TWlDSmd4UzQ3dGErbUJhNEN0Z1orMjdUQ2hKTzNBSmd3c04wcjBJaEF2SnY5QTFjT2JHUzBKNXZtZGNCMndNOG1leGg3dHdEd0hGQkFnYTRFZGtxdmFTM2VWWWYyMDV6QWpjQ1RnWjgwbDNrUENWc0E5SUR1SVJXb1dDRGVDdmdHc0dURk9acmFaQVJ1QXFLSVBIa3kzZHZyL0FJV0FKNFRDaWpRdGNBVGdHTUFad3ZzV3JiZS92NE9QQnM0c2Q0VTg4dk1BaUMvTVRFaUJXb1EyQW80RGxpdWhtVE1ZYUlDc2JSdmZQTS9ZNkpIc2ZON0NWZ0FlRklvb01Da0JEWUR2Z2ZjZjFJSHNOL2lCZUpwLzZjQzV4V2ZTWUVKV0FBVU9HaUdyRUJCQWpGSjBMSEFnd3VLMlZDbkl4RHYrZThBeEFwL3RoNEVMQUI2UVBlUUNqUW04RERnVzBCY0ViQXBFQUpuQVRzN3lVKy9KNE1GUUwvK0hsMkJWZ1NXQmc1TEQzcTFrck41eml6d1RlQkZnTlA3OW55R1dBRDBQQUFlWG9HR0JPNERmQUI0YTBNNW0rbzlBckdrNzRlQnQ3dXdUeDZuaFFWQUh1TmdGQXEwSlBBQzRBdkFFaTBsM1hpdU1jSFB5NEN2TmU2UVZmb1dBRmtOaDhFbzBJekFGc0FSd0dyTlpOeHVvcjhCbmdQOHVsMkNQRE8zQU1oelhJeEtnUllFbGdjT0FuWnJJZGxHYy93SzhFcmdoa2J6enpwdEM0Q3NoOGZnRkdoQ1lCZmdZR0NGSnJKdEk4bjR3TjhualdzYkdSZVlwUVZBZ1lObXlBcFVLTEFxY0Rpd1pZVzV0WlpTdk9MM1F1QjNyU1ZlV3I0V0FLV05tUEVxVUsvQW9zRCt3TDVBL04xV2xzRE53SHVCRHdHM2xSVjZtOUZhQUxRNTdtYXRRTTRDYXdHZkFyYlBPVWhqbTBmZ3RIU3Yzd2Y5Q2pveExBQUtHaXhEVmFBaGdmamQ5SkwwYlhLbGh2SXVMZFZZeU9jdHdDRkF2T2R2SzBqQUFxQ2d3VEpVQlJvVXVGKzZMZkE2SUNZU3N1VWhjRWQ2WmlNZTlJc0ZmV3dGQ2xnQUZEaG9ocXhBZ3dMeGNPQUJ3T01iekQyM2xFOEcvZ1A0ZVc2QkdjOXdBaFlBdzNtNXRRSUs5Q3NRcThmRmcyWXVMRFQ5Y2ZnbDhDN2c2T2tmMmlOT1FzQUNZQktxOXFtQUFwTVdpQWNFUHdKc05Pa0QyVDh4azk4SDB5WC8yL1dvUjhBQ29KNnhOQk1GV2hOWUpMMXYvZzRnM2h4YVkrelRBQUFnQUVsRVFWU3dkU3Z3cTNUYkphWnM5b08vVzlzc2VyTUF5R0lZREVJQkJjWVFpTjlqVHdMZUFPd0UrSHR0REV6ZzlQVEJmNHhQOW84SG1mdmUva1BKZllTTVR3RUZoaEZZQjNnOXNBZXd6REE3TnI3dFRjRFhnVThBNXpSdTBVejZGZ0RORExXSkt0Q1VRQ3cwOVBLMEJPMTZUV1UrWExMeEpIKzh3LysvUUx6VGIydEl3QUtnb2NFMlZRVWFGZGdnclRqNEFwY2Z2dk1NdUNKOTI0KzFGMkxlZmx1akFoWUFqUTY4YVN2UW9FRDh2dHNDaUVMZytjQ0RHekw0TTNBVWNDUndLaEFUK2RnYUY3QUFhUHdFTUgwRkdoV0lOd2dlbmRZYmlGY0tZNktoeFNxeWlLZjI0OXY5OGNBSjZiNitIL29WRFhBWHFWZ0FkS0ZvSHdvb1VMckEwc0RXY3hVRUd4YjJOa0dzdmhmMzgyTlJubmlLLy92QU5hVVBpdkZQVnNBQ1lMSys5cTZBQW1VS0xKY21HZG9ZbVBPemZpWlhDZUxEL3JkQXpNd1hIL3J4VGY5TTRNWXlxWTI2THdFTGdMN2tQYTRDQ3BRbXNDaXdMaEFQRmE0Q3JKeCtIcEgrdkgrSENkMEtYQVpjQ3Z3Ky9SbC9qK1YyTHdCdTZmQllkdFdvZ0FWQW93TnYyZ29vMExuQVVxa3dpS3NIeXdKTEFFdW0rUWlpZUZoaHJ0c0tOd1B4N24yMGE5TzM5NnVCdjZhZjZ6dVB6ZzRWbUUvQUFzQlRRZ0VGRkZCQWdRWUZMQUFhSEhSVFZrQUJCUlJRd0FMQWMwQUJCUlJRUUlFR0JTd0FHaHgwVTFaQUFRVVVVTUFDd0hOQUFRVVVVRUNCQmdVc0FCb2NkRk5XUUFFRkZGREFBc0J6UUFFRkZGQkFnUVlGTEFBYUhIUlRWa0FCQlJSUXdBTEFjMEFCQlJSUVFJRUdCU3dBR2h4MFUxWkFBUVVVVU1BQ3dITkFBUVVVVUVDQkJnVXNBQm9jZEZOV1FBRUZGRkRBQXNCelFBRUZGRkJBZ1FZRkxBQWFISFJUVmtBQkJSUlF3QUxBYzBBQkJSUlFRSUVHQlN3QUdoeDBVMVpBQVFVVVVNQUN3SE5BQVFVVVVFQ0JCZ1VzQUJvY2RGTldRQUVGRkZEQUFzQnpRQUVGRkZCQWdRWUZMQUFhSEhSVFZrQUJCUlJRd0FMQWMwQUJCUlJRUUlFR0JTd0FHaHgwVTFaQUFRVVVVTUFDd0hOQUFRVVVVRUNCQmdVc0FCb2NkRk5XUUFFRkZGREFBc0J6UUFFRkZGQkFnUVlGTEFBYUhIUlRWa0FCQlJSUXdBTEFjMkRhQXNzQUR3R1dBeFlIbHBvdmdCV0FPQyt2U3ovWHovWDN2MDg3V0krbmdBSUsxQ3BnQVZEcnlQYVQxMkxBbXNDajBzOGpnUWVrbi9qUWo3OHZNVVpvdHdGUkVQd0p1Q1Q5WERyZjN5MFN4Z0IyVndVVWFFZkFBcUNkc2U0NjAvaEEzd3JZQkZnSFdCZFlIVmkwNndNTjJkL2x3RG5BMmVubkxPRGFJZnR3Y3dVVVVLQjZBUXVBNm9lNHN3VGpRejQrOExjR0hwOCs3RHZyZk1JZFhUUlhNWEFTOEtzSkg4L3VGVkJBZ2V3RkxBQ3lINkxlQWx3ZTJBbDRKckF0OE1EZUl1bit3UDhQT0Q3OVJFSGdiWVB1amUxUkFRVXlGN0FBeUh5QXBoeGVYTmJmR1hnMjhFUWc3dW5YM200QlRrM0Z3TmVCS0E1c0NpaWdRUFVDRmdEVkQvR3NDYTRFdkJqWUJkZ2N1TStzZTlTN3dSM0FENEZEZ1c4QU45YWJxcGtwb0VEckFoWUE3WjRCbXdHdlRCLytTN2JMc01ETWJ3YStBeHdHSEFmY3JwRUNDaWhRazRBRlFFMmpPWHN1RHdMMkJGNlJYdGViZlErM0NJRzRMWEF3Y0JCd2pTUUtLS0JBRFFJV0FEV000dXc1eEN0Nit3SFB6K0ExdmRtanpYZUx1Q1h3T2VEandCL3lEZFBJRkZCQWdka0ZMQUJtTnlwNWl3MkFmWUhkZ1VWS1RpU3oyT05aZ2JndDhGNGc1aG13S2FDQUFzVUpXQUFVTjJRREJid0Y4STcwR3A5alBCRFp5QnZGYTRUN0E2ZVAzSU03S3FDQUFqMEkrT0hRQS9vRUR4bXo4aDBBUEhtQ3g3RHJtUVhpcllHM0FUSHBrRTBCQlJUSVhzQUNJUHNoR2lqQUZZRjNBYS8xVXY5QVhwUGE2Si9BRjlKWS9IbFNCN0ZmQlJSUW9Bc0JDNEF1RlB2ckkrYmQzeHQ0RHhBejk5bnlFSWlIQlQrYXJzYmNsRWRJUnFHQUFnck1LMkFCVU80WkVkUDB4b2ZNMnVXbVVIM2t2d2RlRFh5MytreE5VQUVGaWhPd0FDaHV5TzZjay8vVGFicmU4cUp2TStLNExmQm1WeVZzYy9ETldvRmNCU3dBY2gyWm1lUGFFVGdFaURuN2JXVUp4RE1COFl6R1VXV0ZiYlFLS0ZDcmdBVkFHU01iOS9jL2xLYnVMU05pbzF5UXdOZFNJZkFYaVJSUVFJRStCU3dBK3RRZjdOaFBUZC82Vng1c2M3Y3FRT0N2d0I1cEJjSUN3alZFQlJTb1VjQUNJTjlSalNmODR5Ry8xd0dPVTc3ak5HcGtNWnZnQjlJa1FpNDBOS3FpK3ltZ3dNZ0NmckNNVERmUkhSOEFmQlY0NGtTUFl1YzVDTVR5dzdzQmY4b2hHR05RUUlGMkJDd0E4aHZyVGROYTlLdmtGNW9SVFVqZ2NtQlhweE9la0s3ZEtxREFqQUlXQUhtZEdDOEhQZ1VzbmxkWVJqTUZnWmhGOEsxcHBjRXBITTVES0tCQTZ3SVdBSG1jQWZjRjNwYytBUEtJeUNqNkV2Zzg4Q3JndHI0QzhMZ0tLTkNHZ0FWQS8rTzhESEEwOEtUK1F6R0NUQVMrbFo0TGNCcmhUQWJFTUJTb1VjQUNvTjlSdlI5d0xQQzRmc1B3NkJrS25BVThIWEMrZ0F3SHg1QVVxRUhBQXFDL1VZelovRTRBTnV3dkJJK2N1Y0RGd0E0dU1aejVLQm1lQW9VS1dBRDBNM0JyQUNjQ3EvWnplSTlha0VDOEhoaEZ3SGtGeFd5b0NpaFFnSUFGd1BRSGFUM2dlOEJEcDM5b2oxaW9RTXdjR0hOQ25GOW8vSWF0Z0FJWkNsZ0FUSGRRTmdaK0FNUzlmNXNDd3dqRVlrTGJBcjhaWmllM1ZVQUJCUllrWUFFd3ZYTWpMdnVmQ2p4NGVvZjBTSlVKV0FSVU5xQ21vMENmQWhZQTA5Ri9HSENhOS95bmcxMzVVZjRJYkFOY1dubWVwcWVBQWhNV3NBQ1lNREN3RW5BS3NPN2tEK1VSR2hHNEpCVUJseldTcjJrcW9NQUVCQ3dBSm9BNlY1ZExwd2YrdHB6c1lleTlRWUVMZ0RpdnJtc3dkMU5XUUlFT0JDd0FPa0JjUUJjeG4vOXh3SGFUTzRROU55NXdEUEFzd09XRUd6OFJURitCVVFRc0FFWlJHMnlmendLdkdHeFR0MUpnWklHUEF2dU12TGM3S3FCQXN3SVdBSk1aK2xjREIwMm1hM3RWNEY0Q2NiNTlSaGNGRkZCZ0dBRUxnR0cwQnR0MkMrQ0hMdWs3R0paYmRTSVFTd2svTGMweDBVbUhkcUtBQXZVTFdBQjBPOFl4di85UG5lV3ZXMVI3RzBqZ2F1QXh2aDQ0a0pVYkthQUFZQUhRM1dtd0tQQjlZT3Z1dXJRbkJZWVNPQnZZQ29nckFqWUZGRkJnb1FJV0FOMmRJSjhDOXU2dU8zdFNZQ1NCRHdEdkdHbFBkMUpBZ2FZRUxBQzZHZTVZdC8wNzNYUmxMd3FNSlhBSDhHU2ZCeGpMMEowVmFFTEFBbUQ4WVY0eHJkTG1IUC9qVzlwRE53S1hBeHNCOFZ5QVRRRUZGSmhSd0FKZy9CUGpLOEN1NDNkakR3cDBLbkFzOEF6Z1g1MzJhbWNLS0ZDTmdBWEFlRU1aSC94UkFOZ1V5RkhnbFVCTVNHVlRRQUVGN2lWZ0FURDZTUkd2L1AwU2lGc0FOZ1Z5RkxnZVdBZTRNc2ZnakVrQkJmb1ZzQUFZM1QvbVlkOXA5TjNkVTRHcENCd092R2dxUi9JZ0NpaFFsSUFGd0dqRDlUemdhNlB0Nmw0S1RGMWcrelJIeGRRUDdBRVZVQ0JmQVF1QTRjY21Wdms3SDFoaitGM2RRNEZlQkM0Q05nUnU3dVhvSGxRQkJiSVVzQUFZZmxqMkE5NC8vRzd1TVo5QXJHTi9HZkIzSU81VngreDFOd0lyQU11a242WFRNeGJMcXplMndMdUIveHE3Rnp0UVFJRnFCQ3dBaGh2S2h3Ry9TUjlPdyszWjd0YS9CODRGemdOK0RzUzMwVDhDTnd4QkVnWEEydW1CdHZnemZyWUU0a0ZNMjJBQzhlMS9mZURpd1RaM0t3VVVxRjNBQW1DNEVmNFM4T0xoZG1sdTY3OEFKd0VucGovanczNVNiVjNnaWNCMndEYStrVEVyYzd5eXV0dXNXN21CQWdvMElXQUJNUGd3eHpLL1o3aUEwb3hnZjB0VEljZURrU2YwdEJqTmZWSWhzQWZ3SENCdUg5am1GWWhKZ1RaTlYyTzBVVUNCeGdVc0FBWS9BVTVMSzYwTnZrZjlXNTRKSEFnY0JkeVNVYnB4eXlEZTFOZ0wyRHlqdUhJSTVkdkFNM01JeEJnVVVLQmZBUXVBd2Z6akVuTXM5V3U3YTJyWnJ3TWZCYUlBeUwzRjJQMW51bFdRZTZ6VGl1OXh3RSttZFRDUG80QUNlUXBZQUF3Mkx2SGhIeDhrcmJlWS9PaWRoVjVDam9jR1k1bmNIVnNmeEZUTXh0d0FOZ1VVYUZqQUFtRDJ3WThQanRObjM2enFMZUlKL3RkVjR2QTA0TCtkeDRFbnVXUncxZjltVFU2QldRVXNBR1lsNGpoZ2g5azNxM0tMZUM4LzNoK1ArL3kzVlpUaEVzQmJnYmNCOGZjVzJ5bkF0aTBtYnM0S0tIQ1hnQVhBd3MrRXpZQ2ZObnF5bkF6c21kN1pyNVZnZFNCZTdZeXJQQzIyVFFxOW5kUGlXSm16QXAwTFdBQXNuUFFid0xNN1Y4Kzd3NWlSTDc3MUh3RGNrWGVvblVSMzN6U3o0NzRORnNSZkFGN1dpYUtkS0tCQWNRSVdBQXNlc2xYVHJHbnhmbmtyN1hMZ3VZVTgzZC8xbU1US2psOEVWdXE2NDR6N2k5a0JId0hFNUUwMkJSUm9UTUFDWU1FRC90NzArbGdycDhRNXdNN0FGYTBrUEVPZUR3ZU9CVFpveUNCZWtYUnRpNFlHM0ZRVm1DTmdBVER6dVJDWGhXTU8rNWo3djRVV0UvbkVESHIvYUNIWldYS014WWhpc3B5dEc3R0lxejZyOVRSN1l5UEVwcWxBbmdJV0FET1BTOHlVZG5TZVE5WjVWRWVraC8xcWVzcC9YS1JZOHZsLzAyeUM0L1pWd3Y2eFBrQ3NFMkJUUUlHR0JDd0FaaDdzN3dCUGIrQTgrRFR3MmtZZTlodDJPQmNCRGdGZU11eU9CVzRmRTEwNU1WQ0JBMmZJQ293allBRndiNzI0RDN3cEVCOEFOYmY0OE4rYnU2YjJ0YzBzRU9kQUxIQlUrNXNndHdOeDNsL3BpYUNBQXUwSVdBRGNlNnpmQmJ5bjhsTWdibS9FWWpueGk5KzJjSUdZS0NoV09JemxobXR1YndRK1VYT0M1cWFBQXZNS1dBRGMrNHk0QUhoVXhTZktXV2xkZzc5WG5HUFhxUzBIL0JDSWlYTnFiYkU0VUN3U1pGTkFnVVlFTEFEbUhlaTFnQXNySHZzL0FqRzdvZTk5RHovSThVYkl6NEFIRHI5ckVYdkVyYUExZ0V1S2lOWWdGVkJnYkFFTGdIa0pZMzc0L3pPMmFwNGR4QXgvVDZ4a1FaKytoTVB2eElxZkQ0blZFai9RRjY3SFZVQ0I2UXBZQU16ckhaZEJONS91RUV6dGFLOEhQam0xbzlWN29QZWxaWVZyelBEWHdMbzFKbVpPQ2lod2J3RUxnSHRNSHBvV3ZxbHg2dDlqZ0dmNEQ2QVRnWmdrS2w2YmUwSW52ZVhYU1N5UTVHMkEvTWJGaUJUb1hNQUM0QjdTVndNSGRTN2NmNGZYQWVzRGwvVWZTalVSeFB6NThiRG8wdFZrZEU4aXJ3SU9yakF2VTFKQWdma0VMQUR1QVlsWHZaNWE0Um55U3VDekZlYlZkMHExUGk4Uzh4NDh2MjljajYrQUFwTVhzQUM0eTNneDRGcGdxY21UVC9VSXA2VkwxVTcyMHozN29zQjVGZDR6dnpxOTZkRENVdERkbnhYMnFFQkJBaFlBZHczV0ZzQ1BDeHEzUVVLTkQvM0hBMmNNc3JIYmpDUVFDd2FkQXRUMjd5aGVGWTFYSG0wS0tGQ3hRRzIvdUVZZHFuMkFENCs2YzZiN2ZSVjRRYWF4MVJUV2tjQXVOU1VFdkEwNG9MS2NURWNCQmVZVDZMb0FpQ2ZvWTJuUm1GQm43WFJKUFdaUnk3MDlCMWd6OXlDSGlDL2UrVi9IcDdtSEVCdDkwNDJBY3l1N0NoQkxZVWNCYVZOQWdYNEZyZ2RpMXRiZnBwOVlwNmF6MjNOZEZBQXJwbTlBVDBuenBkKy9YeStQbnBheWZiRVNVeFA0dHE5WlRzM2FBeW5Rc2tBOG94TzNIYitYRmlxN1poeU1jUXFBcllBM3BXVno0eUU2V3o0Q01XZDlQS0JtbTQ3QVk0RXpwM01vajZLQUFncmNLWEFyRUV2WGYyelVaNzFHS1FBZWsrNlgxNzQ2V3FubldGU0dOYjdPbVB0NHhCVEIyK2NlcFBFcG9FQ1ZBaWNEK3dMbkRKUGRNQVhBc3VuQm9KZ29wTWJaOG9aeHkzbmJuVk5WbUhPTU5jWVdEd0xHQTRFMkJSUlFvQStCV043OTA4RGJnUnNHQ1dEUUFpQXVLY2REUVRVOUtEZUlUMm5iWEFXc0RNUkRnTGJwQ2l3QlhBbXNNTjNEZWpRRkZGQmdIb0Y0WUhEWFFXNEREMUlBUERjOVZCYS80R3g1QzhTOW9EZm5IV0xWMFgwR2lKa1hiUW9vb0VDZkFqY0JMd1MrdWJBZ1ppc0E0cGZaLzFTOC9HbWZBelNKWS92dzN5UlVCKzh6Smw0NmRmRE4zVklCQlJTWW1FRGNFbmpOd3FhQ1gxZ0JzRHR3bVBmN0p6WTRYWGY4QjJEVnJqdTF2NkVFNHQ5VHZFTWZpd1haRkZCQWdiNEZZa2JZbHdLSHpoVElnZ3FBSndQSEFqSGZ1YTBNZ1ZqSmNPOHlRcTA2eXM4Qkw2czZRNU5UUUlHU0JPS1pzS2NCUDVnLzZKa0tnQWVsaHdjZVhGS0d4b3BQLytkeEVyd29YVG5MSXhxalVFQUJCU0FlRUk5YnhGZk1qVEYvQVJELyt5UmdPOFdLRXJndFBYMGVVMGJhK2hWNHlQei95UG9OeDZNcm9JQUNkd3A4SDRpciszZXZEanQvQWJBbjhFV3hpaE9JV2YraXVyUGxJWEFCOEtnOFFqRUtCUlJRNEc2QnVFSjUrSnovTlhjQkVCUDkvQzZ0QmE1WFdRS2Y5Zld6ckFic1lHQ3ZyQ0l5R0FVVVVBRCtsT2J6dVRFdzVpNEEzdUlTb01XZUgvRmhjMGl4MGRjWGVLeVI4ZEg2MGpJakJSU29RQ0RtaW9rNVkrNHVBQlpQcnkvNTRGK1pvL3M0NENkbGhsNWwxRHVtdDJpcVRNNmtGRkNnYUlHWXNYUTE0Slk1VndDY3g3em84U1RlM0lpblBHMTVDS3llYnFmbEVZMVJLS0NBQXZNS3hBeS8zNWhUQUxpZWVibW5Seno1SDg5djNQMWtaN21wVkJQNUlrRGNZM1A2N0dxRzFFUVVxRXJnYU9EWlVRQXNCVndEeEcwQVcza0M1d01ibEJkMjlSSC9CbGk3K2l4TlVBRUZTaFM0R2JoL0ZBQ3hobm1zWlc0clV5RFdnWGJlaHZ6RzdremdzZm1GWlVRS0tLREFuUUxiUlFHd1AvQnVRWW9WT0E3WXFkam82dzM4Rk9BSjlhWm5aZ29vVUxqQXU2TUFPQktJaHdCdFpRcFlBT1E1YmhZQWVZNkxVU21nd0YwQ1g0a0NJR2FSMjBpUllnVzhCWkRuMEowT2JKbG5hRWFsZ0FJS2NHNFVBUEZPb08vL2wzczJ4UHYvTVErQUxTK0JHSmZOOHdySmFCUlFRSUc3QmE2SUFpQmVWMXBhbEdJRnpnVTJMVGI2ZWdQM3lscTlZMnRtQ3RRZ2NFTVVBTEdTWEx5M2JDdFQ0RmZBK21XR1huWFV2d2JXcVRwRGsxTkFnWklGYm84QzRQbzBrVXpKaWJRY2U2dzh0MTdMQUpubTdqd0FtUTZNWVNtZ3dKMEMxMGNCY0FVUWE1amJ5aFM0R0ZpanpOQ3Jqdm9peDZYcThUVTVCVW9YdUN3S2dKOENtNVdlU2NQeFh3WTh2T0g4YzAzOWN1Q2h1UVpuWEFvbzBMekFXVkVBSEE3czNqeEZ1UURYeHBTTzVZWmZiZVQvQUphc05qc1RVMENCMGdVT2l3SmdQK0Q5cFdmU2NQeXhDTkFLNlZtT2hobXlTdjErYVgyTnJJSXlHQVVVVUdBdWdiZEhBZkI0NEZSWmloYUk5ODNQS2pxRHVvSi9OSEIyWFNtWmpRSUtWQ2F3WlJRQWl3RlhBOHRVbGx4TDZid0VPTFNsaERQUGRTL2c0TXhqTkR3RkZHaFg0SVk1cXdFR3dSSEFidTFhRkovNVI0QjlpOCtpbmdRK0NieTJublRNUkFFRktoUDRYK0RGY1FVZzJnNUFMQ3BqSzFQZ0RHQ3JNa092TW1yWEFhaHlXRTFLZ1dvRW5ncDhiMDRCRURNQlhnaXNYazE2YlNWeUt4QVBuc1dUNTdaK0JaWUE0czJNK05PbWdBSUs1Q2J3dXpSTDZaMHpBYzVwcndRK2sxdWt4ak93d0RiQWp3YmUyZzBuSmZBVTRMdVQ2dHgrRlZCQWdURUZYZ0Y4THZxWXV3QllISWg1NWIwS01LWnVUN3UvRDNoblQ4ZjJzUGNJSEFDOFJSQUZGRkFnUTRINDloOVR4OGRWNDNrS2dQamZjVi9naEF5RE5xVFpCYzRITnBoOU03ZVlzRUNzenJqeGhJOWg5d29vb01Bb0Fqdk4vYnpmM0ZjQTVuVDJGV0RYVVhwMm45NEYxZ1orMjNzVTdRWVEvckVJa0UwQkJSVElUZURMODgvNk8xTUJzR3hhSDJDdDNLSTNubGtGM2dwOGFOYXQzR0JTQXU4RzlwOVU1L2FyZ0FJS2pDZ1FsLzVqZ3JMcjV0NS9wZ0lnL3ZzbXdDa3VFendpZFgrN3hiZlBkWUdZSHRnMmZRR1hBSjYrdVVkVVFJR0ZDMXdQUEFINCtmeWJMYWdBaU8yZUNCd1B4TU9CdG5JRVlxQ2Qybm42NCtXVTJ0TTM5NGdLS0xCd2dYalk3K25BaVROdHRyQUNJTGFQQndhT0JKWlN1UmlCdzRBOWlvbTJua0MvQ2p5L25uVE1SQUVGQ2hlSWVXRjJXZGdrZjdNVkFKSC9sc0MzZ0pVS3gyZ2wvSnVCUndKWHRwSndCbm11REZ3SzNEZURXQXhCQVFVVStBdXdNL0NUaFZFTVVnREUvdkVMTHA0Z2pNdWN0dndGUGdhOE9mOHdxNGt3SHJ4MExZWnFodE5FRkNoYUlDYUUyeDI0ZkxZc0JpMEFvcC80ZHZNbTRGM0Ewck4xN0gvdlZlRHZ3R3BBVklHMnlRbzhBTGpFMVRRbmkyenZDaWd3cThDTndIdUEvd3ZjTnV2V00wd0VOTWcrRHdmK0MzZ2hzT2dnTzdoTkx3SXhJOTNiZWpseVd3YzlFSGg5V3ltYnJRSUtaQ1R3VHlDZS9ZclhrQzhiSnE1aHJnRE0zKzhxd0wrblF1QkJ3eHpVYmFjaUVNOEN4SlNQOGUzVU5obUIrRGNRaTJqNXBzeGtmTzFWQVFVV0xQQW40QWdndm9UOFlSU29jUXFBT2NlTFd3TlBTdE1JeDZ1RE1SMXRyQzVvNjEvZ0c4QnordytqMmdpK0NUeXIydXhNVEFFRmNoS0l5L3EvQkU1T0M0NTlIN2g5bkFDN0tBRG1QLzVpd0JycFovbDBiM1M1Y1lLYzByNHZCV0lxMTlyYTlrQ2NLTFp1QmVMZDJ1OTAyMlVXdlYwTWZEYUxTQXhDZ2JZRllnS2ZHNEQ0TTJieWk1ODdGL0hwcWsyaUFPZ3F0bW4zRS9keDQxSktiUzFlVDlzb25VaTE1ZFpYUGpFdlJxeWN1V3BmQVV6d3VFNG5QVUZjdTFZZ0p3RUxnSHRHSTk2ZGoyOC9OYmFEZ1ZmVm1GaFBPWDI2WXM4TjAyWEdubWc5ckFJS1RFdkFBbUJlNlhpZ3E4WkZrR0p0Z0pqVk1hWjJ0bzBuOEJ6Z3FQRzZ5SGJ2ZUlMNEVhNGxrZTM0R0pnQ25RcFlBTXpMR2U5UHZxRlQ0WHc2KzJ0YURXcWtwMFh6U2FQWFNPSVYyUE9BKy9jYXhlUU9IdWYvZjB5dWUzdFdRSUdjQkN3QTVoMk5yWUdZUmFuVzlyTTBtK05OdFNZNHdieml2bitjRzV0TjhCaDlkeDNUZnYrNDd5QTh2Z0lLVEVmQUFtQmU1L0NJSnkzamVZQmEyLytteFlKY01uandFWTd6SWhiRmV0N2d1eFMzWlZ3Wml0a2pQUytLR3pvRFZtQTBBUXVBZTd2RmJFcjdqOFpaekY0ZkJQWXJKdHIrQTMwZjhJNyt3NWhvQkI5eFBZT0ordHE1QXRrSldBRGNlMGppMjM5Y0JhamRKaGF2aVYvNnRvVUw3QU44dUFHa1RkTHpEUTJrYW9vS0tCQUN0WC9JalRyS3B3QlBHSFhuUXZhTFM3M3hhcUNUdml4NHdHS3E2MDhVTXA3amhIbE9la0IwbkQ3Y1Z3RUZDaE93QUpoNXdGNEdmSzZ3c1J3bDNDZ0M0aHR1TEI5c20xY2czZ2I1ZUNORjhxdUJ6M2dDS0tCQVd3SVdBRE9QZDB4ZGZDVVFUMzYzMEZ3NThKNVJqbjhUOFJ4SS9MVFFZdW5vaDZicFJsdkkxeHdWVUNBSldBQXMrRlNJS3dCeEphQ1Y5a1hnTlVDc0l0aHFpM1VzWXR4ZjFCREE1NEdYTjVTdnFTcWdnQVhBck9mQU9tbSs5L3ZNdW1VOUc1d0x4RXgzdjY4bnBZRXpXUm40S2hEdndyZlVOZ1ZpM0cwS0tOQ1lnRmNBRmo3Z3NkcGJyUHJXVXJzSzJMMnhGUVIzQUE0RFZteHBvSUdUZ0NjM2xyUHBLcUNBVndBR09nZmlUWUI0STZDMUZnOEhmaEo0Ry9DUGlwT1BaencrQU1SS2tDMWQ2Wmt6cEU5TDY0cFhQTVNtcG9BQ0N4THdDc0RzNThaUGdNMW4zNnpLTFM1S3owR2NWbUYyMndLSEFLdFhtTnNnS2YwQzJOaVovd2FoY2hzRjZoU3dBSmg5WEo4TGZIMzJ6YXJkSXE0R2ZCbUlkZUpqdGJqU1c5enJmeSt3WnlPditDMW92T0pCeDhOTEgwempWMENCMFFVc0FHYTNpMHZEdndIV25IM1RxcmVJMThVK0JNU0tjZGNYbU9teXFZaUoxZTVhZWIxelFjTjBBYkFoY0h1QjQyaklDaWpRa1lBRndHQ1Fld0NIRHJacDlWdGRDeHlZZnE0cElOdVZnTmNCcndYaTd6YllOUzF1cElVQ0NqUXNZQUV3Mk9ESFZZQ1lMalh1bWRydUVyZ0IrQkp3TUJEM2szTnI2d0o3QXkvMUcvODhReE5qRmZQKzM1SGJnQm1QQWdwTVY4QUNZSER2N1lFVEI5KzhxUzNQQkw0QUhBMzh1Y2ZNNHh2K2JtbTU0MGYzR0VmT2gzNFc4SzJjQXpRMkJSU1lqb0FGd0hET3h3SHh6cmh0Wm9INFZubEcrb0Q1YnBwSWFkTGZORGNDZGt6ajhqamd2ZzdPQWdWT0JyYlRSd0VGRkFnQkM0RGh6b1AxMDVLcGl3eTNXN05iL3cwNFBmMmNEL3dhdUhURWg4L0MvT0hBZXNCajB1cDE4ZWNEbTlVZEx2RjQ0Rzh6NE9mRDdlYldDaWhRcTRBRndQQWpHL2U4OXhwK04vZElBcmNBbHdCL1NiY0w0cFpCdkdFd3A5MEl4QlA3S3dETEEvY0RIZ21zQWl5cTRzZ0NzZHBmclBwblUwQUJCZTRVc0FBWS9rUjRDSEJoK3BBYWZtLzNVR0Q2QW5FbFpxMVVkRTMvNkI1UkFRV3lGTEFBR0cxWTRyV3kveDV0Vi9kU1lPb0M4YzAvcmdEWUZGQkFnYnNGTEFCR094bml0Y0I0b0NyV0NyQXBrTFBBajRDWTlqaG1kTFFwb0lBQ0ZnQWRuQU54U2ZVOFlNa08rcklMQlNZaEVNOWJ4RHYvOGZDbFRRRUZGSmhId0NzQTQ1MFErNmJwY2NmcnhiMFZtSXpBTzRIM1RhWnJlMVZBZ2RJRkxBREdHOEc0RlhBcXNPVjQzYmkzQXAwTHhNeVZjVjdlMm5uUGRxaUFBbFVJV0FDTVA0eVBBczRGRmgrL0szdFFvQk9CZUsxeVUrQzNuZlJtSndvb1VLV0FCVUEzdy9wRzRPUGRkR1V2Q293dEVPc2ZmSEhzWHV4QUFRV3FGckFBNkc1NGp3UjI2YTQ3ZTFKZ0pJR3ZBYzhmYVU5M1VrQ0JwZ1FzQUxvYjdtV0FzNEM0SldCVG9BK0JpOUkweWRmMWNYQ1BxWUFDWlFsWUFIUTdYckZXUUt5TXQxUzMzZHFiQXJNS3hIMy9MWUJZYzhHbWdBSUt6Q3BnQVRBcjBkQWI3QTRjUHZSZTdxREFlQUo3QWw4YXJ3djNWa0NCbGdRc0FDWXoyakh0NmlzbjA3VzlLbkF2Z1hnQTlVMjZLS0NBQXNNSVdBQU1velg0dHJGcTNUSEFVd2JmeFMwVkdFbmdlR0JuNExhUjluWW5CUlJvVnNBQ1lISkRIMHZhbnBLbVlwM2NVZXk1WllHZkFkc0FzWVN5VFFFRkZCaEt3QUpnS0s2aE40NmxnODhBVmgxNlQzZFFZT0VDbDZlSC9pNFRTZ0VGRkJoRndBSmdGTFhoOW9uWEFrOEQ3ai9jYm02dHdBSUZya25mL0gzaTM1TkVBUVZHRnJBQUdKbHVxQjAzQjM3ZzY0RkRtYm54ekFMeHV0OVRnZE1GVWtBQkJjWVJzQUFZUjIrNGZaOEp4R3lCaXcyM20xc3JjTGZBVGNBTzZka1NXUlJRUUlHeEJDd0F4dUliZXVlbkF6RlY2eEpENytrT3JRdkVxbjVSUko3UU9vVDVLNkJBTndJV0FOMDREdFBMdHNCM2dKZzYyS2JBSUFLM0FMc0MzeHBrWTdkUlFBRUZCaEd3QUJoRXFmdHR0Z2FPQmVKVlFac0NDeE9JZS83UEFrNlNTUUVGRk9oU3dBS2dTODNoK3RvS09BNVlicmpkM0xvaGdiOEJPd0kvYmloblUxVkFnU2tKV0FCTUNYb0JoM2xzdWgzd3dIN0Q4T2daQ3NUNy9Uc0J2OGd3TmtOU1FJRUtCQ3dBK2gvRWxZRnZPMk5nL3dPUlVRUy9UQi8rZjh3b0prTlJRSUhLQkN3QThoalFlQ0F3VmhDTU9kMXRiUXVjQ0R3UHVMNXRCck5YUUlGSkMxZ0FURnA0OFA0WEFUN2txbTZEZzFXNDVTZUIvM0JobndwSDFwUVV5RkRBQWlDL1FYazU4RDlPR0pUZndFd3dvcHVCMXdLZm4rQXg3Rm9CQlJTWVI4QUNJTThUNHZIcGxzQWo4Z3pQcURvVXVBUjRMbkJlaDMzYWxRSUtLRENyZ0FYQXJFUzliWEEvNE9CMFA3aTNJRHp3UkFWaVlwK1hBdGRPOUNoMnJvQUNDc3dnWUFHUS8ybXhCL0FwWnc3TWY2Q0dpRERtOUg4N2NDRHdyeUgyYzFNRkZGQ2dNd0VMZ000b0o5clIyc0NYZlZWd29zYlQ2anlXOE4wZGlGZjliQW9vb0VCdkFoWUF2ZEVQZmVERmdmZW1wOFR2Ty9UZTd0QzN3RC9UV3g0eGhqRzN2MDBCQlJUb1ZjQUNvRmYra1E2K0lYQVFzT1ZJZTd0VEh3TG5BbnNCNS9SeGNJK3BnQUlLekNSZ0FWRG1lWEdmOUlIeVFTQWVGclRsS1hBajhKOUF2TjkvZTU0aEdwVUNDclFxWUFGUTlzamZINGdpSUw1ZE9wYjVqR1U4MlBkMVlCL2cvK1VUbHBFb29JQUM5d2o0b1ZISDJiQXRjQUFRaXd2WitoWDRDZkJHNE14K3cvRG9DaWlnd01JRkxBRHFPVU5pTEdNdGdYakliSU42MGlvbWs0dUEvYjhTVzE4QUFBUmdTVVJCVk5QYkdyN2FWOHl3R2FnQzdRcFlBTlEzOWpHbXNaak0rNEMxNmtzdnU0emlFdi83MHpTK3QyVVhuUUVwb0lBQ0N4Q3dBS2ozMUloWEJWOEM3QWVzVm0rYXZXVjJjWHF0N3d0QXZPSm5VMEFCQllvU3NBQW9hcmhHQ2piZUdOZ09lRU5hWTk0eEg0bng3cDErQm53Q09NSlYrOGFEZEc4RkZPaFh3QStEZnYybmZmU1lRK0Qxd0F1QkphZDk4SUtQZHl2dzdmVEJmMXJCZVJpNkFnb29jTGVBQlVDYko4Tks2ZFhCV0lobXpUWUpCc3I2dDhBaHdLSEFWUVB0NFVZS0tLQkFJUUlXQUlVTTFBVERmRFN3RzdBcjhMQUpIcWVVcnE4R2prckxNWi9xWWoybERKdHhLcURBc0FJV0FNT0sxYnQ5UEN1d2RTb0c0aTJDRmV0TjlWNlp4WEs4UndOSEFpZDViNytoa1RkVkJSb1dzQUJvZVBBWGt2cWl3T09BN2RQUFk0Q2FGaUNLOS9UUEEwNUlQMmY0b2U4L0JBVVVhRTNBQXFDMUVSOHQzK1dCbUcxd1RrR3d6bWpkOUxaWGZPQmZBSndPeEVOOEp3Si82aTBhRDZ5QUFncGtJR0FCa01FZ0ZCaEMzQjdZQk5nNC9jVGYxd1lXeVNDWCtMQy9GUGdGOEV2Z3JQVEJINWY1YlFvb29JQUNTY0FDd0ZPaEs0RjRyVENtSUk1WERSOE9QQUpZT2YzRTM1ZnE2a0Nwbnl2VEIzMTgyTWZQNzRGZnB3LzlHem8rbHQwcG9JQUMxUWxZQUZRM3BOa21GRmNONGkyREJ3THhqTUV5YVM2Q0pZQmwwek1Hc2JSeGZIakhsTG94dTE0c3Azc0g4RmNnbnM2Zis4ZHBkN01kYWdOVFFJRVNCQ3dBU2hnbFkxUkFBUVVVVUtCakFRdUFqa0h0VGdFRkZGQkFnUklFTEFCS0dDVmpWRUFCQlJSUW9HTUJDNENPUWUxT0FRVVVVRUNCRWdRc0FFb1lKV05VUUFFRkZGQ2dZd0VMZ0k1QjdVNEJCUlJRUUlFU0JDd0FTaGdsWTFSQUFRVVVVS0JqQVF1QWprSHRUZ0VGRkZCQWdSSUVMQUJLR0NWalZFQUJCUlJRb0dNQkM0Q09RZTFPQVFVVVVFQ0JFZ1FzQUVvWUpXTlVRQUVGRkZDZ1l3RUxnSTVCN1U0QkJSUlFRSUVTQkN3QVNoZ2xZMVJBQVFVVVVLQmpBUXVBamtIdFRnRUZGRkJBZ1JJRUxBQktHQ1ZqVkVBQkJSUlFvR01CQzRDT1FlMU9BUVVVVUVDQkVnUXNBRW9ZSldOVVFBRUZGRkNnWXdFTGdJNUI3VTRCQlJSUVFJRVNCQ3dBU2hnbFkxUkFBUVVVVUtCakFRdUFqa0h0VGdFRkZGQkFnUklFTEFCS0dDVmpWRUFCQlJSUW9HTUJDNENPUWUxT0FRVVVVRUNCRWdRc0FFb1lKV05VUUFFRkZGQ2dZd0VMZ0k1QjdVNEJCUlJRUUlFU0JDd0FTaGdsWTFSQUFRVVVVS0JqQVF1QWprSHRUZ0VGRkZCQWdSSUVMQUJLR0NWalZFQUJCUlJRb0dNQkM0Q09RZTFPQVFVVVVFQ0JFZ1FzQUVvWUpXTlVRQUVGRkZDZ1l3RUxnSTVCN1U0QkJSUlFRSUVTQkN3QVNoZ2xZMVJBQVFVVVVLQmpBUXVBamtIdFRnRUZGRkJBZ1JJRUxBQktHQ1ZqVkVBQkJSUlFvR01CQzRDT1FlMU9BUVVVVUVDQkVnUXNBRW9ZSldOVVFBRUZGRkNnWXdFTGdJNUI3VTRCQlJSUVFJRVNCQ3dBU2hnbFkxUkFBUVVVVUtCakFRdUFqa0h0VGdFRkZGQkFnUklFTEFCS0dDVmpWRUFCQlJSUW9HTUJDNENPUWUxT0FRVVVVRUNCRWdRc0FFb1lKV05VUUFFRkZGQ2dZNEgvRHlvdEZYUzZTbUpOQUFBQUFFbEZUa1N1UW1DQyIvPgo8L2RlZnM+Cjwvc3ZnPgo=");
+}
+
+.cs-sort-custom-select:after {
+    content: "";
+    width: 24px;
+    height: 24px;
+    display: block;
+    transition: all 500ms ease;
+    position: absolute;
+    right: 16px;
+    top: calc(50% - 12px);
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAYCAYAAAAPtVbGAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABdSURBVHgB7c3BCQAgCIVhR3mjNFqbNkpFdOhgZaQQ4Q/iIekj8rwvQ53Yt8V9K9XJfYP2wHh/jOwgMLfiIIAkN1fQ6u04MJ8FTWAGZW1gBakCHGQCjFAkQ8DzHqwAaIA2jGECDhUAAAAASUVORK5CYII=");
+}
+
+.cs-sort-custom-select.active:after {
+    transform: rotate(180deg);
+}
+
+.list-tours>p {
+    text-align: center;
+}
+
+.list-tours .cs-show-more, #top a.cs-view-excursions {
+    width: fit-content;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 40px;
+    color: #fff;
+    font-weight: 600;
+    padding: 0 16px;
+    border-radius: 25px;
+    background-color: #ff9903;
+    border: 0;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+.list-tours .cs-show-more {
+    margin-top: 20px;
+}
+
+.list-tours .cs-show-more:hover, #top a.cs-view-excursions:hover {
+    background-color: #4299c8;
+    color: #fff !important;
+}
+
+#top.single-cruise h1,
+#top.cruise-ship-page h1 {
+    font-size: 58px;
+    line-height: 80px;
+}
+
+#top.single-cruise .av-special-heading-h2 {
+    margin-top: 0;
+}
+
+#top.single-cruise h2 {
+    font-size: 32px;
+    line-height: normal;
+    font-weight: 400;
+    text-align: center;
+}
+
+#top.single-cruise .mm-mt4 {
+    margin-top: 40px;
+}
+
+#top.single-cruise .cs-subtitle-list-tour {
+    margin-top: 30px;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+#top.single-cruise .cs-subtitle-list-tour-below {
+    display: block;
+    font-size: 18px;
+}
+
+#top.single-cruise .cs-content-day {
+    margin-bottom: 0;
+    text-align: left;
+    font-size: 16px;
+}
+
+#top.single-cruise #cruise-ship-guarantee {
+    background-size: cover;
+}
+
+#top.single-cruise #cruise-ship-guarantee .avia_textblock p {
+    margin-bottom: 0;
+}
+
+#top.single-cruise #google-reviews .es-carousel-layout>div:first-child,
+#top.cruise-ship-page #google-reviews .es-carousel-layout>div:first-child {
+    padding: 0 35px;
+}
+
+#top.single-cruise #google-reviews .jCXFfl,
+#top.cruise-ship-page #google-reviews .jCXFfl {
+    right: -8px;
+    margin: 0
+}
+
+#top.single-cruise #google-reviews .hXrUSE,
+#top.cruise-ship-page #google-reviews .hXrUSE {
+    left: -8px;
+    margin: 0
+}
+
+#top.single-cruise #google-reviews .es-review-background-container {
+    border: 1px solid #e1e1e1;
+}
+
+#top.single-cruise #google-reviews .hgACOy,
+#top.cruise-ship-page #google-reviews .hgACOy {
+    border: 0;
+}
+
+#top.single-cruise #cruise-calendar {
+    border: 0;
+}
+
+#top.single-cruise #cruise-calendar .content {
+    padding-top: 32px;
+}
+
+
+#cruise-breadcrumb {
+    min-height: unset;
+    padding: 30px 0 0;
+}
+
+#cruise-breadcrumb .breadcrumbs {
+    font-family: "Open Sans", serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: .2px;
+}
+
+#cruise-breadcrumb .breadcrumbs a {
+    text-decoration: none;
+    color: #2189c1;
+    transition: all .3s ease-in;
+    position: relative;
+    display: inline-block;
+    padding-right: 20px;
+}
+
+#cruise-breadcrumb .breadcrumbs a:before {
+    content: '';
+    background-image: url('../images/bread-right-arrow.svg');
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    right: 2px;
+    top: calc(50% - 7.5px);
+    z-index: 1;
+}
+#top.single-cruise #ss-gallery-hotel .entry-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#top.single-cruise #ss-gallery-hotel .av_one_third {
+    margin-left: 20px;
+    width: calc(calc(100% / 3) - 70px);
+}
+
+#top.single-cruise #ss-gallery-hotel .av_one_fourth {
+    margin-left: 15px;
+    width: calc(calc(100% / 4) - 12px);
+}
+
+#top.single-cruise #ss-gallery-hotel .av_one_fourth.first,
+#top.single-cruise #ss-gallery-hotel .av_one_third.first{
+    margin-left: 0;
+}
+
+#top.single-cruise #ss-gallery-hotel .avia_image,
+#top.single-cruise #ss-gallery-hotel .avia-image-container-inner {
+    width: 100%;
+}
+
+/*Cruise Ship Page*/
+
+#top.cruise-ship-page #wrap_all .main_color h2 {
+    font-size: 32px;
+    line-height: normal;
+    font-weight: 400;
+    text-align: center;
+}
+
+#top.cruise-ship-page #wrap_all .main_color h5 {
+    font-size: 24px;
+    line-height: normal;
+    font-weight: 400;
+}
+
+#top.cruise-ship-page #more-hawaii-offer .av-special-heading {
+    padding-bottom: 0;
+}
+
+#top.cruise-ship-page #more-hawaii-offer .more-hawaii-offer-col {
+    background-color: #fff;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 2px 3px 12px rgb(0 0 0 / 25%);
+    padding-bottom: 16px;
+}
+
+#top.cruise-ship-page #more-hawaii-offer .more-hawaii-offer-col .avia-image-container-inner,
+#top.cruise-ship-page #more-hawaii-offer .more-hawaii-offer-col img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+#top.cruise-ship-page #wrap_all #more-hawaii-offer h5 {
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#top.cruise-ship-page #wrap_all #more-hawaii-offer .more-hawaii-offer-col h5,
+#top.cruise-ship-page #wrap_all #more-hawaii-offer .more-hawaii-offer-col p {
+    padding: 0 16px;
+}
+
+#top.cruise-ship-page #more-hawaii-offer .more-hawaii-offer-col .avia-button {
+    padding: 10px 16px;
+    font-size: 14px;
+    line-height: normal;
+}
+
+#top.cruise-ship-page #google-reviews .iAhjsi,
+#top.cruise-ship-page #google-reviews .eYjDep,
+#top.cruise-ship-page #google-reviews .kxfoeF {
+    background: rgb(219 219 219 / 50%);
+}
+
+#top.cruise-ship-page #google-reviews .gEItPc {
+    background: #fff;
+}
+
+#top.cruise-ship-page #google-reviews .iAhjsi:hover,
+#top.cruise-ship-page #google-reviews .eYjDep:hover,
+#top.cruise-ship-page #google-reviews .kxfoeF:hover,
+#top.cruise-ship-page #google-reviews .gEItPc:hover {
+    background: #fff;
+}
+
+#top.cruise-ship-page #faq.mm-new-faq ul.togglecontainer .mmfaq {
+    background: #fff;
+}
+
+#top.single-cruise .container,
+#top.single-cruise .avia-section {
+    border: 0 !important;
+}
+
+.cruise-info {
+    margin: 16px 0;
+    text-align: center;
+    background-color: #DFF1B9;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #4E5F3B;
+    text-transform: uppercase;
+}
+
+.cruise-info p {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #4E5F3B;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: none;
+    display: flex;
+    column-gap: 16px;
+    row-gap: 10px;
+    justify-content: center;
+    margin-bottom: 5px;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.cruise-info p span {
+    position: relative;
+    padding-left: 26px;
+    width: calc(50% - 8px);
+}
+
+.cruise-info span:before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: calc(50% - 9px);
+}
+
+.cruise-info span:first-child {
+    order: 1;
+}
+
+.cruise-info span:nth-child(2) {
+    order: 3;
+}
+
+.cruise-info span:nth-child(3) {
+    order: 2;
+}
+
+.cruise-info span:last-child {
+    order: 4;
+    text-transform: uppercase;
+}
+
+.cruise-info span:nth-child(3),
+.cruise-info span:last-child {
+    width: 130px;
+}
+
+.cruise-info span:first-child:before {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOSAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2LjI1IDcuNUMxNi4yNSAxMi43NSA5LjUgMTcuMjUgOS41IDE3LjI1QzkuNSAxNy4yNSAyLjc1IDEyLjc1IDIuNzUgNy41QzIuNzUgNS43MDk3OSAzLjQ2MTE2IDMuOTkyOSA0LjcyNzAzIDIuNzI3MDNDNS45OTI5IDEuNDYxMTYgNy43MDk3OSAwLjc1IDkuNSAwLjc1QzExLjI5MDIgMC43NSAxMy4wMDcxIDEuNDYxMTYgMTQuMjczIDIuNzI3MDNDMTUuNTM4OCAzLjk5MjkgMTYuMjUgNS43MDk3OSAxNi4yNSA3LjVaIiBzdHJva2U9IiM0RTVGM0IiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTkuNSA5Ljc1QzEwLjc0MjYgOS43NSAxMS43NSA4Ljc0MjY0IDExLjc1IDcuNUMxMS43NSA2LjI1NzM2IDEwLjc0MjYgNS4yNSA5LjUgNS4yNUM4LjI1NzM2IDUuMjUgNy4yNSA2LjI1NzM2IDcuMjUgNy41QzcuMjUgOC43NDI2NCA4LjI1NzM2IDkuNzUgOS41IDkuNzVaIiBzdHJva2U9IiM0RTVGM0IiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==");
+}
+
+.cruise-info span:nth-child(2):before {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOSAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzY2Nl8zNjg0KSI+CjxwYXRoIGQ9Ik0xNC41NCA3LjQxNjE2VjQuMzIwMTZIMTIuMzhWMi4xNjAxNkg2LjYxOTk2VjQuMzIwMTZINC40NTk5NlY3LjQxNjE2IiBzdHJva2U9IiM0RTVGM0IiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTkuNSAwVjEuOTgiIHN0cm9rZT0iIzRFNUYzQiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIvPgo8cGF0aCBkPSJNMTUuNjIwMiAxNS42NTk4VjEyLjIzOThMMTYuOTUyMiA5LjM1OTc3QzE3LjIwNDIgOC44NTU3NyAxNi45MTYyIDguMjQzNzcgMTYuMzc2MiA4LjA2Mzc3TDkuNTAwMiA1Ljc1OTc3TDIuNTg4MiA4LjA2Mzc3QzIuMDQ4MiA4LjI0Mzc3IDEuNzk2MiA4Ljg1NTc3IDIuMDEyMiA5LjM1OTc3TDMuMzgwMiAxMi4yMzk4VjE1LjY1OTgiIHN0cm9rZT0iIzRFNUYzQiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0xOC4xMzk5IDE2LjA1NThDMTcuOTU5OSAxNi4xMjc4IDE3Ljc0MzkgMTYuMTYzOCAxNy40OTE5IDE2LjE2MzhDMTYuOTUxOSAxNi4xNjM4IDE2LjA4NzkgMTYuMDE5OCAxNS41MTE5IDE1LjU1MThDMTQuOTM1OSAxNi4wMTk4IDE0LjA3MTkgMTYuMTYzOCAxMy41MzE5IDE2LjE2MzhDMTIuOTkxOSAxNi4xNjM4IDEyLjEyNzkgMTYuMDE5OCAxMS41NTE5IDE1LjU1MThDMTAuOTc1OSAxNi4wMTk4IDEwLjExMTkgMTYuMTYzOCA5LjU3MTkxIDE2LjE2MzhDOS4wMzE5MSAxNi4xNjM4IDguMTY3OTEgMTYuMDE5OCA3LjU5MTkxIDE1LjU1MThDNy4wMTU5MSAxNi4wMTk4IDYuMTUxOTEgMTYuMTYzOCA1LjYxMTkxIDE2LjE2MzhDNS4wNzE5MSAxNi4xNjM4IDQuMjA3OTEgMTYuMDE5OCAzLjYzMTkxIDE1LjU1MThDMy4wNTU5MSAxNi4wMTk4IDIuMTkxOTEgMTYuMTYzOCAxLjY1MTkxIDE2LjE2MzhDMS4zOTk5MSAxNi4xNjM4IDEuMTgzOTEgMTYuMTI3OCAxLjAwMzkxIDE2LjEyNzgiIHN0cm9rZT0iIzRFNUYzQiIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTE4LjEzOTkgMTcuNDk2MkMxNy45NTk5IDE3LjU2ODIgMTcuNzQzOSAxNy42MDQyIDE3LjQ5MTkgMTcuNjA0MkMxNi45NTE5IDE3LjYwNDIgMTYuMDg3OSAxNy40NjAyIDE1LjUxMTkgMTYuOTkyMkMxNC45MzU5IDE3LjQ2MDIgMTQuMDcxOSAxNy42MDQyIDEzLjUzMTkgMTcuNjA0MkMxMi45OTE5IDE3LjYwNDIgMTIuMTI3OSAxNy40NjAyIDExLjU1MTkgMTYuOTkyMkMxMC45NzU5IDE3LjQ2MDIgMTAuMTExOSAxNy42MDQyIDkuNTcxOTEgMTcuNjA0MkM5LjAzMTkxIDE3LjYwNDIgOC4xNjc5MSAxNy40NjAyIDcuNTkxOTEgMTYuOTkyMkM3LjAxNTkxIDE3LjQ2MDIgNi4xNTE5MSAxNy42MDQyIDUuNjExOTEgMTcuNjA0MkM1LjA3MTkxIDE3LjYwNDIgNC4yMDc5MSAxNy40NjAyIDMuNjMxOTEgMTYuOTkyMkMzLjA1NTkxIDE3LjQ2MDIgMi4xOTE5MSAxNy42MDQyIDEuNjUxOTEgMTcuNjA0MkMxLjM5OTkxIDE3LjYwNDIgMS4xODM5MSAxNy41NjgyIDEuMDAzOTEgMTcuNTY4MiIgc3Ryb2tlPSIjNEU1RjNCIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTIuNTYgMTAuOEMxMi44NTgzIDEwLjggMTMuMSAxMC4zOTcxIDEzLjEgOS45QzEzLjEgOS40MDI5NCAxMi44NTgzIDkgMTIuNTYgOUMxMi4yNjE4IDkgMTIuMDIgOS40MDI5NCAxMi4wMiA5LjlDMTIuMDIgMTAuMzk3MSAxMi4yNjE4IDEwLjggMTIuNTYgMTAuOFoiIGZpbGw9IiM0RTVGM0IiLz4KPHBhdGggZD0iTTYuNDM5OSAxMC44QzYuNzM4MTQgMTAuOCA2Ljk3OTkgMTAuMzk3MSA2Ljk3OTkgOS45QzYuOTc5OSA5LjQwMjk0IDYuNzM4MTQgOSA2LjQzOTkgOUM2LjE0MTY3IDkgNS44OTk5IDkuNDAyOTQgNS44OTk5IDkuOUM1Ljg5OTkgMTAuMzk3MSA2LjE0MTY3IDEwLjggNi40Mzk5IDEwLjhaIiBmaWxsPSIjNEU1RjNCIi8+CjwvZz4KPGRlZnM+CjxjbGlwUGF0aCBpZD0iY2xpcDBfNjY2XzM2ODQiPgo8cmVjdCB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIGZpbGw9IndoaXRlIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjUpIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==");
+}
+
+.cruise-info span:nth-child(3):before {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOSAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE0Ljc1IDNINC4yNUMzLjQyMTU3IDMgMi43NSAzLjY3MTU3IDIuNzUgNC41VjE1QzIuNzUgMTUuODI4NCAzLjQyMTU3IDE2LjUgNC4yNSAxNi41SDE0Ljc1QzE1LjU3ODQgMTYuNSAxNi4yNSAxNS44Mjg0IDE2LjI1IDE1VjQuNUMxNi4yNSAzLjY3MTU3IDE1LjU3ODQgMyAxNC43NSAzWiIgc3Ryb2tlPSIjNEU1RjNCIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMi41IDEuNVY0LjUiIHN0cm9rZT0iIzRFNUYzQiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNNi41IDEuNVY0LjUiIHN0cm9rZT0iIzRFNUYzQiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMi43NSA3LjVIMTYuMjUiIHN0cm9rZT0iIzRFNUYzQiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K");
+}
+
+.cruise-info span:last-child:before {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOSAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTkuNSAxNi41QzEzLjY0MjEgMTYuNSAxNyAxMy4xNDIxIDE3IDlDMTcgNC44NTc4NiAxMy42NDIxIDEuNSA5LjUgMS41QzUuMzU3ODYgMS41IDIgNC44NTc4NiAyIDlDMiAxMy4xNDIxIDUuMzU3ODYgMTYuNSA5LjUgMTYuNVoiIHN0cm9rZT0iIzRFNUYzQiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNOS41IDQuNVY5TDEyLjUgMTAuNSIgc3Ryb2tlPSIjNEU1RjNCIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=");
+}
+
+#list-tours-box .mm-filter-product {
+    padding-bottom: 0;
+}
+
+#list-tours-box .mm-filter-product .shop-filter-product.avia-content-grid-active {
+    padding-top: 30px;
+}
+
+#list-tours-box .mm-filter-product .product img {
+    max-height: 293px;
+    object-fit: cover;
+}
+
+#top.woocommerce-checkout #order_review .shop_table tbody tr.cart_item .checkout-cruise-info {
+    width: 100%;
+    padding: 16px 0;
+    border-top: 1px solid #d8d8d8;
+    margin-top: 10px;
+}
+
+#top.woocommerce-checkout #order_review .tc-name.variation-Destination,
+#top.woocommerce-checkout #order_review .tc-value.variation-Destination,
+#top.woocommerce-checkout #order_review .tc-name.variation-CruiseShipName,
+#top.woocommerce-checkout #order_review .tc-value.variation-CruiseShipName,
+#top.woocommerce-checkout #order_review .tc-name.variation-ArrivalDate,
+#top.woocommerce-checkout #order_review .tc-value.variation-ArrivalDate,
+#top.woocommerce-checkout #order_review .tc-name.variation-ArrivalTime,
+#top.woocommerce-checkout #order_review .tc-value.variation-ArrivalTime {
+    display: none;
+}
+
+.checkout-cruise-info p {
+    margin-top: 0;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.checkout-cruise-info p:first-child {
+    color: #000000;
+}
+
+.checkout-cruise-info p:nth-child(2),
+.checkout-cruise-info p:nth-child(3),
+.checkout-cruise-info p:nth-child(4),
+.checkout-cruise-info p:nth-child(5) {
+    padding-left: 22px;
+    position: relative;
+}
+
+.checkout-cruise-info p:nth-child(5) {
+    margin-bottom: 0;
+}
+
+.checkout-cruise-info p:nth-child(2):before,
+.checkout-cruise-info p:nth-child(3):before,
+.checkout-cruise-info p:nth-child(4):before,
+.checkout-cruise-info p:nth-child(5):before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: calc(50% - 10px);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.checkout-cruise-info p:nth-child(2):before {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTkiIHZpZXdCb3g9IjAgMCAxOCAxOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzY5NV8xMzE0KSI+CjxwYXRoIGQ9Ik0xNS43NSA4QzE1Ljc1IDEzLjI1IDkgMTcuNzUgOSAxNy43NUM5IDE3Ljc1IDIuMjUgMTMuMjUgMi4yNSA4QzIuMjUgNi4yMDk3OSAyLjk2MTE2IDQuNDkyOSA0LjIyNzAzIDMuMjI3MDNDNS40OTI5IDEuOTYxMTYgNy4yMDk3OSAxLjI1IDkgMS4yNUMxMC43OTAyIDEuMjUgMTIuNTA3MSAxLjk2MTE2IDEzLjc3MyAzLjIyNzAzQzE1LjAzODggNC40OTI5IDE1Ljc1IDYuMjA5NzkgMTUuNzUgOFoiIHN0cm9rZT0iIzIxODlDMSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNOSAxMC4yNUMxMC4yNDI2IDEwLjI1IDExLjI1IDkuMjQyNjQgMTEuMjUgOEMxMS4yNSA2Ljc1NzM2IDEwLjI0MjYgNS43NSA5IDUuNzVDNy43NTczNiA1Ljc1IDYuNzUgNi43NTczNiA2Ljc1IDhDNi43NSA5LjI0MjY0IDcuNzU3MzYgMTAuMjUgOSAxMC4yNVoiIHN0cm9rZT0iIzIxODlDMSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzY5NV8xMzE0Ij4KPHJlY3Qgd2lkdGg9IjE4IiBoZWlnaHQ9IjE4IiBmaWxsPSJ3aGl0ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAwLjUpIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==");
+}
+
+.checkout-cruise-info p:nth-child(3):before {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTkiIHZpZXdCb3g9IjAgMCAxOCAxOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzY5NV8xMzE5KSI+CjxwYXRoIGQ9Ik0xNC4wNCA3LjkxNjE2VjQuODIwMTZIMTEuODhWMi42NjAxNkg2LjExOTk2VjQuODIwMTZIMy45NTk5NlY3LjkxNjE2IiBzdHJva2U9IiMyMTg5QzEiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTkgMC41VjIuNDgiIHN0cm9rZT0iIzIxODlDMSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIvPgo8cGF0aCBkPSJNMTUuMTE5NyAxNi4xNTk4VjEyLjczOThMMTYuNDUxNyA5Ljg1OTc3QzE2LjcwMzcgOS4zNTU3NyAxNi40MTU3IDguNzQzNzcgMTUuODc1NyA4LjU2Mzc3TDguOTk5NzEgNi4yNTk3N0wyLjA4NzcxIDguNTYzNzdDMS41NDc3MSA4Ljc0Mzc3IDEuMjk1NzEgOS4zNTU3NyAxLjUxMTcxIDkuODU5NzdMMi44Nzk3MSAxMi43Mzk4VjE2LjE1OTgiIHN0cm9rZT0iIzIxODlDMSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0xNy42Mzk5IDE2LjU1NjdDMTcuNDU5OSAxNi42Mjg3IDE3LjI0MzkgMTYuNjY0NyAxNi45OTE5IDE2LjY2NDdDMTYuNDUxOSAxNi42NjQ3IDE1LjU4NzkgMTYuNTIwNyAxNS4wMTE5IDE2LjA1MjdDMTQuNDM1OSAxNi41MjA3IDEzLjU3MTkgMTYuNjY0NyAxMy4wMzE5IDE2LjY2NDdDMTIuNDkxOSAxNi42NjQ3IDExLjYyNzkgMTYuNTIwNyAxMS4wNTE5IDE2LjA1MjdDMTAuNDc1OSAxNi41MjA3IDkuNjExOTEgMTYuNjY0NyA5LjA3MTkxIDE2LjY2NDdDOC41MzE5MSAxNi42NjQ3IDcuNjY3OTEgMTYuNTIwNyA3LjA5MTkxIDE2LjA1MjdDNi41MTU5MSAxNi41MjA3IDUuNjUxOTEgMTYuNjY0NyA1LjExMTkxIDE2LjY2NDdDNC41NzE5MSAxNi42NjQ3IDMuNzA3OTEgMTYuNTIwNyAzLjEzMTkxIDE2LjA1MjdDMi41NTU5MSAxNi41MjA3IDEuNjkxOTEgMTYuNjY0NyAxLjE1MTkxIDE2LjY2NDdDMC44OTk5MDYgMTYuNjY0NyAwLjY4MzkwNiAxNi42Mjg3IDAuNTAzOTA2IDE2LjYyODciIHN0cm9rZT0iIzIxODlDMSIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTE3LjYzOTkgMTcuOTk2MkMxNy40NTk5IDE4LjA2ODIgMTcuMjQzOSAxOC4xMDQyIDE2Ljk5MTkgMTguMTA0MkMxNi40NTE5IDE4LjEwNDIgMTUuNTg3OSAxNy45NjAyIDE1LjAxMTkgMTcuNDkyMkMxNC40MzU5IDE3Ljk2MDIgMTMuNTcxOSAxOC4xMDQyIDEzLjAzMTkgMTguMTA0MkMxMi40OTE5IDE4LjEwNDIgMTEuNjI3OSAxNy45NjAyIDExLjA1MTkgMTcuNDkyMkMxMC40NzU5IDE3Ljk2MDIgOS42MTE5MSAxOC4xMDQyIDkuMDcxOTEgMTguMTA0MkM4LjUzMTkxIDE4LjEwNDIgNy42Njc5MSAxNy45NjAyIDcuMDkxOTEgMTcuNDkyMkM2LjUxNTkxIDE3Ljk2MDIgNS42NTE5MSAxOC4xMDQyIDUuMTExOTEgMTguMTA0MkM0LjU3MTkxIDE4LjEwNDIgMy43MDc5MSAxNy45NjAyIDMuMTMxOTEgMTcuNDkyMkMyLjU1NTkxIDE3Ljk2MDIgMS42OTE5MSAxOC4xMDQyIDEuMTUxOTEgMTguMTA0MkMwLjg5OTkwNiAxOC4xMDQyIDAuNjgzOTA2IDE4LjA2ODIgMC41MDM5MDYgMTguMDY4MiIgc3Ryb2tlPSIjMjE4OUMxIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTIuMDU5NSAxMS4zQzEyLjM1NzggMTEuMyAxMi41OTk1IDEwLjg5NzEgMTIuNTk5NSAxMC40QzEyLjU5OTUgOS45MDI5NCAxMi4zNTc4IDkuNSAxMi4wNTk1IDkuNUMxMS43NjEzIDkuNSAxMS41MTk1IDkuOTAyOTQgMTEuNTE5NSAxMC40QzExLjUxOTUgMTAuODk3MSAxMS43NjEzIDExLjMgMTIuMDU5NSAxMS4zWiIgZmlsbD0iIzIxODlDMSIvPgo8cGF0aCBkPSJNNS45NDAzOSAxMS4zQzYuMjM4NjIgMTEuMyA2LjQ4MDM5IDEwLjg5NzEgNi40ODAzOSAxMC40QzYuNDgwMzkgOS45MDI5NCA2LjIzODYyIDkuNSA1Ljk0MDM5IDkuNUM1LjY0MjE2IDkuNSA1LjQwMDM5IDkuOTAyOTQgNS40MDAzOSAxMC40QzUuNDAwMzkgMTAuODk3MSA1LjY0MjE2IDExLjMgNS45NDAzOSAxMS4zWiIgZmlsbD0iIzIxODlDMSIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzY5NV8xMzE5Ij4KPHJlY3Qgd2lkdGg9IjE4IiBoZWlnaHQ9IjE4IiBmaWxsPSJ3aGl0ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAwLjUpIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==");
+}
+
+.checkout-cruise-info p:nth-child(4):before {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTkiIHZpZXdCb3g9IjAgMCAxOCAxOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE0LjI1IDMuNUgzLjc1QzIuOTIxNTcgMy41IDIuMjUgNC4xNzE1NyAyLjI1IDVWMTUuNUMyLjI1IDE2LjMyODQgMi45MjE1NyAxNyAzLjc1IDE3SDE0LjI1QzE1LjA3ODQgMTcgMTUuNzUgMTYuMzI4NCAxNS43NSAxNS41VjVDMTUuNzUgNC4xNzE1NyAxNS4wNzg0IDMuNSAxNC4yNSAzLjVaIiBzdHJva2U9IiMyMTg5QzEiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTEyIDJWNSIgc3Ryb2tlPSIjMjE4OUMxIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik02IDJWNSIgc3Ryb2tlPSIjMjE4OUMxIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0yLjI1IDhIMTUuNzUiIHN0cm9rZT0iIzIxODlDMSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K");
+}
+
+.checkout-cruise-info p:nth-child(5):before {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTkiIHZpZXdCb3g9IjAgMCAxOCAxOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTkgMTdDMTMuMTQyMSAxNyAxNi41IDEzLjY0MjEgMTYuNSA5LjVDMTYuNSA1LjM1Nzg2IDEzLjE0MjEgMiA5IDJDNC44NTc4NiAyIDEuNSA1LjM1Nzg2IDEuNSA5LjVDMS41IDEzLjY0MjEgNC44NTc4NiAxNyA5IDE3WiIgc3Ryb2tlPSIjMjE4OUMxIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik05IDVWOS41TDEyIDExIiBzdHJva2U9IiMyMTg5QzEiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==");
+}
+
+@media (min-width: 768px) {
+    .cruise-ship-calendar-box {
+        display: none;
+    }
+
+    .cruise-ship-filter-box {
+        max-width: 820px;
+    }
+
+    .cruise-ship-name-box {
+        width: 50%;
+    }
+
+    .cruise-ship-filter-box a.cruise-ship-see-detail {
+        width: 50%;
+    }
+}
+#top .cruise-ship-operator .operator-items {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+}
+
+#top .cruise-ship-operator .operator-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 12px;
+}
+
+#top .cruise-ship-operator .operator-item img {
+    max-height: 62px;
+}
+#top .cruise-ship-operator .operator-list-cs {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 16px;
+}
+#top .cruise-ship-operator .operator-list-cs a {
+    display: block;
+    width: 100%;
+    padding: 4px 16px;
+    border-radius: 25px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background: #2189C1;
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 600;
+}
+#top .cruise-ship-operator .operator-list-cs a:first-child {
+    margin-top: 0;
+}
+#top .cruise-ship-operator .operator-list-cs a:hover {
+    background: #FF992C;
+    color: #fff !important;
+}
+#top .cruise-ship-operator .operator-list-cs button.showMore {
+    padding: 6px 20px 6px 35px;
+    border: none;
+    background: transparent;
+    color: #2189C1;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    margin-top: 12px;
+    font-family: "Open Sans", serif;
+}
+#top .cruise-ship-operator .operator-list-cs button.showMore:before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    display: block;
+    position: absolute;
+    left: 3px;
+    top: calc(50% - 12px);
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYgOUwxMiAxNUwxOCA5IiBzdHJva2U9IiMyMTg5QzEiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=");
+}
+
+#top .cruise-ship-operator .operator-list-cs button.showMore.showLess:before {
+    transform: rotate(180deg);
+}
+#top .cruise-ship-operator .operator-list-cs button.showMore::after {
+    content: "More";
+}
+#top .cruise-ship-operator .operator-list-cs button.showMore.showLess::after {
+    content: "Less";
+}
+#top .cs-operator-show-more {
+    padding: 10px 16px;
+    font-family: 'Open Sans', serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 1px;
+    background-color: #ff9903 !important;
+    color: #fff;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
+}
+@media (min-width: 768px) {
+    #top .cruise-ship-operator {
+        margin-bottom: 30px;
+    }
+}
+@media (max-width: 1024px) {
+    #top .cruise-ship-operator .operator-items {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media (max-width: 820px) {
+    #top.cruise-ship-page .list-cruise-ship {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px;
+    }
+
+    #cs-why-book .flex_column_table,
+    #more-hawaii-offer .flex_column_table {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px !important;
+        margin-top: 0 !important;
+    }
+
+    #cs-why-book .flex_column_table .av-flex-placeholder,
+    #more-hawaii-offer .flex_column_table .av-flex-placeholder {
+        display: none;
+    }
+
+    #top.cruise-ship-page #more-hawaii-offer .av-special-heading {
+        padding-bottom: 40px;
+    }
+
+    .responsive #top.cruise-ship-page .cs-why-book-col,
+    .responsive #top.cruise-ship-page .more-hawaii-offer-col {
+        width: 100% !important;
+        margin: 0 !important;
+        display: block;
+    }
+
+    .cruise-ship-filter-box .cs-calender-box {
+        width: 400px;
+    }
+
+    #top .cruise-ship-name-box .select2-selection,
+    #top .main_color .cruise-ship-calendar-box input.cruise-ship-calendar {
+        background-size: 22px;
+        padding: 0 36px;
+        background-position: 16px !important;
+    }
+
+    .cruise-ship-calendar-box:after,
+    #top .cruise-ship-name-box .select2-selection__arrow {
+        right: 16px;
+    }
+
+    #top .cruise-ship-calender .ui-datepicker .ui-datepicker-header .ui-datepicker-title .ui-datepicker-month,
+    #top .cruise-ship-calender .ui-datepicker .ui-datepicker-header .ui-datepicker-title .ui-datepicker-year {
+        min-width: 90px;
+    }
+
+    ul.cs-calendar-visible li {
+        width: 30%;
+    }
+
+    #top.single-cruise #contact .av-share-box-list .av-share-link,
+    #top.single-cruise .av-share-box-list .av-share-link a {
+        width: 100% !important;
+    }
+
+    #list-tours-box .mm-filter-product {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    #top.single-cruise #ss-gallery-hotel .av_one_fourth {
+        margin-left: 0;
+        width: calc(calc(100% / 2) - 20px);
+        margin-top: 20px;
+    }
+
+    #top.single-cruise #ss-gallery-hotel .av_one_fourth:last-child {
+        margin-left: 40px;
+    }
+
+    #top.single-cruise #ss-gallery-hotel .av_one_third {
+        width: calc(calc(100% / 2) - 30px) !important;
+        margin-left: 30px !important;
+        margin-top: 20px !important;
+    }
+
+    #top.single-cruise #ss-gallery-hotel .av_one_third.first,
+    #top.single-cruise #ss-gallery-hotel .av_one_third:last-child {
+        margin-left: 0 !important;
+    }
+
+    #top .cruise-ship-operator .operator-items {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 820px) and (min-width: 768px) {
+    .cruise-info {
+        padding: 40px 16px;
+    }
+
+    .cruise-info span, #wc-bookings-booking-form .mm-time-picker-wrapper {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    #top #main #cruise-breadcrumb.avia-section .content, #top #cruise-breadcrumb.avia-section .content {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    #top.single-cruise .container {
+        padding: 0 20px;
+    }
+
+    #top.cruise-ship-page #cruise-ship-banner {
+        background-size: cover;
+    }
+
+    #top.cruise-ship-page #cruise-ship-banner .container {
+        height: 500px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        min-height: 500px;
+    }
+
+    #top.cruise-ship-page #av_section_1 .container,
+    #top.single-cruise #av_section_1 .container {
+        min-height: 55vh;
+        height: 55vh;
+    }
+
+    #top.single-cruise #contact .flex_column {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #top.single-cruise .content,
+    #top.single-cruise #cruise-calendar .content {
+        padding-bottom: 33px;
+        padding-top: 30px;
+    }
+
+    .cs-calendar-and-info {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .cruise-ship-calender .ui-widget {
+        padding: 10px 16px 25px;
+        border-radius: 25px;
+    }
+
+    .cruise-ship-filter-box .cs-back-choose-date {
+        left: 16px;
+    }
+
+    ul.cs-calendar-visible li {
+        width: 40%;
+    }
+
+    #top.single-cruise .mm-row-text-image .template-page,
+    #top.single-cruise .mm-row-image-text .template-page {
+        padding-top: 0;
+        padding-bottom: 30px;
+    }
+
+    #top.single-cruise .mm-row-text-image .avia-image-container,
+    #top.single-cruise .mm-row-image-text .avia-image-container {
+        margin-bottom: 0;
+    }
+
+    #top.single-cruise #ss-gallery-hotel .av_one_fourth.flex_column,
+    #top.single-cruise #ss-gallery-hotel .av_one_fifth.flex_column {
+        margin: 30px 0 0;
+        width: calc(50% - 40px);
+    }
+
+
+    #top.single-cruise #ss-gallery-hotel .av_one_fourth:last-child {
+        margin-left: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    #top.single-cruise h1, #top.cruise-ship-page h1 {
+        font-size: 44px;
+        line-height: normal;
+    }
+
+    #top .cruise-ship-filter-box {
+        padding: 24px 32px;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .cruise-ship-filter-box .cs-calender-box {
+        position: absolute;
+        top: 50px;
+        left: -32px;
+        z-index: 999;
+        width: calc(100% + 64px)
+    }
+
+    .cruise-ship-name-box,
+    .cruise-ship-calendar-box,
+    .cruise-ship-filter-box a.cruise-ship-see-detail {
+        width: 100%;
+        min-height: 50px;
+        margin-left: unset;
+    }
+
+    #top.cruise-ship-page #cruise-ship-section .av-special-heading {
+        margin-top: 30px;
+        padding-bottom: 0;
+    }
+
+    #top.cruise-ship-page .list-cruise-ship {
+        gap: 16px;
+    }
+
+    .cruise-ship-item {
+        border-radius: 16px;
+    }
+
+    #top .cruise-ship-item a:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgb(0 0 0 / 20%);
+    }
+
+    .cruise-ship-item .cs-content-box p,
+    .cruise-ship-item .cs-content-box .cs-see-detail-button {
+        display: none;
+    }
+
+    .cruise-ship-item .cs-content-box {
+        padding: 0;
+        display: block;
+        position: absolute;
+        z-index: 111;
+        left: 10px;
+        bottom: 10px;
+    }
+
+    #top #wrap_all .main_color h3.cs-title {
+        font-size: 14px;
+        color: #fff;
+        text-align: left;
+        margin-bottom: 0;
+        padding-right: 10px;
+    }
+
+    .responsive #top.cruise-ship-page .cs-why-book-col,
+    .responsive #top.cruise-ship-page .more-hawaii-offer-col {
+        width: 100% !important;
+    }
+
+    #top.cruise-ship-page .cs-why-book-col p {
+        margin-bottom: 0;
+    }
+
+    #top.cruise-ship-page #more-hawaii-offer .av-special-heading {
+        padding-bottom: 24px;
+    }
+
+    .cs-calendar-and-info,
+    #list-tours-box .mm-filter-product {
+        grid-template-columns: 1fr !important;
+    }
+
+    #list-tours-box .mm-filter-product {
+        padding-bottom: 0;
+    }
+
+    #top.single-cruise h2,
+    #top.cruise-ship-page #wrap_all .main_color h2 {
+        font-size: 30px;
+    }
+
+    .cruise-info {
+        padding: 16px 20px;
+        max-width: unset;
+    }
+
+    .cruise-info p {
+        row-gap: 8px;
+        margin-top: 8px;
+    }
+
+    .cruise-info span {
+        width: 100% !important;
+    }
+
+    .cruise-info span:nth-child(2) {
+        order: 2;
+    }
+
+    .cruise-info span:nth-child(3) {
+        order: 3;
+    }
+
+    #top.single-cruise #ss-gallery-hotel .av_one_fourth.flex_column,
+    #top.single-cruise #ss-gallery-hotel .av_one_fifth.flex_column {
+        margin: 10px 0 0;
+        width: calc(50% - 20px);
+    }
+    #top.single-cruise #ss-gallery-hotel .av_one_fourth:last-child {
+        margin-left: 20px;
+    }
+
+    #top.single-cruise #ss-gallery-hotel .av_one_third {
+        width: calc(calc(100% / 2) - 30px);
+        margin-left: 20px !important;
+        margin-top: 10px !important;
+    }
+
+    #top.single-cruise #ss-gallery-hotel .av_one_third.first,
+    #top.single-cruise #ss-gallery-hotel .av_one_third:last-child {
+        margin-left: 0 !important;
+    }
+
+    #top .cruise-ship-operator .operator-items {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    #cs-why-book .flex_column_table,
+    #more-hawaii-offer .flex_column_table {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 320px) {
+    .cs-sort-select, ul.cs-sort-select-options {
+        width: 130px;
+    }
+
+    .cruise-ship-item .tag-cs-special-deal {
+        top: 8px;
+        left: 8px;
+        font-size: 10px;
+    }
+}
+
+.calendar-cruise-ship-section.loading .days:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/loading.gif");
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+}
+
+.calendar-cruise-ship-section.loading .days:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    background: #ffffff52;
+}
+
+.calendar-cruise-ship {
+    display: flex;
+    flex-flow: column;
+}
+
+.calendar-cruise-ship .header .month-year {
+    font-size: 16px;
+    font-weight: bold;
+    color: #636e73;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.calendar-cruise-ship .header .month-year .calendar-cs-month-year {
+    display: flex;
+    gap: 10px;
+}
+
+#top .calendar-cruise-ship .header .month-year select {
+    width: 150px;
+    margin-bottom: 0;
+    border: 1px solid #D4D4D4;
+    border-radius: 20px;
+    padding: 10px 16px;
+    font-size: 16px;
+    color: #000;
+    cursor: pointer;
+}
+
+.calendar-cruise-ship .header .month-year .cs-month-next-prev {
+    display: flex;
+    gap: 8px;
+}
+
+.calendar-cruise-ship .header .month-year .cs-month-next-prev button {
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    background: #fff no-repeat center;
+}
+
+.calendar-cruise-ship .header .month-year .cs-month-next-prev .cs-prev-month {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTMiIGhlaWdodD0iMjIiIHZpZXdCb3g9IjAgMCAxMyAyMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTExLjUgMjFMMS41IDExTDExLjUgMSIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==");
+    background-size: 10px 20px;
+}
+
+.calendar-cruise-ship .header .month-year .cs-month-next-prev .cs-next-month {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTMiIGhlaWdodD0iMjIiIHZpZXdCb3g9IjAgMCAxMyAyMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEuNSAxTDExLjUgMTFMMS41IDIxIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K");
+    background-size: 10px 20px;
+}
+
+.calendar-cruise-ship .days {
+    display: flex;
+    flex-flow: wrap;
+    position: relative;
+}
+
+.calendar-cruise-ship .days .day_name {
+    width: calc(100% / 7);
+    border-right: 1px solid #D4D4D4;
+    border-top: 1px solid #D4D4D4;
+    border-bottom: 1px solid #D4D4D4;
+    padding: 8px 20px;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    background-color: #fff;
+    text-align: center;
+}
+
+.calendar-cruise-ship .days .day_name:nth-child(1) {
+    border-left: 1px solid #D4D4D4;
+}
+
+.calendar-cruise-ship .days .day_num {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: calc(100% / 7);
+    border-right: 1px solid #d4d4d4;
+    border-bottom: 1px solid #d4d4d4;
+    padding: 15px;
+    font-weight: bold;
+    color: #7c878d;
+    cursor: pointer;
+    min-height: 100px;
+}
+
+.calendar-cruise-ship .days .day_num span {
+    display: inline-flex;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.calendar-cruise-ship .days .day_num .event {
+    width: 100%;
+    background-color: #FF9903;
+    margin-top: 10px;
+    transition: all 300ms ease;
+    border-radius: 16px;
+}
+
+.calendar-cruise-ship .days .day_num .event:hover {
+    box-shadow: 0 0 6px 0 #777;
+}
+
+.calendar-cruise-ship .days .day_num .event a {
+    font-weight: 500;
+    font-size: 14px;
+    padding: 3px 6px;
+    border-radius: 4px;
+    color: #fff !important;
+    word-wrap: break-word;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.calendar-cruise-ship .days .day_num:nth-child(7n+1) {
+    border-left: 1px solid #d4d4d4;
+}
+
+.calendar-cruise-ship .days .day_num:hover {
+    background-color: #fdfdfd;
+}
+
+.calendar-cruise-ship .days .day_num.ignore {
+    background-color: #fdfdfd;
+    color: #ced2d4;
+    cursor: inherit;
+}
+
+.calendar-cruise-ship .days .day_num.selected {
+    background-color: #f1f2f3;
+    cursor: inherit;
+}
+
+.calendar-cruise-ship .days .day_num .day_text {
+    display: none;
+}
+
+#cruise-ship-section {
+    position: relative;
+    z-index: 11;
+}
+
+@media (max-width: 768px) {
+    .calendar-cruise-ship-section.loading .days:before {
+        background-size: 50px;
+    }
+    .calendar-cruise-ship .days .day_num:not(.available),
+    .calendar-cruise-ship .days .day_name {
+        display: none;
+    }
+
+    .calendar-cruise-ship .days .day_num .day_text {
+        display: block;
+    }
+
+    .calendar-cruise-ship .days .day_num {
+        display: grid;
+        align-items: start;
+        grid-template-columns: 30px 1fr;
+        gap: 35px;
+        width: 100%;
+        border: 0 !important;
+        padding: 0 10px;
+        min-height: 70px;
+        position: relative;
+        margin-top: 6px;
+    }
+
+    .calendar-cruise-ship .days .day_num:first-child {
+        margin-top: 0;
+    }
+
+    .calendar-cruise-ship .days .day_num.available:before,
+    .list-cruise-ship-by-date-section:before{
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 1px;
+        display: block;
+        background: #C6C6C6;
+        left: 55px;
+        top: 10px;
+    }
+
+    .calendar-cruise-ship .days .day_num.available:last-child:before {
+        content: unset;
+    }
+
+    .calendar-cruise-ship .days .day_num.available:after,
+    .list-cruise-ship-by-date-section:after{
+        content: "";
+        width: 9px;
+        height: 9px;
+        display: block;
+        background-color: #C6C6C6;
+        border-radius: 50%;
+        border: 1px solid #8A8A8A;
+        position: absolute;
+        left: 50px;
+    }
+
+    .calendar-cruise-ship .days .day_num .event {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    .calendar-cruise-ship .header .month-year .cs-month-next-prev {
+        display: none;
+    }
+
+    .calendar-cruise-ship .days .day_num > div:first-child {
+        text-align: center;
+    }
+
+    .calendar-cruise-ship .days .day_num span,
+    .list-cruise-ship-by-date-section span {
+        font-size: 18px;
+        font-weight: 600;
+        color: #000;
+    }
+
+    .calendar-cruise-ship .days .day_num .day_text,
+    .list-cruise-ship-by-date-section > div span:last-child {
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+    #top .calendar-cruise-ship .header .month-year select {
+        width: 90px;
+        padding: 8px 16px;
+        font-size: 14px;
+        color: #838383;
+    }
+
+    .calendar-cruise-ship .header .month-year {
+        padding: 32px 0;
+    }
+
+    #cruise-ship-section .av-special-heading-h2 {
+        display: none;
+    }
+
+    .calendar-cruise-ship .header {
+        position: relative;
+        padding: 0 6px;
+    }
+
+    button.cs-zoomout-calendar {
+        position: absolute;
+        right: 6px;
+        top: calc(50% - 12px);
+        width: 24px;
+        height: 24px;
+        background-color: unset;
+        border: 0;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAyNiAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI1LjUgNi42MTEzM0wxOS41IDYuNjExMzNMMTkuNSAwLjYxMTMyOCIgc3Ryb2tlPSIjODM4MzgzIiBzdHJva2Utd2lkdGg9IjIiLz4KPHBhdGggZD0iTTE5LjUgMjQuNjExM0wxOS41IDE4LjYxMTNMMjUuNSAxOC42MTEzIiBzdHJva2U9IiM4MzgzODMiIHN0cm9rZS13aWR0aD0iMiIvPgo8cGF0aCBkPSJNNi41IDAuNjExMzI4TDYuNSA2LjYxMTMzTDAuNSA2LjYxMTMzIiBzdHJva2U9IiM4MzgzODMiIHN0cm9rZS13aWR0aD0iMiIvPgo8cGF0aCBkPSJNMC41IDE4LjYxMTNINi41TDYuNSAyNC42MTEzIiBzdHJva2U9IiM4MzgzODMiIHN0cm9rZS13aWR0aD0iMiIvPgo8L3N2Zz4K");
+        background-size: 24px;
+        background-repeat: no-repeat;
+    }
+
+    button.cs-zoomin-calendar {
+        position: absolute;
+        right: 18px;
+        top: 24px;
+        width: 24px;
+        height: 24px;
+        background-color: unset;
+        border: 0;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgiIGhlaWdodD0iMjciIHZpZXdCb3g9IjAgMCAyOCAyNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIwLjYwNzQgMS40Mzc1TDI2LjYwNzQgMS40Mzc1TDI2LjYwNzQgNy40Mzc1IiBzdHJva2U9IiM4MzgzODMiIHN0cm9rZS13aWR0aD0iMiIvPgo8cGF0aCBkPSJNMjYuNjA3NCAxOS40Mzc1TDI2LjYwNzQgMjUuNDM3NUwyMC42MDc0IDI1LjQzNzUiIHN0cm9rZT0iIzgzODM4MyIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxwYXRoIGQ9Ik0xLjYwNzQyIDcuNDM3NUwxLjYwNzQyIDEuNDM3NUw3LjYwNzQyIDEuNDM3NSIgc3Ryb2tlPSIjODM4MzgzIiBzdHJva2Utd2lkdGg9IjIiLz4KPHBhdGggZD0iTTcuNjA3NDIgMjUuNDM3NUwxLjYwNzQyIDI1LjQzNzVMMS42MDc0MiAxOS40Mzc1IiBzdHJva2U9IiM4MzgzODMiIHN0cm9rZS13aWR0aD0iMiIvPgo8L3N2Zz4K");
+        background-size: 24px;
+        background-repeat: no-repeat;
+    }
+
+    #calendar-cruise-ship-mobile {
+        display: none;
+        position: relative;
+    }
+
+    #calendar-cruise-ship-mobile.cruise-ship-calender .ui-widget {
+        background-color: #fff !important;
+        border: 1px solid #d4d4d4 !important;
+        padding: 14px;
+        margin-top: 32px;
+    }
+
+    #calendar-cruise-ship-mobile.cruise-ship-calender .ui-datepicker .ui-datepicker-title {
+        background: #fff;
+    }
+
+    #calendar-cruise-ship-mobile.cruise-ship-calender .ui-datepicker .ui-datepicker-title {
+        padding-top: 0;
+        padding-bottom: 10px;
+    }
+
+    #top #calendar-cruise-ship-mobile.cruise-ship-calender .ui-datepicker .ui-datepicker-header .ui-datepicker-title .ui-datepicker-month,
+    #top #calendar-cruise-ship-mobile.cruise-ship-calender .ui-datepicker .ui-datepicker-header .ui-datepicker-title .ui-datepicker-year {
+        border: 1px solid #E7E7E7;
+        box-shadow: unset;
+    }
+
+    #calendar-cruise-ship-mobile.cruise-ship-calender .ui-datepicker .ui-datepicker-header a {
+        display: none;
+    }
+
+    #calendar-cruise-ship-mobile.cruise-ship-calender .ui-datepicker th {
+        border: 0;
+    }
+
+    #calendar-cruise-ship-mobile .ui-state-default, #calendar-cruise-ship-mobile .ui-widget-content .ui-state-default {
+        background: #fff !important;
+    }
+
+    #top .main_color #calendar-cruise-ship-mobile.cruise-ship-calender .ui-datepicker td.available a {
+        background: #ff9903 !important;
+    }
+
+    #calendar-cruise-ship-mobile.cruise-ship-calender .ui-datepicker tr > td:first-child {
+        border: 1px solid #E7E7E7;
+    }
+
+    .list-cruise-ship-by-date-section {
+        display: grid;
+        align-items: start;
+        grid-template-columns: 30px 1fr;
+        gap: 35px;
+        margin-top: 30px;
+        position: relative;
+        padding: 0 10px;
+    }
+    .list-cruise-ship-by-date-section > div:first-child {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .list-cruise-ship-by-date a {
+        display: block;
+        font-weight: 500;
+        font-size: 14px;
+        padding: 3px 6px;
+        color: #fff !important;
+        word-wrap: break-word;
+        text-align: center;
+        text-decoration: none !important;
+        margin-bottom: 10px;
+        background-color: #FF9903;
+        transition: all 300ms ease;
+        border-radius: 16px;
+    }
+
+    .list-cruise-ship-by-date a:last-child {
+        margin-bottom: 0;
+    }
+
+    .main_color .list-cruise-ship-by-date a:hover {
+        color: #fff !important;
+    }
+
+    .calendar-cruise-ship-section.loading .list-cruise-ship-by-date:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-image: url("../images/loading.gif");
+        background-size: 50px;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+    }
+
+    .calendar-cruise-ship-section.loading .list-cruise-ship-by-date:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background: #ffffff52;
+    }
+
+    .calendar-cruise-ship-section .list-cruise-ship-by-date-section:before {
+        height: calc(100% - 11px);
+    }
+}
+
+.ht-choose-date.cruise-disable-calendar:before,
+.mm-hotel-cruise-ship-div.cs-show-overlay:before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 111;
+    border-radius: 35px;
+    cursor: no-drop;
+}
+
+.mm-hotel-to-pickup-div.cs-show-overlay span.select2:before,
+.mm-hotel-to-pickup.set_price_per_person-div.cs-show-overlay span.select2:before,
+.mm-hotel-cruise-ship-div.cs-show-overlay:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #00000024;
+    z-index: 11;
+    border-radius: 25px;
+    cursor: not-allowed;
+    left: 0;
+}
+
+.mm-hotel-cruise-ship-div.cs-show-overlay input,
+.mm-hotel-to-pickup-div.cs-show-overlay select,
+.mm-hotel-to-pickup.set_price_per_person-div.cs-show-overlay select,
+#wc-bookings-booking-form .bookings-date-1.cruise-disable-calendar .wc-bookings-date-picker-date-fields{
+    color: #929292 !important;
+}
+
+#wc-bookings-booking-form .container-datetime .wc-bookings-date-picker .ht-choose-date.cruise-disable-calendar,
+#wc-bookings-booking-form .wc-bookings-date-picker .bookings-date-1.cruise-disable-calendar {
+    background: #ddd !important;
+    color: #929292 !important;
+}
+
+#wc-bookings-booking-form .container-datetime .wc-bookings-date-picker .ht-choose-date.cruise-disable-calendar input,
+#wc-bookings-booking-form .wc-bookings-date-picker .bookings-date-1.cruise-disable-calendar input{
+    color: #929292 !important;
+}

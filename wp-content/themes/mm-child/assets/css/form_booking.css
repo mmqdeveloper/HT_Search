@@ -1,0 +1,383 @@
+.wc-bookings-date-picker:hover .wc-icon-calendar, .wc-bookings-date-picker:hover .wc-bookings-date-picker-date-fields{
+    display: none !important;
+}
+.wc-bookings-date-picker:hover .wc-icon-calendar-hover{
+    display: inherit !important;
+}
+.wc-bookings-booking-form .wc-bookings-date-picker-choose-date{
+    display: inline-block !important;
+    font-size: 17px !important;
+    font-weight: 500 !important;
+    overflow: hidden;
+    padding: 5px 0px 0px !important;
+}
+#top .wc-bookings-date-picker legend .wc-bookings-date-picker-choose-date{
+    margin: 0;
+}
+.wc-bookings-date-picker .ui-datepicker td{
+    border: none;
+}
+.ui-datepicker-calendar thead tr{
+    border-bottom: 1px solid #ccc;
+}
+.main_color .wc-bookings-date-picker .ui-datepicker td.bookable a {
+    background: transparent !important;
+    color: #000 !important;
+    border-color: #e1e1e1;
+}
+#top .main_color .wc-bookings-date-picker .ui-datepicker td.ui-datepicker-current-day a{
+    background: #2189c1 !important;
+    color: #fff !important;
+}
+#top .wc-bookings-date-picker legend{
+    padding: 0;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    color: #404040;
+    height: auto;
+    width: 100%;
+    line-height: 100%;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+.form-field.form-field-wide input[type=number] {
+    -moz-appearance:textfield;
+    -webkit-appearance: textfield;
+    appearance: textfield;
+}
+
+.wc-bookings-booking-cost .woocommerce-Price-amount.amount {
+    font-size: 36px !important;
+    font-weight: normal !important;
+}
+#wc_bookings_field_resource{
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    border: none !important;
+    background: transparent url("../images/br_down.png") no-repeat center right !important;
+}
+.booking-costs-new, .wc-bookings-booking-cost strong{
+    float: right;
+    color: #ff9903 !important;
+}
+.wc-bookings-booking-cost{
+    z-index: -1;
+    background-color: transparent !important;
+    border-top: 2px solid #F0F0F0 !important;
+} 
+#top .wc-bookings-booking-form fieldset .picker.hasDatepicker{
+    margin-top: 15px !important;
+}
+
+.plus-price{
+    color: #ff9903;
+    margin:0px;
+    font-size: 18px;
+    font-weight: 800 !important;
+}
+.wc-bookings-date-picker-booking{
+    margin-top: 20px !important;
+    padding: 20px 0 20px 0 !important;
+    margin-bottom: 0 !important;
+    text-align: center;
+    border-bottom: 2px solid #F0F0F0 !important;
+}
+.wc-bookings-booking-form-button{
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding: 30px 15px !important;
+}
+
+.wc-bookings-date-picker-date-fields{
+    margin-top: 0px;
+    margin-bottom: 34px;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    color: #4299c8;
+    font-weight: 700 !important;
+}
+
+.wc-bookings-date-picker img{
+    margin-top: 18px;
+}
+
+#top .main_color .wc-bookings-date-picker legend .wc-bookings-date-picker-choose-date{
+    border: none;
+    background: transparent;
+    font-size: 0.92em;
+    color: #404040;
+    padding: 0;
+}
+.wc-bookings-booking-form fieldset label{
+    width: auto;
+    font-size: 16px !important;
+}
+.wc-bookings-date-picker-date-fields input{
+    color: #4299c8  !important; 
+    width: 20px !important;
+    font-weight: 700 !important;
+    display: inline-block !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.wc-bookings-booking-form .hollow.circle{
+    min-width: 1px;
+    padding: 0px;
+    line-height: 1em;
+    margin: 4px 2px 0 0;
+    background: transparent;
+    color: #b9c1d4;
+    float: none;
+    font-size: 20px;
+    width: auto;
+    outline: none;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    border-radius: 2px;
+    width: 25% !important;
+}
+.wc-bookings-booking-form .hollow.circle:hover{
+    color:#4299c8;
+}
+.wc-bookings-date-picker-date-fields input.booking_date_year{
+    width: 50px !important;
+}
+.wc-bookings-date-picker-date-fields input::placeholder{
+    color: #000 !important;
+}
+
+.wc-bookings-booking-form input[type="number"]{
+    text-align: center;
+    width:50% !important;
+    margin-left: 0.5rem !important;
+    background: transparent !important;
+    color: #000 !important;
+    font-size: 40px !important;
+    margin-right: 0.5rem !important;
+    padding: 1rem !important;
+    margin-bottom: 0px !important;
+    border:none  !important;
+}
+.price-base-cost{
+    font-size: 24px;
+    font-weight: bold;
+}
+.inner_product_header_cell .price, .button.show_details_button{
+    display: none !important;
+}
+.wc-price sup{
+    font-size: 22px;
+}
+.woocommerce .product-sorting{
+    display: none;
+}
+
+.avia_cart_buttons .button-mini-delimiter{
+    display: none;
+}
+.button.show_details_button{
+    float: right !important;
+}
+.blockUI.blockOverlay{
+    opacity: 0 !important; 
+}
+.av-woo-purchase-button > .price{
+    display:none !important;
+}
+.wc-bookings-booking-cost .custom-prc{
+    margin-top: -10px;
+    display: inline-block;
+}
+.single-product .wc-bookings-booking-cost{
+    display:none;
+    border:none !important;
+    background-color: #fff !important;
+    padding: 25px 20px 25px;
+    font-size: 18px;
+}
+#wc-bookings-booking-form{
+    margin-bottom: 0px;
+}
+.mm-tab-wrap{
+    position: relative;
+    clear: both;
+}
+.mm-tab-wrap .picker{
+    position: absolute;
+    width: 100%;
+}
+.price-small-product{
+    float: right;
+    margin-top: -6px;
+    font-weight: 600 !important;
+    color: #ff9903 !important;
+    font-size: 20px !important;
+    margin-left: 5px;
+}
+.fields_adult label, .fields_child label, .fields_per label, .fields_adultchild label{
+    border-bottom: 1px solid #ccc;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    overflow: hidden;
+    padding-bottom: 7px;
+}
+.pearl-harbol-date fieldset.wc-bookings-date-picker{
+    overflow: hidden;
+    display: block;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+.pearl-harbol-date .wc-bookings-date-picker-choose-date{
+    position: inherit;
+    padding: 32.5px 0px !important;
+    width: 100% !important;
+}
+.bookings-date-1{
+    z-index:1;
+}
+.picker.hasDatepicker{
+    z-index:9999;
+}
+.ui-datepicker-calendar tr span, .ui-datepicker-calendar th{
+    background:#fff !important;
+}
+#wc-bookings-booking-form div.mm_resource i.fa-angle-down{
+    color: #ccc !important;
+}
+#wc-bookings-booking-form div.mm_resource:hover i.fa-angle-down{
+    color: #2189c1 !important;
+}
+.wc-bookings-date-picker .ui-datepicker td.partial_booked a:before{
+    border-top: none;
+    border-right: none;
+}
+@media screen and (max-width: 1023px) and (min-width: 768px){
+    .avia-promocontent {
+        margin-right: 300px;
+    }
+    .wc-price {
+        width: 100%;
+    }
+}
+@media (min-width: 1000px){
+    #wc-bookings-booking-form .ui-datepicker .ui-datepicker-header {
+        width:30%;
+        float:right;
+        height: 100%;
+        position: absolute;
+        right: 0px;
+    }
+    #wc-bookings-booking-form .ui-datepicker .ui-datepicker-header a{
+        position:absolute !important;
+        top:40% !important;
+        z-index:9;
+    }
+    #wc-bookings-booking-form .ui-datepicker .ui-datepicker-header .ui-datepicker-title{
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+    #wc-bookings-booking-form .ui-datepicker .ui-datepicker-header .ui-datepicker-title .ui-datepicker-year{
+        width: 84%;
+        margin-left: 8%;
+        display: block;
+        border-bottom: 1px solid #fff;
+        padding: 0px 0px 5px 0px;
+    }
+    #wc-bookings-booking-form .ui-datepicker .ui-datepicker-header .ui-datepicker-title .ui-datepicker-month{
+        position: absolute;
+        top: 45%;
+        width: 60%;
+        left:20%;
+        text-align: center;
+    }
+    #wc-bookings-booking-form .ui-datepicker .ui-datepicker-calendar {
+        width:70%;
+        float:left;
+    }
+}
+@media (min-width: 535px){
+    .fields_per:hover, .fields_adultchild:hover{
+        -webkit-box-shadow: 0px 0px 20px 2px rgba(36, 48, 120, 0.12);
+        -moz-box-shadow: 0px 0px 20px 2px rgba(36, 48, 120, 0.12);
+        box-shadow: 0px 0px 20px 2px rgba(36, 48, 120, 0.12);
+        z-index: 99;
+    }
+    .fields_adult:hover{
+        -webkit-box-shadow: 0px 0px 20px 2px rgba(36, 48, 120, 0.12);
+        -moz-box-shadow: 0px 0px 20px 2px rgba(36, 48, 120, 0.12);
+        box-shadow: 0px 0px 20px 2px rgba(36, 48, 120, 0.12);
+        z-index: 99;
+        position: absolute;
+    }
+    .pearl-harbol-date .wc-bookings-date-picker-booking:hover .picker.active{
+        -webkit-box-shadow: 0px 0px 20px 2px rgba(36, 48, 120, 0.12);
+        -moz-box-shadow: 0px 0px 20px 2px rgba(36, 48, 120, 0.12);
+        box-shadow: 0px 0px 20px 2px rgba(36, 48, 120, 0.12);
+    }
+    .pearl-harbol-date .wc-bookings-date-picker-booking:hover table.ui-datepicker-calendar{
+        border:none !important;
+    }
+    .pearl-harbol-date .wc-bookings-date-picker-booking:hover .bookings-date-1{
+        -webkit-box-shadow: 0px 0px 20px 2px rgba(36, 48, 120, 0.12);
+        -moz-box-shadow: 0px 0px 20px 2px rgba(36, 48, 120, 0.12);
+        box-shadow: 0px 0px 20px 2px rgba(36, 48, 120, 0.12);
+        z-index: 99;
+        height: 100% !important;
+        left: 0;
+        width: 50% !important;
+        float: left;
+        position: absolute;
+    }
+    .pearl-harbol-date .wc-bookings-date-picker-booking .wc-bookings-date-picker-choose-date{
+        left: 0;
+    }
+    .pearl-harbol-date .wc-bookings-date-picker-booking:hover .bookings-date-2{
+        min-height: 150px;
+        width: 1px;
+    }
+    .fields_child:hover, .mm_resource:hover{
+        -webkit-box-shadow: 0px 0px 20px 2px rgba(36, 48, 120, 0.12);
+        -moz-box-shadow: 0px 0px 20px 2px rgba(36, 48, 120, 0.12);
+        box-shadow: 0px 0px 20px 2px rgba(36, 48, 120, 0.12);
+        z-index: 99;
+        position: absolute;
+        right:0;
+    }
+    .fields_child{
+        float:right !important;
+    }
+}
+
+@media (max-width: 535px){
+    .form-field.fields_adult, .form-field.fields_child, .wc-bookings-date-picker, .form-field.mm_resource{
+        width:100%;
+        border:none !important;
+        border-bottom:1px solid #000 !important;
+    }
+    .form-field.mm_resource{
+        border:none !important;
+    }
+}
+@media (max-width: 430px){
+    .wc-bookings-booking-cost strong{
+        width: 40%;
+        margin:  0px;
+        text-align: right;
+    }
+}

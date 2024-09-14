@@ -1,0 +1,61 @@
+.nf-hidden-field{
+    display: none !important; 
+}
+
+/* 
+    Page vendor
+*/
+#top.page-id-189821 #nf-form-18-cont {
+    padding: 32px;
+    box-shadow: 0px 0px 5px 0px #B3B3B3;
+    border-radius: 30px;
+    background-color: #fff;
+}
+#top.page-id-189821 #nf-form-18-cont #nf-field-366 {
+    height: auto;
+    overflow: unset;
+    border-radius: 30px;
+}
+#top.page-id-189821 .avia-icon-list .avia_start_animation:last-child {
+    padding-bottom: 0;
+}
+
+/* 
+    Page sustainability
+*/
+#top.page-id-351329 #nf-form-4-cont {
+    padding: 32px;
+    box-shadow: 0px 0px 5px 0px #B3B3B3;
+    border-radius: 30px;
+    background-color: #fff;
+}
+
+@media (max-width: 767px) {
+    /* 
+        Page vendor
+    */
+    #top.page-id-189821 #nf-form-18-cont {
+        padding: 25px 15px;
+        margin-top: 30px;
+    }
+    #top.page-id-189821 #av_section_1 .container {
+        height: 450px !important;
+        min-height: 450px;
+    }
+
+    /* 
+        Page sustainability
+    */
+    #top.page-id-351329 #nf-form-18-cont {
+        padding: 25px 15px;
+    }
+    #top.page-id-351329 #wrap_all .hr.avia-builder-el-8 {
+        height: 0;
+    }
+    #top.page-id-351329 #wrap_all .av-special-heading-h2 .av-special-heading-tag {
+        font-size: 30px;
+    }
+    #top.page-id-351329 .avia-builder-el-12.avia-image-container {
+        max-width: 200px;
+    }
+}

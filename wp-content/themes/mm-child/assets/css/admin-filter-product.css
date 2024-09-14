@@ -1,0 +1,45 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 20, 2019, 2:57:38 PM
+    Author     : MM
+*/
+#aviaTBsort_tag_name{
+    pointer-events:none;
+}
+.mm-link-product-resource{
+    text-decoration: none;
+}
+body .avia-expanded .avia-fixed-controls {
+    top: 19px;
+}
+body .avia-expanded .layout-builder-wrap {
+    margin-top: 10px;
+}
+body .avia-expanded .avia-template-save-button-container {
+    bottom: -29px;
+}
+
+/*Fix Table Woocommerce/Products*/
+body table.wp-list-table.widefat.fixed.striped.table-view-list.posts{
+    table-layout: auto;
+}
+/*Fix Table Woocommerce/Products*/
+.hidden-title-faq{
+    display: none;
+}
+
+/* Checkbox */
+#aviaTBshow_filter-form-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: left;
+}
+
+#aviaTBshow_filter-form-container > .avia-form-element  {
+    position: unset;
+    width: max-content;
+}

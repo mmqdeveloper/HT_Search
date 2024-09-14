@@ -1,0 +1,678 @@
+<?php
+
+/**
+ * Loads the parent stylesheet.
+ */
+function mm_load_parent_stylesheet() {
+    wp_enqueue_style('parent-styles', get_template_directory_uri() . '/style.css');
+}
+
+/* Indeed */
+if (!function_exists('ht_remove_affiliate_pro_css')) {
+
+    function ht_remove_affiliate_pro_css() {
+        wp_dequeue_style('uap_public_style');
+        wp_dequeue_style('uap_templates');
+    }
+
+}
+add_action('wp_print_styles', 'ht_remove_affiliate_pro_css', 100);
+
+if (!function_exists('ht_indeed_add_google_fonts')) {
+
+    function ht_indeed_add_google_fonts() {
+        // wp_enqueue_style( 'ht-google-fonts-open-san', 'https://fonts.googleapis.com/css?family=Open+Sans:100,400,300,500,600,700', false ); 
+        // wp_enqueue_style( 'ht-google-fonts-oswald', 'https://fonts.googleapis.com/css?family=Oswald:100,400,300,600,700', false ); 
+        // wp_enqueue_style( 'ht-google-fonts-roboto', 'https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,600,700', false ); 
+    }
+
+}
+add_action('wp_enqueue_scripts', 'ht_indeed_add_google_fonts');
+
+/* End Indeed */
+
+add_action('wp_enqueue_scripts', 'mm_load_parent_stylesheet');
+if (!function_exists('mm_child_script')) {
+
+    function mm_child_script() {
+	    global $post;
+        wp_enqueue_style('css-slider', get_stylesheet_directory_uri() . '/assets/css/flickity-docs.css', array(), '1.0', 'all');
+        wp_enqueue_style('mm-booking-box-css', get_stylesheet_directory_uri() . '/assets/css/booking-box.css', array(), '2.7.2', 'all');
+<<<<<<< HEAD
+        wp_enqueue_style('mm-child-css', get_stylesheet_directory_uri() . '/assets/css/mm-child.css', array(), '1.3.5', 'all');
+=======
+        wp_enqueue_style('mm-child-css', get_stylesheet_directory_uri() . '/assets/css/mm-child.css', array(), '1.3.4', 'all');
+>>>>>>> master
+        wp_enqueue_style('custom-mm-child-css', get_stylesheet_directory_uri() . '/assets/css/custom-mm-child.css', array(), '1.3.8', 'all');
+        wp_enqueue_style('css-custom', get_stylesheet_directory_uri() . '/assets/css/custom.css', array(), '7.9.5', 'all');
+        wp_enqueue_style('css-min-fontawesome', get_stylesheet_directory_uri() . '/assets/css/font-awesome.min.css', array(), '1.0.0', 'all');
+        wp_enqueue_style('css-form', get_stylesheet_directory_uri() . '/assets/css/form.css', array(), '1.8', 'all');
+        wp_enqueue_style('css-menu', get_stylesheet_directory_uri() . '/assets/css/css-menu.css', array(), '1.1.1', 'all');
+        wp_enqueue_style('custom-style', get_stylesheet_directory_uri() . '/assets/css/custom-style.css', array(), '2.5', 'all');
+        wp_enqueue_style('css-toggle', get_stylesheet_directory_uri() . '/assets/css/toggle.css', array(), '1.0', 'all');
+        wp_enqueue_style('ninjaform-style', get_stylesheet_directory_uri() . '/assets/css/ninjaform-style.css', array(), '1.1.0', 'all');
+        wp_enqueue_style('google-fonts-Raleway', 'https://fonts.googleapis.com/css?family=Raleway:300,300italic,400,400italic,500,500italic,600,600italic,700,700italic', false);
+        wp_enqueue_style('yellow-pencil', get_stylesheet_directory_uri() . '/assets/css/yellow_pencil_style.css', array(), '1.0.9', 'all');
+        wp_enqueue_style('tour-box', get_stylesheet_directory_uri() . '/assets/css/tour-box.css', array(), '2.0.4', 'all');
+        wp_enqueue_style('checkout-page', get_stylesheet_directory_uri() . '/assets/css/checkout-page.css', array(), '1.4.2', 'all');
+        wp_enqueue_style('my-account-page', get_stylesheet_directory_uri() . '/assets/css/my_account.css', array(), '1.1.2', 'all');
+        //Indeed
+        wp_enqueue_style('indeed_main_public', get_stylesheet_directory_uri() . '/assets/css/indeed_main_public.css', array(), '1.0', 'all');
+        wp_enqueue_style('indeed_templates', get_stylesheet_directory_uri() . '/assets/css/indeed_templates.css', array(), '1.0', 'all');
+        //End Indeed
+        wp_enqueue_script('custom-js', get_stylesheet_directory_uri() . '/assets/js/custom.js', array('jquery'), '3.3.9', true);
+	    wp_localize_script( 'custom-js', 'ajax_custom_js', array(
+			    'ajax_url' => admin_url( 'admin-ajax.php' ),
+			    'product_id' => $post->ID )
+	    );
+        //wp_enqueue_script('match-height', 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/9487/jquery.matchHeight-min.js', array('jquery'), '1.0', true); 
+        wp_enqueue_script('match-height-js', get_stylesheet_directory_uri() . '/assets/js/jquery.matchHeight.js', array('jquery'), '1.0', true);
+        wp_enqueue_script('auto-select-js', get_stylesheet_directory_uri() . '/assets/js/auto_select_island.js', array('jquery'), '1.6.9', true);
+        wp_enqueue_script('js-booking-form', get_stylesheet_directory_uri() . '/assets/js/booking_form.js', array('jquery'), '4.8.4', true);
+        wp_enqueue_script('avia_styleswitch', get_stylesheet_directory_uri() . '/assets/js/avia_styleswitch.js', array('jquery'), '1.0', true);
+        //wp_enqueue_style('font-awesome-icon', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
+        wp_enqueue_script('flickity-slider', get_stylesheet_directory_uri() . '/assets/js/flickity-docs.min.js', array('jquery'), '1.0', true);
+        wp_enqueue_script('mm-booking-box-js', get_stylesheet_directory_uri() . '/assets/js/booking-box.js', array('jquery'), '2.4.2', true);
+        wp_enqueue_script('mm-js', get_stylesheet_directory_uri() . '/assets/js/mm-script.js', array('jquery'), '1.0', true);
+        wp_enqueue_script('mm-hotel-rooms-js', get_stylesheet_directory_uri() . '/assets/js/mm-hotel-rooms.js', array('jquery'), '1.0', true);
+        if (!is_cart() && !is_checkout()) {
+            wp_dequeue_script('wc-cart-fragments');
+        }
+        if (is_cart() || is_checkout()){
+            wp_enqueue_script('slick-js', get_stylesheet_directory_uri() . '/assets/js/slick.js', array('jquery'), '1.0.0', true);
+            wp_enqueue_style('css-slick', get_stylesheet_directory_uri() . '/assets/css/slick.css', array(), '1.0', 'all');
+        
+        }
+    }
+
+    add_action('wp_enqueue_scripts', 'mm_child_script', 9);
+}
+
+if (!function_exists('mm_js_filter_element')) {
+
+    function mm_js_filter_element() {
+        wp_enqueue_script('js_filter_element', get_stylesheet_directory_uri() . '/assets/js/admin-filter-product.js');
+        wp_enqueue_style('css_filter_element', get_stylesheet_directory_uri() . '/assets/css/admin-filter-product.css', array(), '1.5', 'all');
+    }
+
+    add_action('admin_enqueue_scripts', 'mm_js_filter_element');
+}
+
+/* ---------------------------------------------------------------------------
+ * Scripts
+ * --------------------------------------------------------------------------- */
+if (!function_exists('mm_vie_frontend_scripts')) {
+
+    function mm_vie_frontend_scripts() {
+        //js theme 
+        wp_enqueue_script('theme-js', get_stylesheet_directory_uri() . '/assets/js/theme.js', false, "10.1", true);
+    }
+
+}
+
+
+if (!function_exists('no_post_nav')) {
+
+    function no_post_nav($entries) {
+        $entries = array();
+        return $entries;
+    }
+
+    add_filter('avia_post_nav_entries', 'no_post_nav');
+}
+
+
+/* Full size */
+add_filter('avf_avia_builder_helper_lightbox_size', 'mm_avf_avia_builder_helper_lightbox_size');
+
+function mm_avf_avia_builder_helper_lightbox_size($size) {
+    $size = "full";
+    return $size;
+}
+
+function show_popup_info_special_day() {
+    date_default_timezone_set('Pacific/Honolulu');
+    $time_hawaii = date('Y-m-d H:i:s');
+    $day = date('d', strtotime($time_hawaii));
+    $month = date('m', strtotime($time_hawaii));
+    $year = date('Y', strtotime($time_hawaii));
+    if ($day < 23 && $month == 7 && $year == 2016) {
+        ?>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <?php if (is_active_sidebar('info_special_day')) : ?>
+                            <?php dynamic_sidebar('info_special_day'); ?>
+                        <?php endif; ?>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php
+    }
+}
+
+add_action('wp_footer', 'show_popup_info_special_day');
+
+function feed_the_excerpt() {
+    if (is_feed()) {
+        global $post;
+        $content_new_excerpt = html_entity_decode(apply_filters('the_content', get_the_excerpt($post->ID)));
+        $content_excerpt_p = str_replace('<p>', '', $content_new_excerpt);
+        $content_excerpt = str_replace('</p>', '', $content_excerpt_p);
+        echo '<source><![CDATA[' . $content_excerpt . ']]></source>' . "\n";
+    }
+}
+
+add_action("rss_item", 'feed_the_excerpt', 1, 1);
+add_action("rss2_item", 'feed_the_excerpt', 1, 1);
+
+
+if (!function_exists('avia_ajax_search')) {
+    //now hook into wordpress ajax function to catch any ajax requests
+    add_action('wp_ajax_avia_ajax_search', 'avia_ajax_search');
+    add_action('wp_ajax_nopriv_avia_ajax_search', 'avia_ajax_search');
+
+    function avia_ajax_search() {
+        global $avia_config;
+
+        unset($_REQUEST['action']);
+        if (empty($_REQUEST['s']))
+            $_REQUEST['s'] = array_shift(array_values($_REQUEST));
+        if (empty($_REQUEST['s']))
+            die();
+
+        $defaults = array('numberposts' => 5, 'post_type' => array('post', 'page', 'product'), 'post_status' => 'publish', 'post_password' => '', 'suppress_filters' => false, 'results_hide_fields' => '');
+
+        $_REQUEST['s'] = apply_filters('get_search_query', $_REQUEST['s']);
+
+        $search_parameters = array_merge($defaults, $_REQUEST);
+
+        if ($search_parameters['results_hide_fields'] !== '') {
+            $search_parameters['results_hide_fields'] = explode(',', $_REQUEST['results_hide_fields']);
+        } else {
+            $search_parameters['results_hide_fields'] = array();
+        }
+
+        $search_query = apply_filters('avf_ajax_search_query', http_build_query($search_parameters));
+        $query_function = apply_filters('avf_ajax_search_function', 'get_posts', $search_query, $search_parameters, $defaults);
+        $posts = (($query_function == 'get_posts') || !function_exists($query_function)) ? get_posts($search_query) : $query_function($search_query, $search_parameters, $defaults);
+
+        $search_messages = array(
+            'no_criteria_matched' => __("Sorry, no posts matched your criteria", 'avia_framework'),
+            'another_search_term' => __("Please try another search term", 'avia_framework'),
+            'time_format' => get_option('date_format'),
+            'all_results_query' => http_build_query($_REQUEST),
+            'all_results_link' => home_url('?' . http_build_query($_REQUEST)),
+            'view_all_results' => __('View all results', 'avia_framework')
+        );
+
+        $search_messages = apply_filters('avf_ajax_search_messages', $search_messages, $search_query);
+
+        if (empty($posts)) {
+            $output = "<span class='ajax_search_entry ajax_not_found'>";
+            $output .= "<span class='ajax_search_image " . av_icon_string('info') . "'>";
+            $output .= "</span>";
+            $output .= "<span class='ajax_search_content'>";
+            $output .= "    <span class='ajax_search_title'>";
+            $output .= $search_messages['no_criteria_matched'];
+            $output .= "    </span>";
+            $output .= "    <span class='ajax_search_excerpt'>";
+            $output .= $search_messages['another_search_term'];
+            $output .= "    </span>";
+            $output .= "</span>";
+            $output .= "</span>";
+            echo $output;
+            die();
+        }
+
+        //if we got posts resort them by post type
+        $output = "";
+        $sorted = array();
+        $post_type_obj = array();
+        foreach ($posts as $post) {
+            $sorted[$post->post_type][] = $post;
+            if (empty($post_type_obj[$post->post_type])) {
+                $post_type_obj[$post->post_type] = get_post_type_object($post->post_type);
+            }
+        }
+
+
+
+        //now we got everything we need to preapre the output
+        foreach ($sorted as $key => $post_type) {
+
+            // check if post titles are in the hidden fields list
+            if (!in_array('post_titles', $search_parameters['results_hide_fields'])) {
+                if (isset($post_type_obj[$key]->labels->name)) {
+                    $label = apply_filters('avf_ajax_search_label_names', $post_type_obj[$key]->labels->name);
+                    $output .= "<h4>" . $label . "</h4>";
+                } else {
+                    $output .= "<hr />";
+                }
+            }
+
+
+            foreach ($post_type as $post) {
+
+
+                $image = "";
+                $extra_class = "";
+
+                // check if image is in the hidden fields list
+                if (!in_array('image', $search_parameters['results_hide_fields'])) {
+                    $image = get_the_post_thumbnail($post->ID, 'thumbnail');
+                    $extra_class = $image ? "with_image" : "";
+                    $post_type = $image ? "" : ( get_post_format($post->ID) != "" ? get_post_format($post->ID) : "standard" );
+                    $iconfont = $image ? "" : av_icon_string($post_type);
+                }
+
+                $excerpt = "";
+
+                // check if post meta fields are in the hidden fields list
+                if (!in_array('meta', $search_parameters['results_hide_fields'])) {
+                    if (!empty($post->post_excerpt)) {
+                        $excerpt = apply_filters('avf_ajax_search_excerpt', avia_backend_truncate($post->post_excerpt, 70, " ", "...", true, '', true));
+                    } else {
+                        $excerpt = apply_filters('avf_ajax_search_no_excerpt', get_the_time($search_messages['time_format'], $post->ID), $post);
+                    }
+                }
+
+
+                $link = apply_filters('av_custom_url', get_permalink($post->ID), $post);
+
+                $output .= "<a class ='ajax_search_entry {$extra_class}' href='" . $link . "'>";
+
+                if ($image !== "" || $iconfont) {
+                    $output .= "<span class='ajax_search_image' {$iconfont}>";
+                    $output .= $image;
+                    $output .= "</span>";
+                }
+                $output .= "<span class='ajax_search_content'>";
+                $output .= "    <span class='ajax_search_title'>";
+                $output .= get_the_title($post->ID);
+                $output .= "    </span>";
+                $output .= "    <span class='ajax_search_excerpt'>";
+                $output .= $excerpt;
+                $output .= "    </span>";
+                $output .= "</span>";
+                $output .= "</a>";
+            }
+        }
+
+        $output .= "<a class='ajax_search_entry ajax_search_entry_view_all' href='" . $search_messages['all_results_link'] . "'>" . $search_messages['view_all_results'] . "</a>";
+
+        echo $output;
+        die();
+    }
+
+}
+add_filter('searchwp_live_search_query_args', 'ht_filter_live_search', 999);
+
+function ht_filter_live_search($args) {
+    $args['post_type'] = array('post', 'page', 'product');
+    return $args;
+}
+
+add_filter('yikes_woocommerce_custom_repeatable_product_tabs_heading', 'ht_custom_product_tabs_customize_title', 10, 2);
+
+function ht_custom_product_tabs_customize_title($title, $tab) {
+    return str_replace(array('<h2', '</h2>'), array('<h5', '</h5>'), $title);
+}
+
+//if(!function_exists('avia_ajax_search'))
+//{
+//now hook into wordpress ajax function to catch any ajax requests
+add_action('wp_ajax_avia_ajax_search', 'avia_ajax_search');
+add_action('wp_ajax_nopriv_avia_ajax_search', 'avia_ajax_search');
+
+function avia_ajax_search() {
+    global $avia_config;
+
+    unset($_REQUEST['action']);
+    if (empty($_REQUEST['s']))
+        $_REQUEST['s'] = array_shift(array_values($_REQUEST));
+    if (empty($_REQUEST['s']))
+        die();
+
+    $defaults = array('numberposts' => 5, 'post_type' => 'any', 'post_status' => 'publish', 'post_password' => '', 'suppress_filters' => false, 'results_hide_fields' => '');
+
+    $_REQUEST['s'] = apply_filters('get_search_query', $_REQUEST['s']);
+
+    $search_parameters = array_merge($defaults, $_REQUEST);
+
+    if ($search_parameters['results_hide_fields'] !== '') {
+        $search_parameters['results_hide_fields'] = explode(',', $_REQUEST['results_hide_fields']);
+    } else {
+        $search_parameters['results_hide_fields'] = array();
+    }
+
+    $search_query = apply_filters('avf_ajax_search_query', http_build_query($search_parameters));
+    $query_function = apply_filters('avf_ajax_search_function', 'get_posts', $search_query, $search_parameters, $defaults);
+    $posts = (($query_function == 'get_posts') || !function_exists($query_function)) ? get_posts($search_query) : $query_function($search_query, $search_parameters, $defaults);
+
+    $search_messages = array(
+        'no_criteria_matched' => __("Sorry, no posts matched your criteria", 'avia_framework'),
+        'another_search_term' => __("Please try another search term", 'avia_framework'),
+        'time_format' => get_option('date_format'),
+        'all_results_query' => http_build_query($_REQUEST),
+        'all_results_link' => home_url('?' . http_build_query($_REQUEST)),
+        'view_all_results' => __('View all results', 'avia_framework')
+    );
+
+    $search_messages = apply_filters('avf_ajax_search_messages', $search_messages, $search_query);
+
+    if (empty($posts)) {
+        $output = "<span class='ajax_search_entry ajax_not_found'>";
+        $output .= "<span class='ajax_search_image " . av_icon_string('info') . "'>";
+        $output .= "</span>";
+        $output .= "<span class='ajax_search_content'>";
+        $output .= "    <span class='ajax_search_title'>";
+        $output .= $search_messages['no_criteria_matched'];
+        $output .= "    </span>";
+        $output .= "    <span class='ajax_search_excerpt'>";
+        $output .= $search_messages['another_search_term'];
+        $output .= "    </span>";
+        $output .= "</span>";
+        $output .= "</span>";
+        echo $output;
+        die();
+    }
+
+    //if we got posts resort them by post type
+    $output = "";
+    $sorted = array();
+    $post_type_obj = array();
+    foreach ($posts as $post) {
+        $sorted[$post->post_type][] = $post;
+        if (empty($post_type_obj[$post->post_type])) {
+            $post_type_obj[$post->post_type] = get_post_type_object($post->post_type);
+        }
+    }
+
+
+
+    //now we got everything we need to preapre the output
+    foreach ($sorted as $key => $post_type) {
+
+        // check if post titles are in the hidden fields list
+        if (!in_array('post_titles', $search_parameters['results_hide_fields'])) {
+            if (isset($post_type_obj[$key]->labels->name)) {
+                $label = apply_filters('avf_ajax_search_label_names', $post_type_obj[$key]->labels->name);
+                switch ($label) {
+                    case 'Page':
+                        $label = 'Information & Lists';
+                        break;
+                    case 'Products':
+                        $label = 'Activity';
+                        break;
+                    case 'Post':
+                        $label = 'Information';
+                        break;
+                    case 'MM FAQ':
+                        $label = 'FAQ';
+                        break;
+                    default:
+                        break;
+                }
+                $output .= "<h4>" . $label . "</h4>";
+            } else {
+                $output .= "<hr />";
+            }
+        }
+
+
+        foreach ($post_type as $post) {
+
+
+            $image = "";
+            $extra_class = "";
+
+            // check if image is in the hidden fields list
+            if (!in_array('image', $search_parameters['results_hide_fields'])) {
+                $image = get_the_post_thumbnail($post->ID, 'thumbnail');
+                $extra_class = $image ? "with_image" : "";
+                $post_type = $image ? "" : ( get_post_format($post->ID) != "" ? get_post_format($post->ID) : "standard" );
+                $iconfont = $image ? "" : av_icon_string($post_type);
+            }
+
+            $excerpt = "";
+
+            // check if post meta fields are in the hidden fields list
+            if (!in_array('meta', $search_parameters['results_hide_fields'])) {
+                if (!empty($post->post_excerpt)) {
+                    $excerpt = apply_filters('avf_ajax_search_excerpt', avia_backend_truncate($post->post_excerpt, 70, " ", "...", true, '', true));
+                } else {
+                    $excerpt = apply_filters('avf_ajax_search_no_excerpt', get_the_time($search_messages['time_format'], $post->ID), $post);
+                }
+            }
+
+
+            $link = apply_filters('av_custom_url', get_permalink($post->ID), $post);
+
+            $output .= "<a class ='ajax_search_entry {$extra_class}' href='" . $link . "'>";
+
+            if ($image !== "" || $iconfont) {
+                $output .= "<span class='ajax_search_image' {$iconfont}>";
+                $output .= $image;
+                $output .= "</span>";
+            }
+            $output .= "<span class='ajax_search_content'>";
+            $output .= "    <span class='ajax_search_title'>";
+            $output .= get_the_title($post->ID);
+            $output .= "    </span>";
+            $output .= "    <span class='ajax_search_excerpt'>";
+            $output .= $excerpt;
+            $output .= "    </span>";
+            $output .= "</span>";
+            $output .= "</a>";
+        }
+    }
+
+    $output .= "<a class='ajax_search_entry ajax_search_entry_view_all' href='" . $search_messages['all_results_link'] . "'>" . $search_messages['view_all_results'] . "</a>";
+
+    echo $output;
+    die();
+}
+
+//}
+add_filter('wp_nav_menu_items', 'avia_append_search_nav', 9997, 2);
+add_filter('avf_fallback_menu_items', 'avia_append_search_nav', 9997, 2);
+
+function avia_append_search_nav($items, $args) {
+    if (avia_get_option('header_searchicon', 'header_searchicon') != "header_searchicon")
+        return $items;
+    if (avia_get_option('header_position', 'header_top') != "header_top")
+        return $items;
+
+    if ((is_object($args) && $args->theme_location == 'avia') || (is_string($args) && $args = "fallback_menu")) {
+        global $avia_config;
+        ob_start();
+        get_search_form();
+        $form = htmlspecialchars(ob_get_clean());
+
+        $items .= '<li id="menu-item-search" class="noMobile menu-item menu-item-search-dropdown menu-item-avia-special">
+                                                <a href="/" rel="nofollow" data-avia-search-tooltip="' . $form . '" ' . av_icon_string('search') . '><span class="avia_hidden_link_text">' . __('Search', 'avia_framework') . '</span></a>
+                           </li>';
+    }
+    return $items;
+}
+
+function mm_disable_lazyload_menuimage_wprocket($attributes) {
+    $attributes[] = 'class="menu-image';
+
+    return $attributes;
+}
+
+add_filter('rocket_lazyload_excluded_attributes', 'mm_disable_lazyload_menuimage_wprocket');
+
+/*
+ * Remove H2 wp_print_media_templates 12/09/1020
+ *
+ */
+if (!function_exists('remove_print_media_templates')) {
+
+    add_action('wp_head', 'remove_print_media_templates');
+
+    function remove_print_media_templates() {
+        remove_action('wp_footer', 'wp_print_media_templates');
+    }
+
+}
+if (!function_exists('mm_current_year')) {
+    add_shortcode('current_year', 'mm_current_year');
+
+    function mm_current_year() {
+        return date("Y");
+    }
+
+}
+/*
+ * shortcode [mm_footer_search_Tour] 03/14/2023 Lam Truong
+ *
+ */
+if (!function_exists('mm_footer_search_tour')) {
+    
+    add_shortcode('footer_search_tour', 'mm_footer_search_tour');
+
+    function mm_footer_search_tour($args) {
+        if( is_front_page() )
+            return '';
+            
+        return '<div class="footer_search">
+        <p class="headding-findtour">' .$args['headding-findtour']. '</p>
+        ' .do_shortcode('[mm_quick_search]'). '
+        </div>';
+    }
+}
+
+//Ben
+add_theme_support('avia_template_builder_custom_tab_toogle_id');
+
+/*
+ * Some server configurations seem to cache WP options and do not return changed options - so we generate a new file again and again
+ * This filter allows to return the same value (or a custom value) for each file. "---" is added to seperate and identify as added value.
+ * Return empty string to avoid adding.
+ * 
+ * The following snippet shows what to return.
+ * 
+ * @since 4.7.2.1
+ * @param string $uniqid
+ * @param array $data
+ * @param WP_Scripts $enqueued
+ * @param string $file_group_name
+ * @param array $conditions
+ * @return string               
+ */
+
+function avf_custom_merged_files_unique_id($uniqid, $file_type, $data, $enqueued, $file_group_name, $conditions) {
+    return '';
+}
+
+add_filter('avf_merged_files_unique_id', 'avf_custom_merged_files_unique_id', 10, 6);
+//ninja-form waitlist
+//add_filter( 'ninja_forms_submit_data', 'my_ninja_forms_submit_data' );
+//
+//function my_ninja_forms_submit_data( $form_data ) {
+//    echo "ninja form";
+//  foreach( $form_data[ 'fields' ] as $field ) { // Field settigns, including the field key and value.
+//
+//      if( 'deal_name_1619608543892' != $field[ 'key' ] ) continue; // Check the field key to see if this is the field that I need to update.
+//
+//      $field[ 'value' ] = 'foo'; // Update the submitted field value.
+//  }
+//
+//  $form_settings = $form_data[ 'settings' ]; // Form settings.
+//
+//  $extra_data = $form_data[ 'extra' ]; // Extra data included with the submission.
+//
+//  return $form_data;
+//}
+//add_action( 'ninja_forms_after_submission', 'my_ninja_forms_processing_callback' );
+//
+///**
+// * @param $form_data array
+// * @return void
+// */
+//function my_ninja_forms_processing_callback( $form_data ){
+//  $form_id       = $form_data[ 'form_id' ];
+//
+//  $form_fields   =  $form_data[ 'fields' ];
+//  foreach( $form_fields as $field ){
+//      $field_id    = $field[ 'id' ];
+//      $field_key   = $field[ 'key' ];
+//      $field_value = $field[ 'value' ];
+//
+//      // Example Field Key comparison
+//      if( 'deal_name_1619608543892' == $field_key ){
+//          // This is the field that you are looking for.
+//          $field_value = 'hung trinh';
+//      }
+//  }
+//
+//  $form_settings = $form_data[ 'settings' ];
+//  $form_title    = $form_data[ 'settings' ][ 'title' ];
+//}
+add_filter('auto_update_plugin', '__return_false');
+add_filter('auto_update_theme', '__return_false');
+add_filter('woocommerce_breadcrumb_defaults', 'mm_breadcrumb_delimiter');
+
+function mm_breadcrumb_delimiter($defaults) {
+    $defaults['delimiter'] = ' > ';
+    return $defaults;
+}
+
+// hidden all widget on dashboard
+if (!function_exists('remove_dashboard_widgets')) {
+
+    function remove_dashboard_widgets() {
+        $uid = get_current_user_id();
+        // hide welcome panel
+        update_user_meta($uid, 'show_welcome_panel', '0');
+        // get the current hidden metaboxes
+        $hidden = get_user_meta($uid, 'metaboxhidden_dashboard');
+        // the metaboxes to be hidden
+        $to_hide = array(
+            'dashboard_right_now',
+            'dashboard_activity',
+            'dashboard_quick_press',
+            'dashboard_primary',
+            'sendgrid_statistics_widget',
+            'wpseo-dashboard-overview',
+            'woosea_rss_dashboard_widget',
+            'fue-dashboard',
+            'wordfence_activity_report_widget',
+            'jetpack_summary_widget',
+            'dashboard_site_health',
+            'yith_dashboard_products_news',
+            'yith_dashboard_blog_news',
+            'wpseo-dashboard-overview',
+            'woocommerce_dashboard_status',
+            'dashboard_php_nag'
+        );
+        // if not already hidden, hide
+        if ($hidden !== $to_hide) {
+            update_user_meta($uid, 'metaboxhidden_dashboard', $to_hide);
+        }
+    }
+
+    add_action('wp_dashboard_setup', 'remove_dashboard_widgets');
+    add_action('wp_user_dashboard_setup', 'remove_dashboard_widgets');
+}
+if (!function_exists('mm_page404_redirection')) {
+    function mm_page404_redirection() {
+        global $mapage;
+        if (is_404()) {
+            wp_redirect(home_url("404-error")); 
+            exit;
+        }
+    }
+}
+add_action('wp', 'mm_page404_redirection', 1);
+
+add_theme_support('avia_rel_nofollow_for_links');

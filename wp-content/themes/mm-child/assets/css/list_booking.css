@@ -1,0 +1,200 @@
+#header_tours,
+#header_tours .av-section-color-overlay-wrap{
+    min-height: 350px;
+}
+#header_tours .content{
+    margin-top: 30px;
+    padding-bottom: 0px;
+}
+#header_tours .title-page-tour{
+    margin-top: 180px;
+    text-align: center;
+    font-size: 48px !important;
+    font-family: exo2-Medium !important;
+    color: #fff !important;
+}
+#mm_list_tour_red{
+    padding:0px;
+    margin:auto;
+    display:inline-block; 
+    font-family: 'exo2-Regular';
+}
+#mm_list_tour_red .title_tours{
+    text-align: center;
+    color: #464646;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    font-family: 'exo2-Thin';
+    font-size: 40px !important;
+}
+#mm_list_tour_red .title_tours .save{
+    font-weight: 800;
+    color: #464646;
+    font-family: 'exo2-Regular';
+}
+#mm_list_tour_red .item_booking{
+    background:#fff;
+}
+#mm_list_tour_red .item_booking  .title_booking{
+    font-size: 24px !important;
+    padding: 15px 30px 10px 30px;
+    text-align: center;
+    border-top: 2px solid #f43737;
+    font-family: 'exo2-Medium';
+    color: #464646;
+}
+#mm_list_tour_red .item_booking .title_booking.title_booking_1994{
+    padding: 15px 78px 10px;
+}
+.bt_booking{
+    position:relative;
+}
+.bt_booking .view>img{
+    width:100%;
+}
+.bt_booking .warrap_bt{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    margin-top: -115px;
+    z-index: 1; 
+}
+.bt_booking .warrap_bt .bt_detail{
+    margin-bottom: 30px;
+    height: 23px;
+}
+.bt_detail .btn_detail{
+    background: transparent;
+    border-radius: 30px;
+    border-color: #fff;
+    color: #fff;
+    font-size: 20px;
+    font-family: exo2-Medium;
+    border: 2px solid;
+    padding: 7px 45px;
+    text-decoration: none;
+    opacity:0;
+    webkit-transition: all .4s ease-in;
+    -moz-transition: all .4s ease-in;
+    -o-transition: all .4s ease-in;
+    -ms-transition: all .4s ease-in;
+    transition: all .4s ease-in;
+} 
+.bt_book_now .btn_book{
+    background: #e04549 !important;
+    border-radius: 30px;
+    color: #fff !important;
+    font-size: 20px;
+    font-family: exo2-Medium;
+    padding: 9px 27px;
+    text-decoration: none;
+    webkit-transition: all .4s ease-in;
+    -moz-transition: all .4s ease-in;
+    -o-transition: all .4s ease-in;
+    -ms-transition: all .4s ease-in;
+    transition: all .4s ease-in;
+}
+.bt_book_now .btn_book:hover{
+    background: #e60006 !important;
+    color: #fff !important;
+}
+.bt_booking .view{
+    background: #000;
+}
+.bt_booking .view img{
+    width: 100%;
+    height: auto;
+    border: none;
+    opacity: 1;
+    webkit-transition: all .4s ease-in;
+    -moz-transition: all .4s ease-in;
+    -o-transition: all .4s ease-in;
+    -ms-transition: all .4s ease-in;
+    transition: all .4s ease-in;
+}
+.bt_booking .view:hover img{
+    opacity: 0.4;
+}
+
+.bt_booking:hover  .bt_detail .btn_detail{
+    opacity:1;
+}
+.item_product{
+    margin: 0px;
+    background-color: #fff;
+    background: -webkit-gradient(radial, center center, 0, center center, 460, from(#1a82f7), to(#2F2727));
+    background: -webkit-radial-gradient(circle, #fff, #efefef);
+    background: -moz-radial-gradient(circle, #fff, #efefef);
+    background: -ms-radial-gradient(circle, #fff, #efefef);
+}
+.item_product #savings{
+    display:none; 
+} 
+.item_product input[type="submit"]{
+    border-radius: 0px;
+    background: transparent;
+    text-align: center;
+    border:none;
+    height: 50px;
+}
+.item_product input[type="submit"]:hover{
+    border-radius: 1px solid #e60006;
+    background: #e60006;
+    text-align: center;
+} 
+.item_product .form-date, .item_product .form-Adult {
+    margin-right: 6%;
+} 
+.item_product .form-Adult, .item_product .form-Child {
+    width: 47%;
+    float: left;  
+}
+.item_product .form-date, .item_product .form-time, .item_product .form-Adult, .item_product .form-Child {
+    width: 47%;
+    float: left;
+} 
+.item_product .form-Adult{
+    margin-right: 17px;
+}
+.item_product #als_date{
+    width: 100%;
+}
+#gform_2 #gform_submit_button_2:hover {
+    background-color: #e60006;
+}
+#ui-datepicker-div{
+    background: #fff;
+}
+#footer .container{
+    width: 100%;
+    padding:0px 50px;
+}
+@media only screen and (max-width:989px) {
+    #mm_list_tour_red{
+        width: 70%;
+        display: block !important;
+    }
+    #mm_list_tour_red .col-md-4{margin-top: 30px;}
+    #mm_list_tour_red .title_tours {padding-bottom: 10px;}
+    #footer .el_after_av_one_half .textwidget div:last-child strong {
+        position: relative !important;
+        top: 0.1em !important;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    #mm_list_tour_red{
+        width: 100%;
+    }
+    #mm_list_tour_red .col-md-4{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    #mm_list_tour_red #gform_wrapper_2 #gform_2 div.ginput_complex.ginput_container.gf_name_has_2 span {
+        width: 100%;
+        padding-right: 0px;
+    }
+    #mm_list_tour_red #gform_wrapper_2 #gform_2 div.ginput_complex.ginput_container.gf_name_has_2 span.name_first{
+        margin-bottom: 15px;
+    }
+}

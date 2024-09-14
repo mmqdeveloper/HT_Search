@@ -1,0 +1,11 @@
+diff a/module/assets/css/module.css b/module/assets/css/module.css	(rejected hunks)
+@@ -346,3 +346,8 @@
+ #top .av-woo-purchase-button .hr-inner .hr-inner-style{
+     border-color: #ffffff;
+ }
++
++
++body.single-product#top #booking-box .av-woo-purchase-button p.book-title{
++    color: #fff !important;
++}
+\ No newline at end of file

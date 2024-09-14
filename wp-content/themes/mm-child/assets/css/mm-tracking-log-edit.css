@@ -1,0 +1,116 @@
+#toplevel_page_mm_view_detail_log_edit_theme_options,
+#toplevel_page_mm_view_detail_log_edit,
+#toplevel_page_mm-tracking-view-log-theme-options {
+    display: none !important;
+}
+
+.toplevel_page_mm_view_detail_log_edit .notice,
+.toplevel_page_mm_view_detail_log_edit_theme_options .notice,
+.toplevel_page_mm-tracking-view-log-theme-options .notice {
+    display: none;
+}
+.toplevel_page_mm_view_detail_log_edit table,
+.toplevel_page_mm_view_detail_log_edit_theme_options table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.toplevel_page_mm_view_detail_log_edit th, .toplevel_page_mm_view_detail_log_edit td,
+.toplevel_page_mm_view_detail_log_edit_theme_options th, .toplevel_page_mm_view_detail_log_edit_theme_options td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+.toplevel_page_mm_view_detail_log_edit th,
+.toplevel_page_mm_view_detail_log_edit_theme_options th {
+    background-color: #f2f2f2;
+}
+.toplevel_page_mm_view_detail_log_edit tr:nth-child(even),
+.toplevel_page_mm_view_detail_log_edit_theme_options tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.mm-tracking-edit-log-popup-note-wrap {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+}
+.mm-tracking-edit-log-popup-note-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.6;
+}
+#mm-tracking-edit-log-popup-note-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 40px 20px 20px;
+    border-radius: 10px;
+}
+#mm-tracking-edit-log-popup-note-form label {
+    display: block;
+}
+#mm-tracking-edit-log-popup-note {
+    display: block;
+    width: 400px;
+    height: 150px;
+    margin: 10px 0;
+}
+#mm-tracking-edit-log-popup-note-form [type="submit"] {
+    margin-left: auto;
+}
+#mm-tracking-edit-log-popup-note-skip {
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 10px;
+}
+#mm-tracking-edit-log-notification {
+    margin-top: 10px;
+}
+.mm-tracking-edit-log-btn-close {
+    position: absolute;
+    border-radius: 50% !important;
+    top: 10px;
+    right: 10px;
+}
+.mm-tracking-log-notification-loading {
+    width: 15px;
+    height: 15px;
+    border: 2px solid #1d2327;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: mmTrackingLogRotation 1s linear infinite;
+}
+@keyframes mmTrackingLogRotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#woocommerce-product-data .hndle label {
+    display: inline-block;
+}
+
+.wp-admin.wc-wp-version-gte-55 #woocommerce-product-data .hndle {
+    display: grid;
+    grid-template-columns: 95px auto;
+    align-items: start;
+}
+
+.wp-admin.wc-wp-version-gte-55 #woocommerce-product-data .hndle .type_box {
+    display: flex;
+    row-gap: 5px;
+    flex-wrap: wrap;
+}

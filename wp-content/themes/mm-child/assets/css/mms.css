@@ -1,0 +1,159 @@
+#mms_search_cate_silde {
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-height: 64px;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    column-gap: 28px;
+}
+#mms_search_cate_silde .category h3{
+    font-size: 16px;
+    font-weight: 400;
+    display: ruby-text;
+}
+#mms_search_cate_silde .category img {
+    height:35px;
+    width:35px;
+}
+#mms_search_loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: grid;
+    align-items: center;    
+    justify-content: center;
+}
+#top .search_dates input[type="text"] ,
+.search_dates input[type="text"] {
+    display:none;
+}
+.mms_row_search {
+    display: flex;  
+    width: 100%;
+}
+.search_keyword {
+    width: 100% ;
+}
+.mms_row_search .search_dates_content{
+    display: flex;
+    align-items: center;
+    margin-left: 16px;
+    padding: 10px 20px;
+    border: 1px solid #BABABA;
+    border-radius: 50px;
+    width: 320px;
+    cursor: pointer;
+    position: relative;
+    max-width: max-content;
+}
+#mms_product_search {
+    display: flex;
+    align-items: center;
+    border: 1px solid #BABABA;
+    padding: 10px 12px 10px 20px;
+    border-radius: 50px;
+}
+#mms_product_search #mms_search {
+    margin-bottom: 0;
+    border: none;
+    box-shadow: none;
+}
+#mms_product_search button {
+    border-radius: 40px;
+    background-color: #ff9903;
+    width: max-content;
+    color: #fff;
+    padding: 10px 30px;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 200ms linear;
+    border: none;
+    opacity: 1;
+}
+#mms_product_search button:disabled {
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+#mms_datepicker_widget {
+    position: absolute;
+    top: calc(100% + 15px);
+    right: 0;
+    background-color: #fff;
+    z-index: 99999;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #0000004f;
+    width: 500px;
+}
+#mms_load_more {
+    margin: 50px auto 0;
+    max-width: 200px;
+    width: max-content;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 10px 30px;
+    background-color: var(--mmtf-primary-color, #ff9903);
+    color: #fff;
+    border-radius: 100px;
+    border: 1px solid var(--mmtf-primary-color, #ff9903);
+    cursor: pointer;
+    user-select: none;
+    transition: all 300ms ease;
+    opacity: 1;
+}
+#mms_load_more.loading {
+    background-color: inherit;
+    border: 0;
+}
+#mms_load_more.loading .waveform {
+    --uib-size: 40px;
+    --uib-speed: 1s;
+    --uib-color: #ff9903;
+    --uib-line-weight: 3.5px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: var(--uib-size);
+    height: calc(var(--uib-size)* 0.9);
+}
+#mms_load_more .waveform__bar {
+    width: var(--uib-line-weight);
+    height: 100%;
+    background-color: var(--uib-color)
+}
+
+#mms_load_more .waveform__bar:nth-child(1) {
+    animation: mms_grow var(--uib-speed) ease-in-out calc(var(--uib-speed) * -0.45) infinite
+}
+
+#mms_load_more .waveform__bar:nth-child(2) {
+    animation: mms_grow var(--uib-speed) ease-in-out calc(var(--uib-speed) * -0.3) infinite
+}
+
+#mms_load_more .waveform__bar:nth-child(3) {
+    animation: mms_grow var(--uib-speed) ease-in-out calc(var(--uib-speed) * -0.15) infinite
+}
+
+#mms_load_more .waveform__bar:nth-child(4) {
+    animation: mms_grow var(--uib-speed) ease-in-out infinite
+}
+
+@keyframes mms_grow {
+    0%,100% {
+        transform: scaleY(.3)
+    }
+
+    50% {
+        transform: scaleY(1)
+    }
+}
