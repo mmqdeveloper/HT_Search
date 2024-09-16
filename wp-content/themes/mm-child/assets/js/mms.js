@@ -9,7 +9,7 @@ jQuery(document).ready(function ($) {
   var mms_cate_tab = $("#mms_search_cate_silde");
   var mms_history_item = $("#mms_history .mms-item-history");
   var mms_submit = $('#mms_product_search button[type="submit"]');
-
+  var $button = $("#mms_load_more");
   function updateOrAddParamsToURL(url, params) {
     let newURL = new URL(url);
     for (let key in params) {
@@ -20,6 +20,42 @@ jQuery(document).ready(function ($) {
       }
     }
     return newURL.toString();
+  }
+ 
+  function mms_search_fn(s, c){
+    console.log('ajax search');
+    $.ajax({
+      url: mmsAjax.ajaxurl,
+      type: "GET",
+      data: {
+        action: "mms_ajax_s",
+        category: c,
+        mms_search: s,
+      },
+      beforeSend: function () {
+        $("#mms_search_loading").show();
+      },
+      success: function (response) {
+        mms_suggestions.hide();
+        if (response.products) {
+          mms_results_data.html(response.products);
+        }
+        if (response.categories) {
+          mms_cate_tab.html(response.categories);
+        }
+        if (response.total_pages) {
+          $('#mms_search_results_count').html(response.total_pages + ' activities found');
+        }
+        console.log("Search Button Clicked");
+        $button.data("page", 1);
+      },
+      complete: function () {
+        $("#mms_search_loading").hide();
+      },
+      error: function (xhr, status, error) {
+        console.error("AJAX error:", status, error);
+      },
+    });
   }
 
   mms_searchInput.on("focus input blur", function (e) {
@@ -79,53 +115,21 @@ jQuery(document).ready(function ($) {
   // Ajax Search Submit
   mms_searchb.on("submit", function (e) {
     e.preventDefault();
-    var $button = $("#mms_load_more");
     var query = mms_searchInput.val();
     var category = new URLSearchParams(window.location.search).get("category");
-    console.log(category);
     var currentUrl = window.location.pathname;
     if (!currentUrl.includes("/s/")) {
       var redirectUrl = "/s/?mms_search=" + encodeURIComponent(query);
       window.location.href = redirectUrl;
     } else {
       mms_suggestions.hide();
-      var data = $(this).serialize() + "&action=mms_ajax_s";
-      if (category) {
-        data += "&category=" + encodeURIComponent(category);
-      }
       var newUrl = updateOrAddParamsToURL(window.location.href, {
         mms_search: query,
       });
-
       if (window.history && window.history.pushState) {
         history.pushState({}, "", newUrl);
       }
-
-      $.ajax({
-        url: mmsAjax.ajaxurl,
-        type: "GET",
-        data: data,
-        beforeSend: function () {
-          $("#mms_search_loading").show();
-        },
-        success: function (response) {
-          mms_suggestions.hide();
-          if (response.products) {
-            mms_results_data.html(response.products);
-          }
-          if (response.categories) {
-            mms_cate_tab.html(response.categories);
-          }
-          console.log("Search Button Clicked");
-          $button.data("page", 1);
-        },
-        complete: function () {
-          $("#mms_search_loading").hide();
-        },
-        error: function (xhr, status, error) {
-          console.error("AJAX error:", status, error);
-        },
-      });
+      mms_search_fn(query, category);
     }
   });
 
@@ -145,7 +149,6 @@ jQuery(document).ready(function ($) {
   // Ajax Search Category
   mms_cate_tab.on("click", ".category", function () {
     var category = $(this).data("category");
-    var $button = $("#mms_load_more");
     var currentPage = $button.data("page");
     var nextPage = currentPage + 1;
     
@@ -162,30 +165,7 @@ jQuery(document).ready(function ($) {
     } else {
       console.error("history.pushState is not supported");
     }
-
-    $.ajax({
-      url: mmsAjax.ajaxurl,
-      type: "GET",
-      data: {
-        action: "mms_ajax_search_by_category",
-        category: category,
-      },
-      beforeSend: function () {
-        $("#mms_search_loading").show();
-      },
-      success: function (response) {
-        mms_results_data.html(response);
-        $button.data("page", nextPage);
-        console.log("Search Category");
-        $button.data("page", 1);
-      },
-      complete: function () {
-        $("#mms_search_loading").hide();
-      },
-      error: function (xhr, status, error) {
-        console.error("AJAX Error:", error);
-      },
-    });
+    mms_search_fn(search_query, category);
   });
 
   function resetSuggestionClickHandler() {

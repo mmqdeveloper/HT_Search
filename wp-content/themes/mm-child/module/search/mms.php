@@ -28,7 +28,7 @@ if (!function_exists('mms_product_search_form')) {
                             </div>
                             <ul>
                                 <?php foreach ($search_history as $history) : ?>
-                                    <li class="mms-item-history" data-history="<?php echo esc_html($history) ?>">
+                                    <li class="mms-item-history" data-history="<?php echo esc_html($history) ?>"> 
                                         <?php echo esc_html($history); ?>
                                     </li>
                                 <?php endforeach; ?>
@@ -64,7 +64,7 @@ if (!function_exists('mms_ajax_s')) {
         $search_query = isset($_GET['mms_search']) ? sanitize_text_field($_GET['mms_search']) : '';
         $search_category = isset($_GET['category']) ? sanitize_text_field($_GET['category']) : '';
         $paged = isset($_GET['paged']) ? intval($_GET['paged']) : 1;
-        $posts_per_page = 8;
+        $limit = 8;
 
         $ip_address = $_SERVER['REMOTE_ADDR'];
         $query = "SELECT * FROM wp_product_search_view WHERE 1=1";
@@ -93,51 +93,52 @@ if (!function_exists('mms_ajax_s')) {
             $query .= $wpdb->prepare(" AND product_categories LIKE %s", '%' . $wpdb->esc_like($search_category) . '%');
         }
 
-        $total_query = "SELECT COUNT(*) FROM wp_product_search_view WHERE 1=1";
-        $total_results = $wpdb->get_var($total_query);
-        $total_pages = ceil($total_results / $posts_per_page);
-
-        $query .= $wpdb->prepare(" LIMIT %d, %d", ($paged - 1) * $posts_per_page, $posts_per_page);
+        $query .= $wpdb->prepare(" LIMIT %d, %d", ($paged - 1) * $limit, $limit);
         $results = $wpdb->get_results($query);
-
+        $total_pages =  count($results);
         $response = [
             'products' => '',
             'categories' => '',
             'total_pages' => $total_pages
         ];
 
+
+        $categories = [];
+        $products_html = '';
         if ($results) {
-            $categories = [];
-            $products_html = '';
 
             foreach ($results as $product) {
-                $products_html .= '<div class="product-result" style="width: 25%;">' .
-                    '<a href="' . esc_url($product->product_url) . '">' .
-                    '<img src="' . esc_url($product->product_image) . '" alt="' . esc_html($product->product_title) . '">' .
-                    '<h3>' . esc_html($product->product_title) . '</h3>' .
-                    '<p>Pickup: ' . esc_html($product->product_pickup) . '</p>' .
-                    '<p>Duration: ' . esc_html($product->product_duration . ' ' . $product->product_duration_unit) . '</p>' .
-                    '<p>Category: ' . esc_html($product->product_categories_pimary) . '</p>' .
-                    '<b class="product-cat-primary">Price: ' . esc_html($product->product_price) . '</b>' .
+                $products_html .= '<div class="product-result">' .
+                    '<a class="mmsp_result_wrapper" href="' . esc_url($product->product_url) . '">' .
+                    '<div class="mmsp_image"><img class="image" src="' . esc_url($product->product_image) . '" alt="' . esc_html($product->product_title) . '"></div>' .
+                    '<h3 class="mmsp_title">' . esc_html($product->product_title) . '</h3>' .
+                    '<div class="mmsp_piclup_dura"> <div class="mmsp_pickup" >' . esc_html($product->product_pickup) . '</div>' .
+                    '<div class="mmsp_duration" >' . esc_html($product->product_duration . ' ' . $product->product_duration_unit) . '</div></div>' .
+                    '<div class="mmsp_price_rating"> <div class="mmsp_price"><span class="mmsp_price_label">from</span>$' . number_format($product->product_price) . '</div>' .
+                    '<div class="mmsp_rating"><span class="dashicons dashicons-star-filled"></span>5.0</div></div>' .
+                    '<div class="mmsp_cate_pimary">' . esc_html($product->product_categories_pimary) . '</div>' .
                     '</a>' .
                     '</div>';
-                $categories_list = explode(',', $product->product_categories);
-                foreach ($categories_list as $category) {
-                    $category = trim(esc_html($category));
-                    if (!in_array($category, $categories)) {
-                        $categories[] = $category;
-                        $image_file = $image_path_file . $category . '.svg';
-                        $image_url = $image_path_url . $category . '.svg';
-                        if (file_exists($image_file)) {
-                            $response['categories'] .= '<div class="category" data-category="' . esc_attr($category) . '">';
-                            $response['categories'] .= '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($category) . '">';
-                            $response['categories'] .= '<h3>' . esc_html($category) . '</h3>';
-                            $response['categories'] .= '</div>';
-                        } else {
-                            $response['categories'] .= '<div class="category" data-category="' . esc_attr($category) . '">';
-                            $response['categories'] .= '<img src="' . esc_url($image_path_url . 'default.svg') . '" alt="' . esc_attr($category) . '">';
-                            $response['categories'] .= '<h3>' . esc_html($category) . '</h3>';
-                            $response['categories'] .= '</div>';
+                if(!empty($product->product_categories)){
+                    $categories_list = explode(',', $product->product_categories);
+                    foreach ($categories_list as $category) {
+                        $category = trim(esc_html($category));
+                        $formatted_category = strtolower(str_replace(' ', '-', trim($category)));
+                        if (!in_array($formatted_category, $categories)) {
+                            $categories[] = $formatted_category;
+                            $image_file = $image_path_file . $formatted_category . '.svg';
+                            $image_url = $image_path_url . $formatted_category . '.svg';
+                            if (file_exists($image_file)) {
+                                $response['categories'] .= '<div class="category" data-category="' . esc_attr($category) . '">';
+                                $response['categories'] .= '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($category) . '">';
+                                $response['categories'] .= '<h3>' . esc_html($category) . '</h3>';
+                                $response['categories'] .= '</div>';
+                            } else {
+                                $response['categories'] .= '<div class="category" data-category="' . esc_attr($category) . '">';
+                                $response['categories'] .= '<img src="' . esc_url($image_path_url . 'default.svg') . '" alt="' . esc_attr($category) . '">';
+                                $response['categories'] .= '<h3>' . esc_html($category) . '</h3>';
+                                $response['categories'] .= '</div>';
+                            }
                         }
                     }
                 }
@@ -254,7 +255,7 @@ if (!function_exists('mms_ajax_search_by_category')) {
         $search_query = isset($_GET['mms_search']) ? sanitize_text_field($_GET['mms_search']) : '';
         $search_category = isset($_GET['category']) ? sanitize_text_field($_GET['category']) : '';
         $paged = isset($_GET['paged']) ? intval($_GET['paged']) : 1;
-        $posts_per_page = 8;
+        $limit = 8;
 
         $ip_address = $_SERVER['REMOTE_ADDR'];
         $query = "SELECT * FROM wp_product_search_view WHERE 1=1";
@@ -264,8 +265,8 @@ if (!function_exists('mms_ajax_search_by_category')) {
 
             $query = $wpdb->prepare(
                 "SELECT * FROM wp_product_search_view 
-                 WHERE product_categories LIKE %s 
-                 AND product_title LIKE %s",
+                WHERE product_categories LIKE %s 
+                AND product_title LIKE %s",
                 $like_category,
                 $like_query
             );
@@ -274,8 +275,8 @@ if (!function_exists('mms_ajax_search_by_category')) {
             $like_category = '%' . $wpdb->esc_like($search_category) . '%';
             $query = $wpdb->prepare(
                 "SELECT * FROM wp_product_search_view 
-                 WHERE product_categories LIKE %s 
-                 OR product_title LIKE %s",
+                WHERE product_categories LIKE %s 
+                OR product_title LIKE %s",
                 $like_category,
                 $like_query
             );
@@ -285,25 +286,14 @@ if (!function_exists('mms_ajax_search_by_category')) {
 
         $total_query = "SELECT COUNT(*) FROM wp_product_search_view WHERE 1=1";
         $total_results = $wpdb->get_var($total_query);
-        $total_pages = ceil($total_results / $posts_per_page);
+        $total_pages = ceil($total_results / $limit);
 
-        $query .= $wpdb->prepare(" LIMIT %d, %d", ($paged - 1) * $posts_per_page, $posts_per_page);
+        $query .= $wpdb->prepare(" LIMIT %d, %d", ($paged - 1) * $limit, $limit);
         $results = $wpdb->get_results($query);
 
         if ($results) {
             foreach ($results as $product) {
-        ?>
-                <div class="product-result" style="width: 25%;">
-                    <a href="<?php echo esc_url($product->product_url); ?>">
-                        <img src="<?php echo esc_url($product->product_image); ?>" alt="<?php echo esc_html($product->product_title); ?>">
-                        <h3><?php echo esc_html($product->product_title); ?></h3>
-                        <p>Pickup: <?php echo esc_html($product->product_pickup); ?></p>
-                        <p>Duration: <?php echo esc_html($product->product_duration . ' ' . $product->product_duration_unit); ?></p>
-                        <p>Category: <?php echo esc_html($product->product_categories_pimary); ?></p>
-                        <p>Price: <?php echo esc_html($product->product_price); ?></p>
-                    </a>
-                </div>
-            <?php
+                include( get_stylesheet_directory() . '/module/search/templates/mms-product.php' );
             }
         } else {
             echo '<p>No products found. hili</p>';
@@ -328,18 +318,7 @@ if (!function_exists('mms_ajax_search_by_suggestion')) {
 
         if ($results) {
             foreach ($results as $product) {
-            ?>
-                <div class="product-result" style="width: 25%;">
-                    <a href="<?php echo esc_url($product->product_url); ?>">
-                        <img src="<?php echo esc_url($product->product_image); ?>" alt="<?php echo esc_html($product->product_title); ?>">
-                        <h3><?php echo esc_html($product->product_title); ?></h3>
-                        <p>Pickup: <?php echo esc_html($product->product_pickup); ?></p>
-                        <p>Duration: <?php echo esc_html($product->product_duration . ' ' . $product->product_duration_unit); ?></p>
-                        <p>Category: <?php echo esc_html($product->product_categories_pimary); ?></p>
-                        <p>Price: <?php echo esc_html($product->product_price); ?></p>
-                    </a>
-                </div>
-            <?php
+                include( get_stylesheet_directory() . '/module/search/templates/mms-product.php' );
             }
         } else {
             echo '<p>No products found. hili</p>';
@@ -358,7 +337,7 @@ if (!function_exists('mms_ajax_search_by_history')) {
         $history = isset($_GET['history']) ? sanitize_text_field($_GET['history']) : '';
         $search_category = isset($_GET['category']) ? sanitize_text_field($_GET['category']) : '';
         $paged = isset($_GET['paged']) ? intval($_GET['paged']) : 1;
-        $posts_per_page = 8;
+        $limit = 8;
 
         $ip_address = $_SERVER['REMOTE_ADDR'];
         $query = "SELECT * FROM wp_product_search_view WHERE 1=1";
@@ -389,25 +368,14 @@ if (!function_exists('mms_ajax_search_by_history')) {
 
         $total_query = "SELECT COUNT(*) FROM wp_product_search_view WHERE 1=1";
         $total_results = $wpdb->get_var($total_query);
-        $total_pages = ceil($total_results / $posts_per_page);
+        $total_pages = ceil($total_results / $limit);
 
-        $query .= $wpdb->prepare(" LIMIT %d, %d", ($paged - 1) * $posts_per_page, $posts_per_page);
+        $query .= $wpdb->prepare(" LIMIT %d, %d", ($paged - 1) * $limit, $limit);
         $results = $wpdb->get_results($query);
 
         if ($results) {
             foreach ($results as $product) {
-            ?>
-                <div class="product-result" style="width: 25%;">
-                    <a href="<?php echo esc_url($product->product_url); ?>">
-                        <img src="<?php echo esc_url($product->product_image); ?>" alt="<?php echo esc_html($product->product_title); ?>">
-                        <h3><?php echo esc_html($product->product_title); ?></h3>
-                        <p>Pickup: <?php echo esc_html($product->product_pickup); ?></p>
-                        <p>Duration: <?php echo esc_html($product->product_duration . ' ' . $product->product_duration_unit); ?></p>
-                        <p>Category: <?php echo esc_html($product->product_categories_pimary); ?></p>
-                        <p>Price: <?php echo esc_html($product->product_price); ?></p>
-                    </a>
-                </div>
-            <?php
+                include( get_stylesheet_directory() . '/module/search/templates/mms-product.php' );
             }
         } else {
             echo '<p>No products found. hili</p>';
@@ -475,18 +443,7 @@ if (!function_exists('mms_load_more_products')) {
 
         if ($results) {
             foreach ($results as $product) {
-            ?>
-                <div class="product-result" style="width: 25%;">
-                    <img src="<?php echo esc_url($product->product_image); ?>" alt="<?php echo esc_html($product->product_title); ?>">
-                    <a href="<?php echo esc_url($product->product_url); ?>">
-                        <h3><?php echo esc_html($product->product_title); ?></h3>
-                        <p>Pickup: <?php echo esc_html($product->product_pickup); ?></p>
-                        <p>Duration: <?php echo esc_html($product->product_duration . ' ' . $product->product_duration_unit); ?></p>
-                        <p>Price: <?php echo esc_html($product->product_price); ?></p>
-                        <p class="product-cat-primary"><?php echo esc_html($product->product_categories_pimary); ?></p>
-                    </a>
-                </div>
-            <?php
+                include( get_stylesheet_directory() . '/module/search/templates/mms-product.php' );
             }
         } else {
             echo '';
