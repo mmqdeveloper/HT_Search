@@ -90,15 +90,15 @@ get_header();
             <?php
                 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
                 $search_query = isset($_GET['mms_search']) ? sanitize_text_field($_GET['mms_search']) : '';
-                $category = isset($_GET['category']) ? sanitize_text_field($_GET['category']) : '';
+                $search_category = isset($_GET['category']) ? sanitize_text_field($_GET['category']) : '';
                 $limit = 8;
                 $offset = ($page - 1) * $limit;
-                $query = "SELECT * FROM wp_product_search_view WHERE 1=1";
-                if(!empty($search_query) && !empty($category)){
+                $query = "SELECT SQL_CALC_FOUND_ROWS * FROM wp_product_search_view WHERE 1=1";
+                if(!empty($search_query) && !empty($search_category)){
                     $like_query = '%' . $wpdb->esc_like($search_query) . '%';
-                    $like_category = '%' . $wpdb->esc_like($category) . '%'; 
+                    $like_category = '%' . $wpdb->esc_like($search_category) . '%'; 
                     $query = $wpdb->prepare(
-                        "SELECT * FROM wp_product_search_view 
+                        "SELECT SQL_CALC_FOUND_ROWS * FROM wp_product_search_view 
                             WHERE product_categories LIKE %s 
                             AND product_title LIKE %s",
                         $like_category,
@@ -106,22 +106,29 @@ get_header();
                     );
                 } elseif ($search_query) {
                     $like_query = '%' . $wpdb->esc_like($search_query) . '%';
-                    $like_category = '%' . $wpdb->esc_like($category) . '%'; 
+                    $like_category = '%' . $wpdb->esc_like($search_category) . '%'; 
                     $query = $wpdb->prepare(
-                        "SELECT * FROM wp_product_search_view 
+                        "SELECT SQL_CALC_FOUND_ROWS * FROM wp_product_search_view 
                             WHERE product_categories LIKE %s 
                             OR product_title LIKE %s",
                         $like_category,
                         $like_query
                     );
-                } elseif ($category) {
-                    $query .= $wpdb->prepare(" AND product_categories LIKE %s", '%' . $wpdb->esc_like($category) . '%');
+                } elseif ($search_category) {
+                    $like_category = '%' . $wpdb->esc_like($search_category) . '%'; 
+                    $query = $wpdb->prepare(
+                        "SELECT SQL_CALC_FOUND_ROWS * FROM wp_product_search_view 
+                            WHERE product_categories LIKE %s",
+                        $like_category
+                    );
                 }
+
                 $query .= $wpdb->prepare(" LIMIT %d OFFSET %d", $limit, $offset);
                 $results = $wpdb->get_results($query);
-                $total_pages =  count($results);
+                $total_query = "SELECT FOUND_ROWS()";
+                $total_results = $wpdb->get_var($total_query);
                 ?>
-                 <div id="mms_search_results_count"> <?php echo $total_pages . ' activities found' ?></div>
+                 <div id="mms_search_results_count"> <?php echo $total_results . ' activities found' ?></div>
                  <div id="mms_search_results" style="display: grid;grid-template-columns: repeat(4, 1fr);">
                     <?php
                     if ($results) {
@@ -133,7 +140,7 @@ get_header();
                 </div>
                <?php
             ?>
-            <div id="mms_load_more" data-page="<?php echo $page; ?>">Show more</div>
+            <div id="mms_load_more" <?php if($total_results <= $limit){ echo 'hidden'; } ?> data-page="<?php echo $page; ?>">Show more</div>
         </div>
 
     </div>

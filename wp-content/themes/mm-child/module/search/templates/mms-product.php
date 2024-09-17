@@ -11,7 +11,7 @@ if (!empty($product)) {
             <?php  if(!empty($product->product_pickup)) { ?>
                 <div class="mmsp_pickup"><?php echo esc_html($product->product_pickup); ?></div>
             <?php } ?>
-            <?php  if(!empty($product->product_pickup)) { ?>
+            <?php  if(!empty($product->product_duration)) { ?>
                 <div class="mmsp_duration"><?php echo esc_html($product->product_duration . ' ' . $product->product_duration_unit); ?></div>
             <?php } ?>
             </div>

@@ -66,14 +66,13 @@ if (!function_exists('mms_ajax_s')) {
         $paged = isset($_GET['paged']) ? intval($_GET['paged']) : 1;
         $limit = 8;
 
-        $ip_address = $_SERVER['REMOTE_ADDR'];
-        $query = "SELECT * FROM wp_product_search_view WHERE 1=1";
+        $query = "SELECT SQL_CALC_FOUND_ROWS * FROM wp_product_search_view WHERE 1=1";
         if (!empty($search_query) && !empty($search_category)) {
             $like_query = '%' . $wpdb->esc_like($search_query) . '%';
             $like_category = '%' . $wpdb->esc_like($search_category) . '%';
 
             $query = $wpdb->prepare(
-                "SELECT * FROM wp_product_search_view 
+                "SELECT SQL_CALC_FOUND_ROWS * FROM wp_product_search_view 
                     WHERE product_categories LIKE %s 
                     AND product_title LIKE %s",
                 $like_category,
@@ -83,23 +82,32 @@ if (!function_exists('mms_ajax_s')) {
             $like_query = '%' . $wpdb->esc_like($search_query) . '%';
             $like_category = '%' . $wpdb->esc_like($search_category) . '%';
             $query = $wpdb->prepare(
-                "SELECT * FROM wp_product_search_view 
+                "SELECT SQL_CALC_FOUND_ROWS * FROM wp_product_search_view 
                     WHERE product_categories LIKE %s 
                     OR product_title LIKE %s",
                 $like_category,
                 $like_query
             );
         } elseif ($search_category) {
-            $query .= $wpdb->prepare(" AND product_categories LIKE %s", '%' . $wpdb->esc_like($search_category) . '%');
+            $like_category = '%' . $wpdb->esc_like($search_category) . '%'; 
+            $query = $wpdb->prepare(
+                "SELECT SQL_CALC_FOUND_ROWS * FROM wp_product_search_view 
+                    WHERE product_categories LIKE %s",
+                $like_category
+            );
         }
 
         $query .= $wpdb->prepare(" LIMIT %d, %d", ($paged - 1) * $limit, $limit);
         $results = $wpdb->get_results($query);
-        $total_pages =  count($results);
+
+        $total_query = "SELECT FOUND_ROWS()";
+        $total_results = $wpdb->get_var($total_query);
+
         $response = [
             'products' => '',
             'categories' => '',
-            'total_pages' => $total_pages
+            'total_results' => $total_results,
+            'hide_button' => count($results) < $limit,
         ];
 
 
@@ -108,17 +116,9 @@ if (!function_exists('mms_ajax_s')) {
         if ($results) {
 
             foreach ($results as $product) {
-                $products_html .= '<div class="product-result">' .
-                    '<a class="mmsp_result_wrapper" href="' . esc_url($product->product_url) . '">' .
-                    '<div class="mmsp_image"><img class="image" src="' . esc_url($product->product_image) . '" alt="' . esc_html($product->product_title) . '"></div>' .
-                    '<h3 class="mmsp_title">' . esc_html($product->product_title) . '</h3>' .
-                    '<div class="mmsp_piclup_dura"> <div class="mmsp_pickup" >' . esc_html($product->product_pickup) . '</div>' .
-                    '<div class="mmsp_duration" >' . esc_html($product->product_duration . ' ' . $product->product_duration_unit) . '</div></div>' .
-                    '<div class="mmsp_price_rating"> <div class="mmsp_price"><span class="mmsp_price_label">from</span>$' . number_format($product->product_price) . '</div>' .
-                    '<div class="mmsp_rating"><span class="dashicons dashicons-star-filled"></span>5.0</div></div>' .
-                    '<div class="mmsp_cate_pimary">' . esc_html($product->product_categories_pimary) . '</div>' .
-                    '</a>' .
-                    '</div>';
+                ob_start();
+                include( get_stylesheet_directory() . '/module/search/templates/mms-product.php' );
+                $products_html .= ob_get_clean();
                 if(!empty($product->product_categories)){
                     $categories_list = explode(',', $product->product_categories);
                     foreach ($categories_list as $category) {
@@ -145,7 +145,7 @@ if (!function_exists('mms_ajax_s')) {
             }
             $response['products'] = $products_html;
         } else {
-            $response['products'] = '<p>No products found.</p>';
+            $response['products'] = "<p class='product_notf'>Sorry, we couldn't find any experiences or activities</p>";
         }
         wp_send_json($response);
     }
@@ -296,7 +296,7 @@ if (!function_exists('mms_ajax_search_by_category')) {
                 include( get_stylesheet_directory() . '/module/search/templates/mms-product.php' );
             }
         } else {
-            echo '<p>No products found. hili</p>';
+            echo "<p class='product_notf'>Sorry, we couldn't find any experiences or activities</p>";
         }
 
         wp_die();
@@ -321,7 +321,7 @@ if (!function_exists('mms_ajax_search_by_suggestion')) {
                 include( get_stylesheet_directory() . '/module/search/templates/mms-product.php' );
             }
         } else {
-            echo '<p>No products found. hili</p>';
+            echo "<p class='product_notf'>Sorry, we couldn't find any experiences or activities</p>";
         }
 
         wp_die();
@@ -378,7 +378,7 @@ if (!function_exists('mms_ajax_search_by_history')) {
                 include( get_stylesheet_directory() . '/module/search/templates/mms-product.php' );
             }
         } else {
-            echo '<p>No products found. hili</p>';
+            echo "<p class='product_notf'>Sorry, we couldn't find any experiences or activities</p>";
         }
 
         wp_die();
@@ -440,15 +440,17 @@ if (!function_exists('mms_load_more_products')) {
             );
         }
         $results = $wpdb->get_results($query);
-
+        $response = new stdClass();
+        $response->products = '';
         if ($results) {
             foreach ($results as $product) {
+                ob_start();
                 include( get_stylesheet_directory() . '/module/search/templates/mms-product.php' );
+                $response->products .= ob_get_clean();
             }
-        } else {
-            echo '';
         }
-
+        $response->hide_button = count($results) < $limit;
+        echo json_encode($response);
         wp_die();
     }
     add_action('wp_ajax_mms_load_more_products', 'mms_load_more_products');

@@ -43,8 +43,11 @@ jQuery(document).ready(function ($) {
         if (response.categories) {
           mms_cate_tab.html(response.categories);
         }
-        if (response.total_pages) {
-          $('#mms_search_results_count').html(response.total_pages + ' activities found');
+        if (response.total_results) {
+          $('#mms_search_results_count').html(response.total_results + ' activities found');
+        }
+        if (data.hide_button) {
+          $button.hide();
         }
         console.log("Search Button Clicked");
         $button.data("page", 1);
@@ -208,50 +211,22 @@ jQuery(document).ready(function ($) {
   // Ajax Search History
   mms_history_item.on("click", function () {
     var historyValue = $(this).data("history");
-    var $button = $("#mms_load_more");
     mms_submit.prop("disabled", false);
-    var currentPage = $button.data("page");
-    var nextPage = currentPage + 1;
     mms_searchInput.val(historyValue);
 
     var category = new URLSearchParams(window.location.search).get("category");
     console.log(category);
-
+    console.log(historyValue);
     var newUrl = updateOrAddParamsToURL(window.location.href, {
       mms_search: historyValue,
     });
 
     if (window.history && window.history.pushState) {
       history.pushState({}, "", newUrl);
-    } else {
-      console.error("history.pushState is not supported");
     }
 
-    $.ajax({
-      url: mmsAjax.ajaxurl,
-      type: "GET",
-      data: {
-        action: "mms_ajax_search_by_history",
-        history: historyValue,
-        category: category
-      },
-      beforeSend: function () {
-        mms_history.hide();
-        $("#mms_search_loading").show();
-      },
-      success: function (response) {
-        mms_results_data.html(response);
-        $button.data("page", nextPage);
-        console.log("Search by History");
-        $button.data("page", 1);
-      },
-      complete: function () {
-        $("#mms_search_loading").hide();
-      },
-      error: function (xhr, status, error) {
-        console.error("AJAX Error:", error);
-      },
-    });
+    mms_search_fn(historyValue, category);
+
   });
 
   $("#mms_load_more").on("click", function () {
@@ -265,8 +240,6 @@ jQuery(document).ready(function ($) {
     console.log(nextPage);
     var category = new URLSearchParams(window.location.search).get("category");
     var search_query = new URLSearchParams(window.location.search).get("mms_search");
-    console.log('Ajax:' + category , search_query)
-
 
     $.ajax({
       url: mmsAjax.ajaxurl,
@@ -288,12 +261,13 @@ jQuery(document).ready(function ($) {
                 `);
       },
       success: function (response) {
-        if ($.trim(response)) {
-          $("#mms_search_results").append(response);
-          $button.data("page", nextPage);
-          $button.removeClass("loading").text("Show more");
-        } else {
+        var data = JSON.parse(response);
+        mms_results_data.append(data.products);
+        if (data.hide_button) {
           $button.hide();
+        } else {
+          $button.data("page", nextPage);
+          $button.removeClass("loading").text("Show more").show();
         }
       },
       error: function (xhr, status, error) {
@@ -448,7 +422,6 @@ jQuery(document).ready(function ($) {
     if (date_from) {
       human_readable += $.datepicker.formatDate("d M", date_from);
     }
-    console.log(human_readable);
     if (date_from && date_to) {
       if (
         $.datepicker.formatDate("d M", date_from) ==
@@ -466,6 +439,7 @@ jQuery(document).ready(function ($) {
         human_readable += " - " + $.datepicker.formatDate("d M", date_to);
       }
     }
+    console.log(human_readable);
 
     $("#mms_search_datepicker_result").text(human_readable);
   }
