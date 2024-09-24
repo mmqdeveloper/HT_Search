@@ -833,7 +833,7 @@ function get_filtered_products_availability($ids) {
 
     $availability_table = $wpdb->prefix . "daily_product_availability";
 
-    // Logs\debug_log( $ids, "Filtering-get_filtered_products_availability-ids" );
+    // Logs\debug_log( $ids, "Filtering-get_filtered_products_availability-ids" );  
 
     $id_placeholders = implode(', ', array_fill(0, count($ids), '%d'));
 

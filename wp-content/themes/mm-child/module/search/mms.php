@@ -65,7 +65,8 @@ if (!function_exists('mms_ajax_s')) {
         $search_category = isset($_GET['category']) ? sanitize_text_field($_GET['category']) : '';
         $paged = isset($_GET['paged']) ? intval($_GET['paged']) : 1;
         $limit = 8;
-
+        $offset = ($paged - 1) * $limit;
+        
         $query = "SELECT SQL_CALC_FOUND_ROWS * FROM wp_product_search_view WHERE 1=1";
         if (!empty($search_query) && !empty($search_category)) {
             $like_query = '%' . $wpdb->esc_like($search_query) . '%';
@@ -73,10 +74,13 @@ if (!function_exists('mms_ajax_s')) {
 
             $query = $wpdb->prepare(
                 "SELECT SQL_CALC_FOUND_ROWS * FROM wp_product_search_view 
-                    WHERE product_categories LIKE %s 
-                    AND product_title LIKE %s",
+                WHERE product_categories LIKE %s 
+                AND product_title LIKE %s 
+                LIMIT %d OFFSET %d",
                 $like_category,
-                $like_query
+                $like_query,
+                $limit,
+                $offset
             );
         } elseif ($search_query) {
             $like_query = '%' . $wpdb->esc_like($search_query) . '%';
@@ -84,20 +88,24 @@ if (!function_exists('mms_ajax_s')) {
             $query = $wpdb->prepare(
                 "SELECT SQL_CALC_FOUND_ROWS * FROM wp_product_search_view 
                     WHERE product_categories LIKE %s 
-                    OR product_title LIKE %s",
+                    OR product_title LIKE %s
+                    LIMIT %d OFFSET %d",
                 $like_category,
-                $like_query
+                $like_query,
+                $limit,
+                $offset
             );
         } elseif ($search_category) {
             $like_category = '%' . $wpdb->esc_like($search_category) . '%'; 
             $query = $wpdb->prepare(
                 "SELECT SQL_CALC_FOUND_ROWS * FROM wp_product_search_view 
                     WHERE product_categories LIKE %s",
-                $like_category
+                $like_category,
+                $limit,
+                $offset
             );
         }
 
-        $query .= $wpdb->prepare(" LIMIT %d, %d", ($paged - 1) * $limit, $limit);
         $results = $wpdb->get_results($query);
 
         $total_query = "SELECT FOUND_ROWS()";
@@ -159,6 +167,8 @@ if (!function_exists('mms_ajax_s_suggestions')) {
         $query = isset($_POST['query']) ? sanitize_text_field($_POST['query']) : '';
         if (strlen($query) >= 1) {
             $like_query = '%' . $wpdb->esc_like($query) . '%';
+            $exact_query = $wpdb->esc_like($query);
+        
             $results = $wpdb->get_results(
                 $wpdb->prepare(
                     "SELECT DISTINCT product_id, product_title, product_categories
@@ -166,20 +176,23 @@ if (!function_exists('mms_ajax_s_suggestions')) {
                     WHERE 
                         (product_title LIKE %s)
                         OR
-                        (product_categories LIKE %s)",
+                        (product_categories = %s)
+                        LIMIT 5",
                     $like_query,
-                    $like_query
+                    $exact_query
                 )
             );
         } else {
             wp_die();
         }
         if ($results) {
+            $valid_categories = ['Maui', 'Oahu', 'Big Island', 'Kauai'];
             $all_categories = [];
             $all_titles = [];
             foreach ($results as $row) {
-                $filtered_categories = array_filter(array_map('trim', explode(',', $row->product_categories)), function ($category) use ($query) {
-                    return stripos($category, $query) !== false;
+                $categories = array_map('trim', explode(',', $row->product_categories));
+                $filtered_categories = array_filter($categories, function($category) use ($query, $valid_categories) {
+                    return stripos($category, $query) !== false && in_array($category, $valid_categories);
                 });
                 $all_categories = array_merge($all_categories, $filtered_categories);
             }
@@ -248,83 +261,108 @@ if (!function_exists('mms_clear_search_history')) {
     add_action('wp_ajax_mms_clear_search_history', 'mms_clear_search_history');
     add_action('wp_ajax_nopriv_mms_clear_search_history', 'mms_clear_search_history');
 }
-if (!function_exists('mms_ajax_search_by_category')) {
-    function mms_ajax_search_by_category()
-    {
-        global $wpdb;
-        $search_query = isset($_GET['mms_search']) ? sanitize_text_field($_GET['mms_search']) : '';
-        $search_category = isset($_GET['category']) ? sanitize_text_field($_GET['category']) : '';
-        $paged = isset($_GET['paged']) ? intval($_GET['paged']) : 1;
-        $limit = 8;
-
-        $ip_address = $_SERVER['REMOTE_ADDR'];
-        $query = "SELECT * FROM wp_product_search_view WHERE 1=1";
-        if (!empty($search_query) && !empty($search_category)) {
-            $like_query = '%' . $wpdb->esc_like($search_query) . '%';
-            $like_category = '%' . $wpdb->esc_like($search_category) . '%';
-
-            $query = $wpdb->prepare(
-                "SELECT * FROM wp_product_search_view 
-                WHERE product_categories LIKE %s 
-                AND product_title LIKE %s",
-                $like_category,
-                $like_query
-            );
-        } elseif ($search_query) {
-            $like_query = '%' . $wpdb->esc_like($search_query) . '%';
-            $like_category = '%' . $wpdb->esc_like($search_category) . '%';
-            $query = $wpdb->prepare(
-                "SELECT * FROM wp_product_search_view 
-                WHERE product_categories LIKE %s 
-                OR product_title LIKE %s",
-                $like_category,
-                $like_query
-            );
-        } elseif ($search_category) {
-            $query .= $wpdb->prepare(" AND product_categories LIKE %s", '%' . $wpdb->esc_like($search_category) . '%');
-        }
-
-        $total_query = "SELECT COUNT(*) FROM wp_product_search_view WHERE 1=1";
-        $total_results = $wpdb->get_var($total_query);
-        $total_pages = ceil($total_results / $limit);
-
-        $query .= $wpdb->prepare(" LIMIT %d, %d", ($paged - 1) * $limit, $limit);
-        $results = $wpdb->get_results($query);
-
-        if ($results) {
-            foreach ($results as $product) {
-                include( get_stylesheet_directory() . '/module/search/templates/mms-product.php' );
-            }
-        } else {
-            echo "<p class='product_notf'>Sorry, we couldn't find any experiences or activities</p>";
-        }
-
-        wp_die();
-    }
-    add_action('wp_ajax_mms_ajax_search_by_category', 'mms_ajax_search_by_category');
-    add_action('wp_ajax_nopriv_mms_ajax_search_by_category', 'mms_ajax_search_by_category');
-}
 if (!function_exists('mms_ajax_search_by_suggestion')) {
     function mms_ajax_search_by_suggestion()
     {
         global $wpdb;
 
+        $image_path_url = get_stylesheet_directory_uri() . '/module/search/images/';
+        $image_path_file = get_stylesheet_directory() . '/module/search/images/';
 
-        $category = isset($_GET['category']) ? sanitize_text_field($_GET['category']) : '';
+        $search_query = isset($_GET['mms_search']) ? sanitize_text_field($_GET['mms_search']) : '';
+        $search_category = isset($_GET['category']) ? sanitize_text_field($_GET['category']) : '';
+        $paged = isset($_GET['paged']) ? intval($_GET['paged']) : 1;
+        $limit = 8;
+        $offset = ($paged - 1) * $limit;
 
-        $query = "SELECT * FROM wp_product_search_view WHERE product_categories LIKE %s ";
-        $like_query = '%' . $wpdb->esc_like($category) . '%';
-        $results = $wpdb->get_results($wpdb->prepare($query, $like_query));
+        $query = "SELECT SQL_CALC_FOUND_ROWS * FROM wp_product_search_view WHERE 1=1";
+        if (!empty($search_query) && !empty($search_category)) {
+            $like_query = '%' . $wpdb->esc_like($search_query) . '%';
+            $like_category = '%' . $wpdb->esc_like($search_category) . '%';
 
-        if ($results) {
-            foreach ($results as $product) {
-                include( get_stylesheet_directory() . '/module/search/templates/mms-product.php' );
-            }
-        } else {
-            echo "<p class='product_notf'>Sorry, we couldn't find any experiences or activities</p>";
+            $query = $wpdb->prepare(
+                "SELECT SQL_CALC_FOUND_ROWS * FROM wp_product_search_view 
+                WHERE product_categories LIKE %s 
+                AND product_title LIKE %s 
+                LIMIT %d OFFSET %d",
+                $like_category,
+                $like_query,
+                $limit,
+                $offset
+            );
+        } elseif ($search_query) {
+            $like_query = '%' . $wpdb->esc_like($search_query) . '%';
+            $like_category = '%' . $wpdb->esc_like($search_category) . '%';
+            $query = $wpdb->prepare(
+                "SELECT SQL_CALC_FOUND_ROWS * FROM wp_product_search_view 
+                    WHERE product_categories LIKE %s 
+                    OR product_title LIKE %s
+                    LIMIT %d OFFSET %d",
+                $like_category,
+                $like_query,
+                $limit,
+                $offset
+            );
+        } elseif ($search_category) {
+            $like_category = '%' . $wpdb->esc_like($search_category) . '%'; 
+            $query = $wpdb->prepare(
+                "SELECT SQL_CALC_FOUND_ROWS * FROM wp_product_search_view 
+                    WHERE product_categories LIKE %s",
+                $like_category,
+                $limit,
+                $offset
+            );
         }
 
-        wp_die();
+        $results = $wpdb->get_results($query);
+
+        $total_query = "SELECT FOUND_ROWS()";
+        $total_results = $wpdb->get_var($total_query);
+
+        $response = [
+            'products' => '',
+            'categories' => '',
+            'total_results' => $total_results,
+            'hide_button' => count($results) < $limit,
+        ];
+
+        $categories = [];
+        $products_html = '';
+        if ($results) {
+
+            foreach ($results as $product) {
+                ob_start();
+                include( get_stylesheet_directory() . '/module/search/templates/mms-product.php' );
+                $products_html .= ob_get_clean();
+                if(!empty($product->product_categories)){
+                    $categories_list = explode(',', $product->product_categories);
+                    foreach ($categories_list as $category) {
+                        $category = trim(esc_html($category));
+                        $formatted_category = strtolower(str_replace(' ', '-', trim($category)));
+                        if (!in_array($formatted_category, $categories)) {
+                            $categories[] = $formatted_category;
+                            $image_file = $image_path_file . $formatted_category . '.svg';
+                            $image_url = $image_path_url . $formatted_category . '.svg';
+                            if (file_exists($image_file)) {
+                                $response['categories'] .= '<div class="category" data-category="' . esc_attr($category) . '">';
+                                $response['categories'] .= '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($category) . '">';
+                                $response['categories'] .= '<h3>' . esc_html($category) . '</h3>';
+                                $response['categories'] .= '</div>';
+                            } else {
+                                $response['categories'] .= '<div class="category" data-category="' . esc_attr($category) . '">';
+                                $response['categories'] .= '<img src="' . esc_url($image_path_url . 'default.svg') . '" alt="' . esc_attr($category) . '">';
+                                $response['categories'] .= '<h3>' . esc_html($category) . '</h3>';
+                                $response['categories'] .= '</div>';
+                            }
+                        }
+                    }
+                }
+            }
+            $response['products'] = $products_html;
+        } else {
+            $response['products'] = "<p class='product_notf'>Sorry, we couldn't find any experiences or activities</p>";
+        }
+        wp_send_json($response);
     }
     add_action('wp_ajax_mms_ajax_search_by_suggestion', 'mms_ajax_search_by_suggestion');
     add_action('wp_ajax_nopriv_mms_ajax_search_by_suggestion', 'mms_ajax_search_by_suggestion');

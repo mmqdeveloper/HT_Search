@@ -985,6 +985,10 @@ if (!function_exists('hawaiitour_add_fareharbor_link_settings')) {
             'label' => __('Vendor URL', 'MM'),
             'id' => 'mm_vendor_product',
         ));
+        woocommerce_wp_text_input(array(
+            'label' => __('Vendor PID', 'MM'),
+            'id' => 'mm_vendor_pid',
+        ));
         $mm_select_booking_type = get_post_meta( $post->ID, 'mm_select_booking_type', true );
         woocommerce_wp_select( array(
             'id'      => 'mm_select_booking_type',
@@ -1019,6 +1023,8 @@ function hawaiitour_add_fareharbor_link_fields_save($post_id) {
     update_post_meta($post_id, 'mm_vendor_tour_name', esc_attr($mm_vendor_tour_name));
     $mm_vendor_product = $_POST['mm_vendor_product'];
     update_post_meta($post_id, 'mm_vendor_product', esc_attr($mm_vendor_product));
+    $mm_vendor_pid = $_POST['mm_vendor_pid'];
+    update_post_meta($post_id, 'mm_vendor_pid', esc_attr($mm_vendor_pid));
     
     $mm_select_booking_type = $_POST['mm_select_booking_type'];
     update_post_meta($post_id, 'mm_select_booking_type', esc_attr($mm_select_booking_type));
@@ -1760,6 +1766,7 @@ if (!function_exists('mm_add_vendor_meta_resource')) {
             $mm_resource_vendor = get_post_meta($post_id, 'mm_resource_vendor', true);
             $mm_vendor_tour_name = get_post_meta($post_id, 'mm_vendor_tour_name', true);
             $mm_vendor_product = get_post_meta($post_id, 'mm_vendor_product', true);
+            $mm_vendor_pid = get_post_meta($post_id, 'mm_vendor_pid', true);
             $mm_duration = get_post_meta($post_id, '_mm_resource_duration', true);
             $mm_duration_unit = get_post_meta($post_id, '_mm_resource_duration_unit', true);
             $mm_resource_checkin_time = get_post_meta($post_id, 'mm_resource_checkin_time', true);
@@ -1856,6 +1863,10 @@ if (!function_exists('mm_add_vendor_meta_resource')) {
                     <div class="lable" style="margin-top: 12px">Place ID : <span data_productID="<?php echo get_the_ID(); ?>"></span></div>
                     
                     <textarea class="place_ids" style="width: 100%;height:125px;" name="_wc_place_ids" id="_wc_place_ids" value="<?php echo ($mm_place_ids? $mm_place_ids : '');?>"><?php echo ($mm_place_ids? $mm_place_ids : '');?></textarea>
+                    <div class="" style="margin-bottom: 10px;">
+                        <div class="label">Vendor PID</div>
+                        <input type="text" name="mm_vendor_pid" value="<?php echo $mm_vendor_pid; ?>" style="width: 100%; max-width: 455px;"/>
+                    </div>
                 </div>
             </div>
 
@@ -1879,6 +1890,9 @@ if (!function_exists('mm_add_vendor_meta_resource_save')) {
         }
         if (isset($_POST['mm_vendor_product'])) {
             update_post_meta($post_id, 'mm_vendor_product', $_POST['mm_vendor_product']);
+        }
+        if (isset($_POST['mm_vendor_pid'])) {
+            update_post_meta($post_id, 'mm_vendor_pid', $_POST['mm_vendor_pid']);
         }
         if (isset($_POST['_mm_resource_duration'])) {
             update_post_meta($post_id, '_mm_resource_duration', $_POST['_mm_resource_duration']);
@@ -2016,6 +2030,7 @@ if (!function_exists('mm_custom_woocommerce_hidden_order_itemmeta')) {
         $array[] = 'mm_product_vendor';
         $array[] = 'mm_vendor_tour_name';
         $array[] = 'mm_vendor_product';
+        $array[] = 'mm_vendor_pid';
         $array[] = 'mm_fareharbor_pickup_text';
         $array[] = 'mm_fareharbor_pickup_description';
         $array[] = 'mm_fareharbor_order_item_sync';
@@ -2041,7 +2056,7 @@ add_filter('woocommerce_hidden_order_itemmeta', 'mm_custom_woocommerce_hidden_or
 
 if(!function_exists('mm_filter_woocommerce_display_item_meta')){
     function mm_filter_woocommerce_display_item_meta ( $html, $item, $args ) {
-        if ($item->get_meta( 'mm_product_vendor' ) || $item->get_meta( 'mm_vendor_tour_name' ) || $item->get_meta( 'mm_vendor_product' ) || $item->get_meta( 'mm_fareharbor_pickup_text' ) || $item->get_meta( 'mm_fareharbor_pickup_description' ) || $item->get_meta( 'mm_fareharbor_order_item_sync' ) || $item->get_meta( 'mm_fareharbor_order_item_vendor' ) || $item->get_meta( 'mm_fareharbor_api_confirm_url' ) || $item->get_meta( 'mm_fareharbor_api_dashboard_url' ) || $item->get_meta( 'mm_fareharbor_booking_id' )|| $item->get_meta( 'order_item_hubwoo_ecomm_deal_id' )|| $item->get_meta( 'mm_galaxyconnect_order_item_sync' )|| $item->get_meta( 'mm_galaxyconnect_booking_id' )|| $item->get_meta( 'mm_galaxyconnect_ticketNumber' )|| $item->get_meta( 'mm_change_stage_confirmation_sent' )) {
+        if ($item->get_meta( 'mm_product_vendor' ) || $item->get_meta( 'mm_vendor_tour_name' ) || $item->get_meta( 'mm_vendor_product' ) || $item->get_meta( 'mm_vendor_pid' ) || $item->get_meta( 'mm_fareharbor_pickup_text' ) || $item->get_meta( 'mm_fareharbor_pickup_description' ) || $item->get_meta( 'mm_fareharbor_order_item_sync' ) || $item->get_meta( 'mm_fareharbor_order_item_vendor' ) || $item->get_meta( 'mm_fareharbor_api_confirm_url' ) || $item->get_meta( 'mm_fareharbor_api_dashboard_url' ) || $item->get_meta( 'mm_fareharbor_booking_id' )|| $item->get_meta( 'order_item_hubwoo_ecomm_deal_id' )|| $item->get_meta( 'mm_galaxyconnect_order_item_sync' )|| $item->get_meta( 'mm_galaxyconnect_booking_id' )|| $item->get_meta( 'mm_galaxyconnect_ticketNumber' )|| $item->get_meta( 'mm_change_stage_confirmation_sent' )) {
             $html = '';
         }
 

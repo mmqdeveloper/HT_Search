@@ -167,9 +167,9 @@
     height: 217px;
     object-fit: cover;
     overflow: hidden;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    transition: all .3s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
 }
 #mms_search_results .product-result .mmsp_price_rating {
     display: flex;
@@ -231,7 +231,7 @@
     width: 500px;
 }
 #mms_load_more {
-    margin: 50px auto 0;
+    margin: 24px auto 40px;
     max-width: 200px;
     width: max-content;
     text-align: center;

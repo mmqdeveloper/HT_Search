@@ -9,7 +9,8 @@ jQuery(document).ready(function ($) {
   var mms_cate_tab = $("#mms_search_cate_silde");
   var mms_history_item = $("#mms_history .mms-item-history");
   var mms_submit = $('#mms_product_search button[type="submit"]');
-  var $button = $("#mms_load_more");
+  var mms_buttonL = $("#mms_load_more");
+  var mms_countP = $('#mms_search_results_count');
   function updateOrAddParamsToURL(url, params) {
     let newURL = new URL(url);
     for (let key in params) {
@@ -44,13 +45,15 @@ jQuery(document).ready(function ($) {
           mms_cate_tab.html(response.categories);
         }
         if (response.total_results) {
-          $('#mms_search_results_count').html(response.total_results + ' activities found');
+          mms_countP.html(response.total_results + ' activities found');
         }
-        if (data.hide_button) {
-          $button.hide();
+        if (response.hide_button) {
+          mms_buttonL.hide();
+        } else{
+          mms_buttonL.show();
         }
         console.log("Search Button Clicked");
-        $button.data("page", 1);
+        mms_buttonL.data("page", 1);
       },
       complete: function () {
         $("#mms_search_loading").hide();
@@ -68,6 +71,12 @@ jQuery(document).ready(function ($) {
       mms_history.show();
     } else if (e.type === "input") {
       mms_history.toggle(query.length === 0);
+    } else if( e.type === "focus" && query.length >= 1) {
+      if (mms_suggestions.html().trim() !== '') {
+        mms_suggestions.show();
+      } else {
+        mms_executeSearch(query);
+      }
     }
   });
 
@@ -86,35 +95,34 @@ jQuery(document).ready(function ($) {
     }
   });
 
-  mms_searchInput.on("input", function () {
-    var query = $(this).val();
-    if (query.length >= 1) {
+    const mms_debounce = (fn, delay) => {
+      let timeout, activeRequest = null;
+      return (...args) => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          activeRequest?.abort?.();
+          activeRequest = fn.apply(this, args);
+        }, delay);
+      };
+    };
+    const mms_executeSearch = (query) => {
+      if (!query.trim()) return mms_suggestions.hide(), null;
+      
       mms_submit.prop("disabled", false);
-      $.ajax({
+      return $.ajax({
         url: mmsAjax.ajaxurl,
         type: "POST",
-        data: {
-          action: "mms_ajax_s_suggestions",
-          query: query,
-        },
-        beforeSend: function () {
-          mms_suggestions.hide();
-        },
-        success: function (response) {
-          mms_suggestions.empty();
+        data: { action: "mms_ajax_s_suggestions", query },
+        beforeSend: () => mms_suggestions.hide(),
+        success: (response) => {
           mms_suggestions.html(response).show();
           resetSuggestionClickHandler();
         },
-        complete: function () {
-          mms_suggestions.show();
-        },
+        error: (xhr, status) => status !== 'abort' && console.error("Request error:", status)
       });
-    } else {
-      mms_submit.prop("disabled", true);
-      mms_suggestions.empty().hide();
-    }
-    console.log(query);
-  });
+    };
+    const mms_debouncedSearch = mms_debounce(mms_executeSearch, 100);
+    mms_searchInput.on("input", ({ target: { value } }) => mms_debouncedSearch(value));
   // Ajax Search Submit
   mms_searchb.on("submit", function (e) {
     e.preventDefault();
@@ -152,7 +160,7 @@ jQuery(document).ready(function ($) {
   // Ajax Search Category
   mms_cate_tab.on("click", ".category", function () {
     var category = $(this).data("category");
-    var currentPage = $button.data("page");
+    var currentPage = mms_buttonL.data("page");
     var nextPage = currentPage + 1;
     
     var search_query = new URLSearchParams(window.location.search).get("mms_search");
@@ -172,42 +180,47 @@ jQuery(document).ready(function ($) {
   });
 
   function resetSuggestionClickHandler() {
-    var mms_s_suggestions = $(".s_suggestions");
-    mms_s_suggestions.on("click", function () {
-      var suggestion = $(this).data("suggestions");
-      var newUrl = updateOrAddParamsToURL(window.location.href, {
-        suggestion: suggestion,
-      });
-
-      if (window.history && window.history.pushState) {
-        history.pushState({}, "", newUrl);
-      } else {
-        console.error("history.pushState is not supported");
-      }
-
+    $(".s_suggestions").on("click", function () {
+      const suggestion = $(this).data("suggestions");
+      const isCategory = $(this).hasClass("cate");
+      const params = isCategory ? { category: suggestion } : { mms_search: suggestion };
+      console.log(params);
+      const newUrl = updateOrAddParamsToURL(window.location.href, params);
+      history.pushState?.({}, "", newUrl) || console.error("history.pushState is not supported");
+  
       $.ajax({
         url: mmsAjax.ajaxurl,
         type: "GET",
         data: {
           action: "mms_ajax_search_by_suggestion",
-          suggestion: suggestion,
+          ...params
         },
-        beforeSend: function () {
-          $("#mms_search_loading").show();
-        },
+        beforeSend: () => $("#mms_search_loading").show(),
         success: function (response) {
-          mms_results_data.html(response);
-          console.log("Search Suggestion");
+          mms_suggestions.hide();
+          if (response.products) {
+            mms_results_data.html(response.products);
+          }
+          if (response.categories) {
+            mms_cate_tab.html(response.categories);
+          }
+          if (response.total_results) {
+            mms_countP.html(response.total_results + ' activities found');
+          }
+          if (response.hide_button) {
+            mms_buttonL.hide();
+          }  else{
+            mms_buttonL.show();
+          }
+          console.log("Search Button Clicked");
+          mms_buttonL.data("page", 1);
         },
-        complete: function () {
-          $("#mms_search_loading").hide();
-        },
-        error: function (xhr, status, error) {
-          console.error("AJAX Error:", error);
-        },
+        complete: () => $("#mms_search_loading").hide(),
+        error: (xhr, status) => console.error("AJAX Error:", status)
       });
     });
   }
+
   // Ajax Search History
   mms_history_item.on("click", function () {
     var historyValue = $(this).data("history");
@@ -234,8 +247,8 @@ jQuery(document).ready(function ($) {
   });
 
   function loadMoreProducts(button) {
-    var $button = $(button);
-    var currentPage = $button.data("page");
+    var mms_buttonL = $(button);
+    var currentPage = mms_buttonL.data("page");
     var nextPage = currentPage + 1;
     console.log(nextPage);
     var category = new URLSearchParams(window.location.search).get("category");
@@ -251,7 +264,7 @@ jQuery(document).ready(function ($) {
         category: category
       },
       beforeSend: function () {
-        $button.addClass("loading").html(`
+        mms_buttonL.addClass("loading").html(`
                     <div class="waveform">
                         <div class="waveform__bar"></div>
                         <div class="waveform__bar"></div>
@@ -264,15 +277,15 @@ jQuery(document).ready(function ($) {
         var data = JSON.parse(response);
         mms_results_data.append(data.products);
         if (data.hide_button) {
-          $button.hide();
+          mms_buttonL.hide();
         } else {
-          $button.data("page", nextPage);
-          $button.removeClass("loading").text("Show more").show();
+          mms_buttonL.data("page", nextPage);
+          mms_buttonL.removeClass("loading").text("Show more").show();
         }
       },
       error: function (xhr, status, error) {
         console.error("AJAX Error:", status, error);
-        $button.removeClass("loading").text("Try again");
+        mms_buttonL.removeClass("loading").text("Try again");
       },
     });
   }
@@ -414,9 +427,6 @@ jQuery(document).ready(function ($) {
       $("#mms_search_datepicker_date_to").val()
     );
 
-    console.log(date_from);
-    console.log(date_to);
-
     let human_readable = "";
 
     if (date_from) {
@@ -439,7 +449,6 @@ jQuery(document).ready(function ($) {
         human_readable += " - " + $.datepicker.formatDate("d M", date_to);
       }
     }
-    console.log(human_readable);
 
     $("#mms_search_datepicker_result").text(human_readable);
   }

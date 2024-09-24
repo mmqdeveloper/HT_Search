@@ -135,6 +135,8 @@ get_header();
                         foreach ($results as $product) {
                             include( get_stylesheet_directory() . '/module/search/templates/mms-product.php' );
                         }
+                    } else {
+                        
                     }
                     ?>
                 </div>

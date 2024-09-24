@@ -664,7 +664,7 @@ function mmtf_load_category_filter () {
             $availability_search = Availability\get_filtered_products_availability( $results_product_id );
             $product_ids_not_avaliable = mm_search_get_product_not_availability($results_product_id, $availability_search, $_POST["start_day"], $_POST["end_day"]);
             if (!empty($product_ids_not_avaliable)) {
-                $post__not_in = $product_ids_not_avaliable;
+                $post__not_in = $product_ids_not_avaliable;  
             }
         }
 
