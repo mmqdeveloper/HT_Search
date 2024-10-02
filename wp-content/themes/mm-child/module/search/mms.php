@@ -23,7 +23,7 @@ if (!function_exists('mms_product_search_form')) {
                             <div class="header-search history">
                                 <h4>Recent Searches:</h4>
                                 <?php if (!empty($search_history)) : ?>
-                                    <button type="button" id="mms_clear_history">Clear History</button>
+                                    <button type="button" id="mms_clear_history">Clear</button>
                                 <?php endif; ?>
                             </div>
                             <ul>
@@ -36,7 +36,7 @@ if (!function_exists('mms_product_search_form')) {
                         </div>
                     <?php endif; ?>
 
-                    <div id="mms_search_suggestions"></div>
+                    <div id="mms_search_suggestions" style="display: none;"></div>
                 </section>
             </div>
             <div class="search_dates">
@@ -99,7 +99,8 @@ if (!function_exists('mms_ajax_s')) {
             $like_category = '%' . $wpdb->esc_like($search_category) . '%'; 
             $query = $wpdb->prepare(
                 "SELECT SQL_CALC_FOUND_ROWS * FROM wp_product_search_view 
-                    WHERE product_categories LIKE %s",
+                    WHERE product_categories LIKE %s
+                    LIMIT %d OFFSET %d",
                 $like_category,
                 $limit,
                 $offset
@@ -107,6 +108,37 @@ if (!function_exists('mms_ajax_s')) {
         }
 
         $results = $wpdb->get_results($query);
+
+        $tag_order = array(
+            '1', '2', '3', '4', '5', '6', 
+            'a', 'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 
+            'b', 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 
+            'c', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6',
+            'd', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6',
+            'e', 'e1', 'e2', 'e3', 'e4', 'e5', 'e6',
+            'f', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6'
+        );
+        function get_tag_priority($product_tags, $tag_order) {
+            $priorities = [];
+            foreach ($product_tags as $tag) {
+                $tag = trim($tag);
+                $order_index = array_search($tag, $tag_order);
+                if ($order_index !== false) {
+                    $priorities[] = $order_index;
+                }
+            }
+            return !empty($priorities) ? min($priorities) : count($tag_order);
+        }
+        
+        usort($results, function($a, $b) use ($tag_order) {
+            $a_tags = explode(',', $a->product_tags);
+            $b_tags = explode(',', $b->product_tags);
+            $a_priority = get_tag_priority($a_tags, $tag_order);
+            $b_priority = get_tag_priority($b_tags, $tag_order);
+        
+            return $a_priority - $b_priority;
+        });
+        
 
         $total_query = "SELECT FOUND_ROWS()";
         $total_results = $wpdb->get_var($total_query);
@@ -237,7 +269,6 @@ if (!function_exists('mms_save_search_history')) {
         if (isset($_GET['mms_search']) && !empty($_GET['mms_search'])) {
             $search_query = sanitize_text_field($_GET['mms_search']);
             $search_history = isset($_COOKIE['mms_search_history']) ? json_decode(stripslashes($_COOKIE['mms_search_history']), true) : [];
-
             if (!is_array($search_history)) {
                 $search_history = [];
             }
@@ -295,11 +326,9 @@ if (!function_exists('mms_ajax_search_by_suggestion')) {
             $like_category = '%' . $wpdb->esc_like($search_category) . '%';
             $query = $wpdb->prepare(
                 "SELECT SQL_CALC_FOUND_ROWS * FROM wp_product_search_view 
-                    WHERE product_categories LIKE %s 
-                    OR product_title LIKE %s
+                    WHERE product_title LIKE %s
                     LIMIT %d OFFSET %d",
                 $like_category,
-                $like_query,
                 $limit,
                 $offset
             );
@@ -307,12 +336,23 @@ if (!function_exists('mms_ajax_search_by_suggestion')) {
             $like_category = '%' . $wpdb->esc_like($search_category) . '%'; 
             $query = $wpdb->prepare(
                 "SELECT SQL_CALC_FOUND_ROWS * FROM wp_product_search_view 
-                    WHERE product_categories LIKE %s",
+                    WHERE product_categories LIKE %s
+                    LIMIT %d OFFSET %d",
                 $like_category,
                 $limit,
                 $offset
             );
         }
+
+        $tag_order = array(
+            '1', '2', '3', '4', '5', '6', 
+            'a', 'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 
+            'b', 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 
+            'c', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6',
+            'd', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6',
+            'e', 'e1', 'e2', 'e3', 'e4', 'e5', 'e6',
+            'f', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6'
+        );
 
         $results = $wpdb->get_results($query);
 
@@ -323,8 +363,9 @@ if (!function_exists('mms_ajax_search_by_suggestion')) {
             'products' => '',
             'categories' => '',
             'total_results' => $total_results,
-            'hide_button' => count($results) < $limit,
+            'hide_button' => count($results) <= $limit,
         ];
+
 
         $categories = [];
         $products_html = '';
