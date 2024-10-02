@@ -91,8 +91,9 @@ if( !function_exists('epj_export_products_to_json') ){
             $product_obj = wc_get_product($product_id);
     
             // Get the YoastSEO Meta description
-            $meta_description = get_post_meta( $product_id, '_yoast_wpseo_metadesc', true );
             
+            $meta_description = get_post_meta( $product_id, '_yoast_wpseo_metadesc', true );
+            $product_primary_term = yoast_get_primary_term('product_cat', $product_id);
             // Get the Rating
             $rating_review = 0;
             $rating_count = 0;
@@ -352,7 +353,7 @@ if( !function_exists('epj_export_products_to_json') ){
 	                        $list_place = explode("- ", $place_ids);
 	                        foreach ($list_place as $place) {
 	                            $pla = explode(": ", $place);
-	                            if(!empty($pla[1])){
+	                            if (!empty($pla[1]) && trim($pla[1]) !== $VwplaceId) {
 	                                $array_place[] = array(
 	                                    'location' => array(
 	                                        'location' => array(
@@ -484,6 +485,9 @@ if( !function_exists('epj_export_products_to_json') ){
                 ),
                 'description' => array(
                     'localized_texts' => $description,
+                ),
+                'product_primary_term' => array(
+                    'localized_texts' => $product_primary_term,
                 ),
                 'rating'=> $rating,
                 'product_features'=> $product_features,

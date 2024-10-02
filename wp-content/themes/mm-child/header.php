@@ -86,7 +86,7 @@ $rtl_support = 'yes' == apply_filters('avf_rtl_column_support', 'yes') ? ' rtl_c
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 		<meta name="theme-color" content="#ffffff">
-		<meta name="facebook-domain-verification" content="0p75wokujynznzg6k4d62jqd1anodz" />
+		<!-- <meta name="facebook-domain-verification" content="0p75wokujynznzg6k4d62jqd1anodz" /> -->
     </head>
 
     <body id="top" <?php

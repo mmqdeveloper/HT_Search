@@ -54,6 +54,7 @@ jQuery(document).ready(function ($) {
         }
         console.log("Search Button Clicked");
         mms_buttonL.data("page", 1);
+        mmsCateSliderfe();
       },
       complete: function () {
         $("#mms_search_loading").hide();
@@ -66,7 +67,7 @@ jQuery(document).ready(function ($) {
 
   mms_searchInput.on("focus input blur", function (e) {
     var query = mms_searchInput.val();
-
+    console.log(query);
     if (e.type === "focus" && query.length === 0) {
       mms_history.show();
     } else if (e.type === "input") {
@@ -113,11 +114,16 @@ jQuery(document).ready(function ($) {
         url: mmsAjax.ajaxurl,
         type: "POST",
         data: { action: "mms_ajax_s_suggestions", query },
-        beforeSend: () => mms_suggestions.hide(),
+        beforeSend: () => mms_suggestions.show(),
         success: (response) => {
-          mms_suggestions.html(response).show();
-          resetSuggestionClickHandler();
+          if (response.trim() === '') {
+            mms_suggestions.hide();
+          } else {
+            mms_suggestions.html(response).show();
+            resetSuggestionClickHandler();
+          }
         },
+        complete: () => mms_suggestions.show(),
         error: (xhr, status) => status !== 'abort' && console.error("Request error:", status)
       });
     };
@@ -184,9 +190,10 @@ jQuery(document).ready(function ($) {
       const suggestion = $(this).data("suggestions");
       const isCategory = $(this).hasClass("cate");
       const params = isCategory ? { category: suggestion } : { mms_search: suggestion };
-      console.log(params);
       const newUrl = updateOrAddParamsToURL(window.location.href, params);
-      history.pushState?.({}, "", newUrl) || console.error("history.pushState is not supported");
+      if (window.history && window.history.pushState) {
+        history.pushState({}, "", newUrl);
+      }
   
       $.ajax({
         url: mmsAjax.ajaxurl,
@@ -214,6 +221,7 @@ jQuery(document).ready(function ($) {
           }
           console.log("Search Button Clicked");
           mms_buttonL.data("page", 1);
+          mmsCateSliderfe();
         },
         complete: () => $("#mms_search_loading").hide(),
         error: (xhr, status) => console.error("AJAX Error:", status)
@@ -290,6 +298,64 @@ jQuery(document).ready(function ($) {
     });
   }
 
+  function mmsCateSliderfe() {
+    const sliderWrap = $('#mms_search_cate_silde');
+    const slides = $('.category', sliderWrap);
+    const slidePadding = 40;
+    const totalSlides = slides.length;
+    let currentSlide = 0;
+    const totalWidth = slides.toArray().reduce((total, slide) => total + $(slide).outerWidth(true), 0);
+    sliderWrap.css('transform', `translateX(0px)`);
+    const updateSliderPosition = () => {
+        const sliderWrapWidth = sliderWrap.outerWidth();
+        const maxTranslate = totalWidth - sliderWrapWidth;
+        const translateX = Math.min(currentSlide * (slides.first().outerWidth(true) + slidePadding), maxTranslate);
+        sliderWrap.css('transform', `translateX(-${translateX}px)`);
+        $('#mms-prevBtn').toggle(currentSlide > 0);
+        $('#mms-nextBtn').toggle(translateX < maxTranslate);
+    };
+    const nextSlide = () => {
+        if (currentSlide < totalSlides - 1) {
+            currentSlide++;
+            updateSliderPosition();
+        }
+    };
+    const prevSlide = () => {
+        if (currentSlide > 0) {
+            currentSlide--;
+            updateSliderPosition();
+        }
+    };
+    $('#mms-nextBtn').on('click', nextSlide);
+    $('#mms-prevBtn').on('click', prevSlide);
+    const handleTouch = () => {
+        let startX = 0, scrollStart = 0, isDragging = false;
+
+        sliderWrap.on('touchstart', e => {
+            isDragging = true;
+            startX = e.originalEvent.touches[0].clientX;
+            scrollStart = sliderWrap.scrollLeft();
+        });
+
+        $(document).on('touchmove', e => {
+            if (!isDragging) return;
+            const currentX = e.originalEvent.touches[0].clientX;
+            sliderWrap.scrollLeft(scrollStart - (currentX - startX));
+        });
+
+        $(document).on('touchend', () => {
+            isDragging = false;
+        });
+    };
+
+    if ($(window).width() < 768) {
+        handleTouch(); 
+    }
+    $(window).on('resize', updateSliderPosition);
+    updateSliderPosition();
+  }
+
+  mmsCateSliderfe();
   window.onpopstate = function (event) {
     if (event.state) {
       $.ajax({

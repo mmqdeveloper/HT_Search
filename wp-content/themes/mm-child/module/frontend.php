@@ -58,7 +58,7 @@ if (!function_exists('mm_child_script')) {
         wp_enqueue_style('indeed_main_public', get_stylesheet_directory_uri() . '/assets/css/indeed_main_public.css', array(), '1.0.1', 'all');
         wp_enqueue_style('indeed_templates', get_stylesheet_directory_uri() . '/assets/css/indeed_templates.css', array(), '1.0.2', 'all');
         //End Indeed
-        wp_enqueue_script('custom-js', get_stylesheet_directory_uri() . '/assets/js/custom.js', array('jquery'), '4.7.4', true);
+        wp_enqueue_script('custom-js', get_stylesheet_directory_uri() . '/assets/js/custom.js', array('jquery'), '4.7.5', true);
 	    wp_localize_script( 'custom-js', 'ajax_custom_js', array(
 			    'ajax_url' => admin_url( 'admin-ajax.php' ),
 			    'product_id' => $post->ID )
